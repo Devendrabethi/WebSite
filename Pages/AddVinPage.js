@@ -14,7 +14,7 @@ class AddVinPage
 
     async SignIn()
     {
-        await this.page.setViewportSize({ width: 1920, height: 1080 })
+        await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.URL)
         //Sign IN
         await this.page.locator(this.addVIN_webelements.SignInbtn).click()
