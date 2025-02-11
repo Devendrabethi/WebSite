@@ -49,7 +49,7 @@ class TrustPage
     {
         await this.page.locator(this.trust_webelements.ViewSubmission).click()
         await this.page.locator(this.trust_webelements.Consignmentbutton).click()
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(3000);
         await this.page.locator(this.trust_webelements.Filterbutton).click()
         await this.page.locator(this.trust_webelements.AllEvent).click()
         await this.page.waitForTimeout(2000);
