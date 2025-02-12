@@ -11,11 +11,13 @@ class AddVinPage
         this.addVIN_webelements =  new AddVIN_WebElements()
         this.testdata = new TestData()
     }
-
-    async SignIn()
+    async ConsignmentURL()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.URL)
+    }
+    async SignIn()
+    {
         //Sign IN
         await this.page.locator(this.addVIN_webelements.SignInbtn).click()
         await this.page.locator(this.addVIN_webelements.Createbtn).click()

@@ -8,6 +8,7 @@ class AddVIN_WebElements
         this.Createbtn = "//span[text()='Create']/parent::button"
         this.Firstname =  "//input[@name='firstName']"
         this.Lastname =   "//input[@name='lastName']"
+        this.Middlename = "//input[@name='middleName']"
         this.Email =      "//input[@name='email']"
         this.Password = "//input[@name='password']"
         this.ConfirmPassword = "//input[@name='confirmPassword']"

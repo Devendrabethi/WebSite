@@ -26,7 +26,7 @@ class TrustPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.trust_webelements.VehicleTitle_Field).click()
         await this.page.locator(this.trust_webelements.Trust_Field).click()
-
+        await this.page.locator(this.trust_webelements.VehicleTitleTo_Field).click()
         await this.page.locator(this.trust_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleTrustName)
         const fileToUpload1 = 
         {
