@@ -63,6 +63,14 @@ class BidderDealerPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
+    async CCDepositeDesiredBidLimit()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
+        await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
+        await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()
+        await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
+    }
     async DealerDocument()
     {
         const fileToUpload2 = 
@@ -102,6 +110,48 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.AuthorizationDoc).setInputFiles(fileToUpload2.AuthorizationDoc);
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+
+    }
+    async CCDepositeCardDetails()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderindividual_webelements.CardFirstName).fill(this.testdata.CardFName)
+        await this.page.locator(this.bidderindividual_webelements.CardLastName).fill(this.testdata.CardLName)
+        await this.page.waitForTimeout(2000)
+
+        const frame1 = await this.page.frameLocator(this.bidderindividual_webelements.frame)
+
+        //await this.page.locator(this.bidderindividual_webelements.CardNum).click()
+        await frame1.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
+        //await this.page.locator(this.bidderindividual_webelements.CardExpDate).click()
+        await frame1.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
+        //await this.page.locator(this.bidderindividual_webelements.Cvv).click()
+        await frame1.locator(this.bidderindividual_webelements.Cvv).fill(this.testdata.CVVNum)
+        //await this.page.locator(this.bidderindividual_webelements.ZipCode).click()
+        await frame1.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
+
+        await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderindividual_webelements.CardFullName).fill(this.testdata.CCCardFullName)
+        await this.page.waitForTimeout(2000)
+
+        const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
+
+        //await this.page.locator(this.bidderindividual_webelements.CardNum).click()
+        await frame.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CCDepositeCard)
+        //await this.page.locator(this.bidderindividual_webelements.CardExpDate).click()
+        await frame.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
+        //await this.page.locator(this.bidderindividual_webelements.Cvv).click()
+        await frame.locator(this.bidderindividual_webelements.Cvv).fill(this.testdata.CVVNum)
+        //await this.page.locator(this.bidderindividual_webelements.ZipCode).click()
+        await frame.locator(this.bidderindividual_webelements.CCZipCode).fill(this.testdata.CCZIpCode)
+
+        await this.page.locator(this.bidderindividual_webelements.CCAddress_Field).fill(this.testdata.AddressSearch)
+        await this.page.locator(this.titledocument_webelements.SelectAddress).click()
+
+        await this.page.locator(this.bidderindividual_webelements.CCNextbtn).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
 
     }
 }

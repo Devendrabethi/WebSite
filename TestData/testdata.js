@@ -10,7 +10,7 @@ class TestData
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
         this.Year = "1998"
-        this.Audi = "Audi"
+        this.Audi = "CHEVROLET"
         this.Trim = "Turbo Premium"
         this.Style = "SUV"
         this.Engine = "L/121"
@@ -58,6 +58,10 @@ class TestData
         this.CardExp = "05/28"
         this.CVVNum = "111"
         this.ZipCOde = "11111"
+
+        this.CCCardFullName = "Devendra Prasad"
+        this.CCDepositeCard = "5105 1051 0510 5100"
+        this.CCZIpCode = "85260"
 
         //Business
         this.BusinessNameText = "Devendra Business"

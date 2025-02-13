@@ -31,41 +31,5 @@ test('test',async({page}) =>
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
 
-    //Business
-    await businesspage.StartAnotherApp()
-    await addvinpage.VehicleDetailsone()
-    await addvinpage.PowerSourceHyBrid()
-    await addvinpage.Mileage()
-    await addvinpage.VehicleDescp()
-    await addmediapage.MainPhotos()
-    await addmediapage.AdditionalPhotos()
-    await businesspage.AlreadyBusinessVehicleDocument()
-    await applicationinfopage.FinishApplication()
-    await applicationinfopage.ReviewApp()
-
-    //Dealer
-    await businesspage.StartAnotherApp()
-    await addvinpage.VehicleDetailsone()
-    await addvinpage.PowerSourceElectric()
-    await addvinpage.Mileage()
-    await addvinpage.VehicleDescp()
-    await addmediapage.MainPhotos()
-    await addmediapage.AdditionalPhotos()
-    await dealerpage.AlreadyDealerVehicleDocument()
-    await applicationinfopage.FinishApplication()
-    await applicationinfopage.ReviewApp()
-
-    //Trust
-    await businesspage.StartAnotherApp()
-    await addvinpage.VehicleDetailsone()
-    await addvinpage.PowerSourceDiesel()
-    await addvinpage.Mileage()
-    await addvinpage.VehicleDescp()
-    await addmediapage.MainPhotos()
-    await addmediapage.AdditionalPhotos()
-    await trustpage.AlreadyTrustVehicleDocument()
-    await applicationinfopage.FinishApplication()
-    await applicationinfopage.ReviewApp()
-
     await trustpage.ViewMySubmission()
 })

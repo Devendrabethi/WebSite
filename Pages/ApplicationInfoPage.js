@@ -13,11 +13,8 @@ class ApplicationInfoPage
         this.applicationinfo_webelements =  new ApplicationInfo_WebElements()
         this.testdata = new TestData()
     }
-
     async FinishApplication()
     {
-        await this.page.waitForTimeout(3000)
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.applicationinfo_webelements.VehicleWorth_Field).fill(this.testdata.VechileWorth)
         await this.page.locator(this.applicationinfo_webelements.ReserveType_Dropdown).click()

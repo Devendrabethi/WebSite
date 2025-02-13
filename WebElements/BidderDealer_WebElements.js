@@ -17,6 +17,7 @@ class BidderDealer_WebElements
 
         this.DesiredBidLimit_Field = "//label[text()='Desired bid limit']/following-sibling::div/input"
         this.PersonalCheckBox = "//input[@value='personalCheck']/../parent::label"
+        this.CreditCardHoldBox = "//input[@value='creditCardHold']/../parent::label"
         this.PersonalCheckBankLGranteeDoc = "//label[text()='Bank letter of guarantee']/../../../following-sibling::div/div[2]/input[@type='file']"
         this.Nextbtn = "//span[text()='Next']/parent::button"
         this.DealerDoc = "//label[text()='Dealer License']/../../../following-sibling::div/div[2]/input[@type='file']"

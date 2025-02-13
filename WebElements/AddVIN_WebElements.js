@@ -23,7 +23,7 @@ class AddVIN_WebElements
         this.Make_Field = "//label[text()='Make']/following-sibling::div[1]/input"
         this.Select_Make = "//div[@aria-label='Suggestions']/div[1]"
         this.Model_Field = "//label[text()='Model']/following-sibling::div[1]/input"
-        this.Select_Model = "//div[@data-key='10711']"
+        this.Select_Model = "//div[@data-key='4901']"
         this.Trim_Field = "//input[@name='trimLevel']"
         this.Style_Field = "//input[@name='style']"
         this.PowerSource_Field = "//span[text()='Power source']/parent::div/following-sibling::button"

@@ -12,6 +12,6 @@ class Trust_WebElements
         this.ViewSubmission = "//span[text()='View my submission']/parent::a"
         this.Consignmentbutton = "//div[text()='Consignments']/parent::div"
         this.Filterbutton = "//button[text()='Filter']"
-        this.AllEvent = "//label[text()='All']"
+        this.RemovePastEvent = "//span[text()='Event: Scottsdale 2025']/../parent::button"
     }
 }

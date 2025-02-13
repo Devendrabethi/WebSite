@@ -44,5 +44,10 @@ class BidderIndividual_WebElements
 
         this.ViewBidderOpportunity = "//span[text()='View my agreement']/parent::a"
 
+        this.CardFullName = "//input[@name='cardholderName']"
+        this.CCZipCode = "//input[@title='ZIP Code']"
+        this.CCAddress_Field = "//input[@name='addressSearch']"
+        this.CCNextbtn = "//span[text()='Next']/parent::button"
+
     }
 }
