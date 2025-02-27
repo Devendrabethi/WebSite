@@ -185,6 +185,9 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerNum)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
+        await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
 
         const fileToUpload2 = 
         {
@@ -219,6 +222,9 @@ class DealerPage
        //all consg one
     try 
     {
+                // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()        already address present
+                // await this.page.waitForTimeout(500)
+                // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
     } 
     catch (error) 

@@ -3,10 +3,10 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://member-uat.barrett-jackson.com/consign/vin?event=845"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.BidderPremiumURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6689"
-        this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6690"
-        this.BidderAbsenteeBidderURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6688"
+        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6654"
+        this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6656"
+        this.Bidder_Pre_premium_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6655"  //6562  --Absentee bidder
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
         this.Year = "1998"

@@ -19,7 +19,9 @@ test('test',async({page}) =>
     await bidderdealerpage.DesiredBidLimit()
     await bidderinvidualpage.AdditionalDocument()
     await bidderdealerpage.DealerDocument()
-    //await bidderinvidualpage.AddProducts()
+    await bidderinvidualpage.AddProducts()
     await bidderinvidualpage.CardDetails()
+    await bidderinvidualpage.PersonalDocuSign()
+    await bidderinvidualpage.ViewBidderOpportunity()
 
 })

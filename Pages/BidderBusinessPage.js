@@ -33,7 +33,29 @@ class BidderBusinessPage
         await this.page.locator(this.bidderbusiness_webelements.SelectBusinessBox).click()
         await this.page.locator(this.bidderbusiness_webelements.BusinessName).fill(this.testdata.BusinessNameText)
         await this.page.locator(this.bidderbusiness_webelements.BusinessPhoneNum_Field).fill(this.testdata.BusPhoneNum)
-        await this.page.locator(this.bidderbusiness_webelements.Ein_Field).fill(this.testdata.BusinessEin)
+
+
+        //Business Ein
+        function generateRandomString(length) 
+        {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+        const randomEinNum = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
+        
+    
+        const EinNum = "Deva" +randomEinNum;
+        await this.page.locator(this.bidderbusiness_webelements.Ein_Field).click()
+        await this.page.locator(this.bidderbusiness_webelements.Ein_Field).fill(EinNum)
+
+       // await this.page.locator(this.bidderbusiness_webelements.Ein_Field).fill(this.testdata.BusinessEin)
+
+
+
         await this.page.locator(this.bidderbusiness_webelements.RelationshipBusiness).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderbusiness_webelements.SelectOwner).click()

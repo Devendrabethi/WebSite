@@ -19,5 +19,7 @@ test('test',async({page}) =>
     await bidderbusinesspage.BusinessDocument()
     await bidderinvidualpage.AddProducts()
     await bidderinvidualpage.CardDetails()
+    await bidderinvidualpage.PersonalDocuSign()
+    await bidderinvidualpage.ViewBidderOpportunity()
 
 })

@@ -11,8 +11,11 @@ class TitleDocument_WebElements
 
         this.MiddleName = "//label[text()='Middle name']/following-sibling::div[1]/input"
         this.ContactNumber = "//label[text()='Contact number']/following-sibling::div[1]/input"
+
+        this.CheckboxforAllAddress = "//label[text()='Use this address for all']"
         this.AddressSearch = "//label[text()='Address search']/following-sibling::div[1]/input"
         this.SelectAddress = "(//div[contains(@data-key, 'address.')])[1]"
+        this.CountydDropdown = "//label[text()='County']/following-sibling::div/button"
 
 
     }

@@ -45,7 +45,8 @@ class AddVinPage
         await this.page.waitForTimeout(1000)        
 
         //Email
-        function generateRandomString(length) {
+        function generateRandomString(length) 
+        {
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             let result = '';
             for (let i = 0; i < length; i++) {
@@ -127,11 +128,12 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ChargingType).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.addVIN_webelements.SelectChargingType).click()
+        await this.page.locator(this.addVIN_webelements.TransmissionType_Field).click()
+        await this.page.locator(this.addVIN_webelements.TransmissionType_AutomaticWithManual).click()
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_4speedValue).click()
-        await this.page.locator(this.addVIN_webelements.TransmissionType_Field).click()
-        await this.page.locator(this.addVIN_webelements.TransmissionType_AutomaticWithManual).click()
+
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
@@ -157,11 +159,12 @@ class AddVinPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.addVIN_webelements.SelectChargingType).click()
         await this.page.locator(this.addVIN_webelements.NoOfMotors).fill(this.testdata.NumofMotors)
+        await this.page.locator(this.addVIN_webelements.TransmissionType_Field).click()
+        await this.page.locator(this.addVIN_webelements.TransmissionType_Manual).click()
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_4speedValue).click()
-        await this.page.locator(this.addVIN_webelements.TransmissionType_Field).click()
-        await this.page.locator(this.addVIN_webelements.TransmissionType_Manual).click()
+
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
@@ -189,11 +192,12 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Cylinder_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.Cylinder_4Value).click()
+        await this.page.locator(this.addVIN_webelements.TransmissionType_Field).click()
+        await this.page.locator(this.addVIN_webelements.TransmissionType_Automatic).click()
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_4speedValue).click()
-        await this.page.locator(this.addVIN_webelements.TransmissionType_Field).click()
-        await this.page.locator(this.addVIN_webelements.TransmissionType_Automatic).click()
+
 
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)

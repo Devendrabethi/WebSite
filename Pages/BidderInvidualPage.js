@@ -71,16 +71,28 @@ class BidderInvidualPage
     async AddressDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress)
-        await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        await this.page.locator(this.bidderindividual_webelements.TitlePaperwork).fill(this.testdata.TitlePaperworkAddress)
-        await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        await this.page.waitForTimeout(1000)
+        // await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress)
+        // await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.waitForTimeout(500)
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.locator(this.bidderindividual_webelements.TitlePaperwork).fill(this.testdata.TitlePaperworkAddress)
+        // await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
+        // await this.page.waitForTimeout(1000)
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.waitForTimeout(500)
+        await this.page.locator(this.titledocument_webelements.CheckboxforAllAddress).click()
         await this.page.locator(this.bidderindividual_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        await this.page.locator(this.bidderindividual_webelements.Vehicleaddress).fill(this.testdata.VehicleAddress)
-        await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        await this.page.waitForTimeout(1000)
+                    await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+                    await this.page.waitForTimeout(500)
+                    await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.locator(this.bidderindividual_webelements.Vehicleaddress).fill(this.testdata.VehicleAddress)
+        // await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
+        // await this.page.waitForTimeout(1000)
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.waitForTimeout(500)
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
       
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
@@ -121,18 +133,51 @@ class BidderInvidualPage
     }
     async AddProducts()
     {
-        try {
+        try 
+        {
             await this.page.locator(this.bidderindividual_webelements.FirstProduct).click();
             await this.page.locator(this.bidderindividual_webelements.FirstProduct).click();
-            
+        }
+        catch (error) 
+        {
+            console.error("An error occurred during the clicking process:", error);
+            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        }
+        try
+        {
             await this.page.locator(this.bidderindividual_webelements.SecoundProduct).click();
             await this.page.locator(this.bidderindividual_webelements.SecoundProduct).click();
-            
+        }
+        catch (error) 
+        {
+            console.error("An error occurred during the clicking process:", error);
+            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        }
+        try
+        {
             await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
             await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
+        }
+        catch (error) 
+        {
+            console.error("An error occurred during the clicking process:", error);
+            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        }
+        try 
+        {
+            // Check if the fourth product exists and is visible
+            const fourthProductLocator = this.page.locator(this.bidderindividual_webelements.FourthProduct);
+            const isFourthProductVisible = await fourthProductLocator.isVisible();
             
-            await this.page.locator(this.bidderindividual_webelements.FourthProduct).click();
-            await this.page.locator(this.bidderindividual_webelements.FourthProduct).click();
+            if (isFourthProductVisible)
+           {
+                await fourthProductLocator.click();
+                await fourthProductLocator.click();
+            } 
+            else
+            {
+                console.log("The fourth product is not visible, skipping click.");
+            }
         } catch (error) {
             console.error("An error occurred during the clicking process:", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
@@ -164,6 +209,30 @@ class BidderInvidualPage
 
         await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click()
         await this.page.waitForTimeout(2000)
+        //await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
+    }
+
+    async PersonalDocuSign()
+    {
+        const frame1 = await this.page.frameLocator(this.bidderindividual_webelements.FrameDocuSign1)
+        const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
+
+        await frame2.locator(this.bidderindividual_webelements.checkbox).click()
+        await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
+        await this.page.waitForTimeout(1000)
+        await frame2.locator(this.bidderindividual_webelements.personalsignin).click()
+        await frame2.locator(this.bidderindividual_webelements.AdoptandSign).click()
+        await this.page.waitForTimeout(15000)
+        await frame2.locator(this.bidderindividual_webelements.BuyerInitialSecondPage).click()
+        await this.page.waitForTimeout(1000)
+        await frame2.locator(this.bidderindividual_webelements.BuyerInitialThirdPage).click()
+        await this.page.waitForTimeout(1000)
+        await frame1.locator(this.bidderindividual_webelements.SubmitApplication).click()
+        
+    }
+
+    async ViewBidderOpportunity()
+    {
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
     }
 }

@@ -41,6 +41,9 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber)
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
+        await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        await this.page.waitForTimeout(500)
+        await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
 
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()

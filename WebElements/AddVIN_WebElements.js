@@ -5,7 +5,7 @@ class AddVIN_WebElements
     {
 
         this.SignInbtn = "//span[text()='Sign In']/parent::button"
-        this.Createbtn = "//span[text()='Create']/parent::button"
+        this.Createbtn = "//span[contains(text(),'Create')]/parent::button"
         this.Firstname =  "//input[@name='firstName']"
         this.Lastname =   "//input[@name='lastName']"
         this.Middlename = "//input[@name='middleName']"

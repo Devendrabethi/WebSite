@@ -26,8 +26,8 @@ class BidderDealerPage
     async BidderOpportunityAbsentee()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.BidderAbsenteeBidderURL)
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+        await this.page.goto(this.testdata.Bidder_Pre_premium_AbsenteeBidderURL)
+       // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
 
     async DealerRegistration()
@@ -36,14 +36,35 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.SelectDealerBox).click()
         await this.page.locator(this.bidderdealer_webelements.DealerName).fill(this.testdata.DealerName)
         await this.page.locator(this.bidderdealer_webelements.DealerePhoneNum_Field).fill(this.testdata.DealerPhoneNum)
-        await this.page.locator(this.bidderdealer_webelements.DealerLicense_Field).fill(this.testdata.DealerLNum)
+
+
+          //Dealer NUmber
+          function generateRandomString(length) 
+          {
+              const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+              let result = '';
+              for (let i = 0; i < length; i++) {
+                  result += chars.charAt(Math.floor(Math.random() * chars.length));
+              }
+              return result;
+          }
+          const randomDealerNum = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
+          
+      
+          const DealerNum = "Deva" +randomDealerNum;
+          await this.page.locator(this.bidderdealer_webelements.DealerLicense_Field).click()
+          await this.page.locator(this.bidderdealer_webelements.DealerLicense_Field).fill(DealerNum)
+
+       // await this.page.locator(this.bidderdealer_webelements.DealerLicense_Field).fill(this.testdata.DealerLNum)
+
+
         await this.page.locator(this.bidderdealer_webelements.TaxID_Field).fill(this.testdata.ResaleTaxIdNum)
         await this.page.locator(this.bidderdealer_webelements.RelationshipDealer).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.SelectRepresentative).click()
         await this.page.locator(this.bidderdealer_webelements.DealerState_Field).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.bidderdealer_webelements.SelectDealerState).click()
+            //    await this.page.locator(this.bidderdealer_webelements.SelectDealerState).click()  in UAT not working dropdown
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
     async DesiredBidLimit()
