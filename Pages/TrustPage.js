@@ -89,28 +89,28 @@ class TrustPage
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
        await this.page.waitForTimeout(2000)
 
-       try 
-       {
-            await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-            await this.page.waitForTimeout(500)
-            await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-           await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
-       } 
-       catch (error) 
-       {
-           console.error('Error occurred while clicking the Next button:', error);
-           // Optional: Add additional actions (e.g., screenshot, retry logic) here
-       }
+       await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
+
+    //    try 
+    //    {
+    //         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+    //         await this.page.waitForTimeout(500)
+    //         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+    //        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
+    //    } 
+    //    catch (error) 
+    //    {
+    //        console.error('Error occurred while clicking the Next button:', error);
+    //        // Optional: Add additional actions (e.g., screenshot, retry logic) here
+    //    }
     }
     async ViewMySubmission()
     {
         await this.page.locator(this.trust_webelements.ViewSubmission).click()
         await this.page.locator(this.trust_webelements.Consignmentbutton).click()
         await this.page.waitForTimeout(3000);
-        await this.page.locator(this.trust_webelements.FormLibrary).click()
-        await this.page.waitForTimeout(3000);
-        await this.page.locator(this.trust_webelements.Consignmentbutton).click()
         await this.page.locator(this.trust_webelements.RemovePastEvent).click()
-        
+        await this.page.waitForTimeout(3000);
+        await this.page.locator(this.trust_webelements.FormLibrary).click()
     }
 }
