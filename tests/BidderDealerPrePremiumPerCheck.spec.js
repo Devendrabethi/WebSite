@@ -11,7 +11,7 @@ test('test',async({page}) =>
     const bidderbusinesspage = new BidderBusinessPage(page)
     const bidderdealerpage = new BidderDealerPage(page)
 
-    await bidderdealerpage.BidderOpportunityAbsentee()
+    await bidderdealerpage.BidderOpportunityPre_premium()
     await addvinpage.SignIn()
     await bidderinvidualpage.IndividualDetails()
     await bidderdealerpage.DealerRegistration()

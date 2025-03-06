@@ -26,8 +26,16 @@ class BidderDealerPage
     async BidderOpportunityAbsentee()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.Bidder_Pre_premium_AbsenteeBidderURL)
-       // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+        await this.page.goto(this.testdata.Bidder_AbsenteeBidderURL)  
+    }
+    async BidderOpportunityPre_premium()
+    {
+        await this.page.setViewportSize({ width: 1920, height: 950 })
+        await this.page.goto(this.testdata.Bidder_Pre_premiumURL)  
+    }
+    async BidderOpportunityAbsenteeyes()
+    {
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
 
     async DealerRegistration()
@@ -135,23 +143,6 @@ class BidderDealerPage
     }
     async CCDepositeCardDetails()
     {
-        await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.CardFirstName).fill(this.testdata.CardFName)
-        await this.page.locator(this.bidderindividual_webelements.CardLastName).fill(this.testdata.CardLName)
-        await this.page.waitForTimeout(2000)
-
-        const frame1 = await this.page.frameLocator(this.bidderindividual_webelements.frame)
-
-        //await this.page.locator(this.bidderindividual_webelements.CardNum).click()
-        await frame1.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
-        //await this.page.locator(this.bidderindividual_webelements.CardExpDate).click()
-        await frame1.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
-        //await this.page.locator(this.bidderindividual_webelements.Cvv).click()
-        await frame1.locator(this.bidderindividual_webelements.Cvv).fill(this.testdata.CVVNum)
-        //await this.page.locator(this.bidderindividual_webelements.ZipCode).click()
-        await frame1.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
-
-        await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.CardFullName).fill(this.testdata.CCCardFullName)
         await this.page.waitForTimeout(2000)

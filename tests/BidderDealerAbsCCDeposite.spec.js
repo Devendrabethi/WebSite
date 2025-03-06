@@ -12,6 +12,7 @@ test('test',async({page}) =>
     const bidderdealerpage = new BidderDealerPage(page)
 
     await bidderdealerpage.BidderOpportunityAbsentee()
+    await bidderdealerpage.BidderOpportunityAbsenteeyes()
     await addvinpage.SignIn()
     await bidderinvidualpage.IndividualDetails()
     await bidderdealerpage.DealerRegistration()
@@ -20,6 +21,8 @@ test('test',async({page}) =>
     await bidderinvidualpage.AdditionalDocument()
     await bidderdealerpage.DealerDocument()
     //await bidderinvidualpage.AddProducts()
+    await bidderinvidualpage.CardDetails()
+    await bidderinvidualpage.PersonalDocuSign()
     await bidderdealerpage.CCDepositeCardDetails()
 
 })
