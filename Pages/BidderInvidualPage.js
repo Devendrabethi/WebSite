@@ -108,8 +108,8 @@ class BidderInvidualPage
     {
         const fileToUpload2 = 
         {
-            "CustomerPhoto" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\R.jpg",
-            "Insurance" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\LIEN Release.jpg"
+            "CustomerPhoto" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+            "Insurance" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
         }
         await this.page.waitForTimeout(2000);
         // Upload each photo to its respective field

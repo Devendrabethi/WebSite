@@ -19,11 +19,11 @@ class AddMediaPage
         const fileToUpload = 
         {
             "front" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\front.jpg",
-            "Rare":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.jpg",
-            "Side":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.jpg",
-            "Interior" :   "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpg",
-            "Engine":      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.jpg",
-            "Vin":         "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.jpeg"
+            "Rare":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif",
+            "Side":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
+            "Interior" :   "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpeg",
+            "Engine":      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+            "Vin":         "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif"
         }
 
         // Upload each photo to its respective field
@@ -46,11 +46,11 @@ class AddMediaPage
         const fileToUpload = 
         [
              "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\front.jpg",
-             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.jpg",
-             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.jpg",
-            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.jpeg"
+             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif",
+             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
+            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpeg",
+            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif"
         ]
         // Upload each photo to its respective field
         await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload)
