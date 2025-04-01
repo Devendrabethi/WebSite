@@ -184,7 +184,7 @@ class BusinessPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(5000)
         //all consg one
 
       //  await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()

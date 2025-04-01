@@ -50,7 +50,8 @@ class AddMediaPage
              "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpeg",
             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
-            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif"
+            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
+            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\2023_mclaren_artura_coupe_base_fq_oem_15_500.jpg.webp"
         ]
         // Upload each photo to its respective field
         await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload)

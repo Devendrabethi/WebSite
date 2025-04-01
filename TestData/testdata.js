@@ -4,13 +4,13 @@ class TestData
     constructor()
     {
         this.URL ="https://member-uat.barrett-jackson.com/consign/vin?event=845"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.BidderPremiumURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6654" //6654 qa and uat
-        this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6657"  //6656 qa 6690 uat 6657
-        this.Bidder_AbsenteeBidderURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6562"  //6562  --Absentee bidder  6655 pre prem
-        this.Bidder_Pre_premiumURL ="https://member-uat.barrett-jackson.com/bid/register?event=845&package=6655"  //6655 uat
+        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6654" //6654 qa and uat
+        this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6656"  //6656 qa 6690 uat 6657
+        this.Bidder_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6562"  //6562  --Absentee bidder  6655 pre prem
+        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6655"  //6655 uat
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
-        this.Year = "1998"
+        this.Year = "2016"
         this.Audi = "CHEVROLET"
         this.Trim = "Turbo Premium"
         this.Style = "SUV"
@@ -46,16 +46,16 @@ class TestData
         
         this.MobileNum = "(231) 629-8184"
         this.MailingAddress = "5055 E Somerset Dr Cornville, Arizona(AZ), 86325"
-        this.VehicleAddress = "859 S 12th St #104 Cottonwood, Arizona(AZ), 86326"
-        this.TitlePaperworkAddress = "230 Sunset Dr Sedona, Arizona(AZ), 86336"
-        this.BiddingAddress = "350 Navajo Trl Sedona, Arizona(AZ), 86336"
+        this.VehicleAddress = "india"
+        this.TitlePaperworkAddress = "united kingdom"
+        this.BiddingAddress = "united canada"
 
         this.BidLimitValue = "90001"
         this.QuantityValue = "3"
 
         this.CardFName = "Devendra"
         this.CardLName = "Prasad"
-        this.CardCC = "4111 1111 1111 1111"
+        this.CardCC = "	6011 0000 0000 0004"//"4111 1111 1111 1111"
         this.CardExp = "05/28"
         this.CVVNum = "111"
         this.ZipCOde = "11111"

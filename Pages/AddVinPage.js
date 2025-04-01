@@ -98,7 +98,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Model_Field).click()
         await this.page.locator(this.addVIN_webelements.Select_Model).click()
 
-        await this.page.locator(this.addVIN_webelements.Trim_Field).fill(this.testdata.Trim)
+        //await this.page.locator(this.addVIN_webelements.Trim_Field).fill(this.testdata.Trim)
         await this.page.locator(this.addVIN_webelements.Style_Field).fill(this.testdata.Style)
     }
     async PowerSource()
@@ -207,17 +207,23 @@ class AddVinPage
     }
     async Mileage()
     {
-        //await this.page.locator(this.addVIN_webelements.Odometer_Field).click()
-        await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
+    //    await this.page.locator(this.addVIN_webelements.Odometer_Field).click()
+    //    await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
+
+
         await this.page.locator(this.addVIN_webelements.Condition_Vehicle_Field).click()
         await this.page.locator(this.addVIN_webelements.Select_RestoredOriginal).click()
 
         await this.page.locator(this.addVIN_webelements.OriginalEngine_Field).click()
         await this.page.locator(this.addVIN_webelements.modifiedHorsePower_Field).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async VehicleDescp ()
     {
+        await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
+
+
         await this.page.locator(this.addVIN_webelements.ShortDesc1).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.ShortDesc2).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.ShortDesc3).fill(this.testdata.ShortDescription)
