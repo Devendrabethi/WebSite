@@ -218,20 +218,42 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.SelectState).click()
 
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(5000)
        //all consg one
       // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
-    try 
-    {
-        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()        //already address present
-        // await this.page.waitForTimeout(500)
-        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
-    } 
-    catch (error) 
-    {
-        console.error('Error occurred while clicking the Next button:', error);
-        // Optional: Add additional actions (e.g., screenshot, retry logic) here
-    }
+    // try 
+    // {
+    //     // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()        //already address present
+    //     // await this.page.waitForTimeout(500)
+    //     // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+    //     await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
+
+        try 
+        {
+            // Check if the fourth product exists and is visible
+            const PersonalNextButton = this.page.locator(this.addVIN_webelements.Nextbtn_Submit);
+            const isPersonalNextButton = await PersonalNextButton.isVisible();
+            
+            if (isPersonalNextButton)
+           {
+                await PersonalNextButton.click();
+            } 
+            else
+            {
+                console.log("The fourth product is not visible, skipping click.");
+            }
+        } 
+        catch (error) 
+        {
+            console.error("An error occurred during the clicking process:", error);
+            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        }
+
+    //} 
+    // catch (error) 
+    // {
+    //     console.error('Error occurred while clicking the Next button:', error);
+    //     // Optional: Add additional actions (e.g., screenshot, retry logic) here
+    // }
     }
 }

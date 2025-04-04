@@ -25,6 +25,7 @@ class BidderBusinessPage
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.BidderSelectURL)
+        await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
     }
 
     async BusinessRegistration()

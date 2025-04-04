@@ -3,7 +3,7 @@ class AddVIN_WebElements
 {
     constructor() 
     {
-
+        this.Acceptpopup = "//button[@data-tid='banner-accept']"
         this.SignInbtn = "//span[text()='Sign In']/parent::button"
         this.Createbtn = "//span[contains(text(),'Create')]/parent::button"
         this.Firstname =  "//input[@name='firstName']"

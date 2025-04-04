@@ -26,12 +26,14 @@ class BidderDealerPage
     async BidderOpportunityAbsentee()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.Bidder_AbsenteeBidderURL)  
+        await this.page.goto(this.testdata.Bidder_AbsenteeBidderURL) 
+        await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
     async BidderOpportunityPre_premium()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.Bidder_Pre_premiumURL)  
+        await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
     async BidderOpportunityAbsenteeyes()
     {

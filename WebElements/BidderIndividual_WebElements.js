@@ -3,6 +3,7 @@ class BidderIndividual_WebElements
 {
     constructor() 
     {
+        this.Acceptpopup = "//button[@data-tid='banner-accept']"
         this.DriverLicenseDoc = "//label[text()=\"Driver's License\"]/../../../following-sibling::div/div[2]/input[@type='file']"
         this.MobileNumber_Field = "//label[text()='Mobile Number']/following-sibling::div[1]/input"
         
@@ -28,7 +29,7 @@ class BidderIndividual_WebElements
         this.SecoundProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[2]/td[3]/div/div/button[2]"
         this.ThiredProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[3]/td[3]/div/div/button[2]"
         this.FourthProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[4]/td[3]/div/div/button[2]"
-        this.MuscleLoungeQuantity = "//button[@aria-label='Increase Quantity']"
+        this.MuscleLoungeQuantity = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[5]/td[3]/div/div/button[2]"
 
         this.CardFirstName = "//input[@name='firstNameCard']"
         this.CardLastName = "//input[@name='lastNameCard']"

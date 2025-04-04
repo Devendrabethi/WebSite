@@ -4,13 +4,13 @@ class TestData
     constructor()
     {
         this.URL ="https://member-uat.barrett-jackson.com/consign/vin?event=845"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6654" //6654 qa and uat
-        this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6656"  //6656 qa 6690 uat 6657
-        this.Bidder_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6562"  //6562  --Absentee bidder  6655 pre prem
-        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6655"  //6655 uat
+        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=845&package=6655" //6654 qa and uat
+        this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6657"  //6656 qa 6690 uat 6657
+        this.Bidder_AbsenteeBidderURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6562"  //6562  --Absentee bidder  6655 pre prem
+        this.Bidder_Pre_premiumURL ="https://member-uat.barrett-jackson.com/bid/register?event=845&package=6654"  //6655 uat
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
-        this.Year = "2016"
+        this.Year = "2011"
         this.Audi = "CHEVROLET"
         this.Trim = "Turbo Premium"
         this.Style = "SUV"

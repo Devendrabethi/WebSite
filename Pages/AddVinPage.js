@@ -15,6 +15,7 @@ class AddVinPage
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.URL)
+        await this.page.locator(this.addVIN_webelements.Acceptpopup).click()
     }
     async SignIn()
     {

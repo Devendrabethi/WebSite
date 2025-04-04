@@ -23,6 +23,7 @@ class BidderInvidualPage
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.BidderPremiumURL)
+        await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
     }
     async IndividualDetails()
     {
@@ -183,12 +184,32 @@ class BidderInvidualPage
             console.error("An error occurred during the clicking process:", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
+        try 
+        {
+            // Check if the fourth product exists and is visible
+            const FivethProductLocator = this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity);
+            const isFivethProductVisible = await FivethProductLocator.isVisible();
+            
+            if (isFivethProductVisible)
+           {
+                await FivethProductLocator.click();
+                await FivethProductLocator.click();
+            } 
+            else
+            {
+                console.log("The fourth product is not visible, skipping click.");
+            }
+        } catch (error) {
+            console.error("An error occurred during the clicking process:", error);
+            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        }
+
 
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity).click()
-        await this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity).click()
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+        // await this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity).click()
+        // await this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity).click()
+        // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
     async CardDetails()
     {
