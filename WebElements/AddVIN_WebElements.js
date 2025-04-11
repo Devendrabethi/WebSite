@@ -16,6 +16,11 @@ class AddVIN_WebElements
         this.CreateAccountbtn = "//span[text()='Create account']/parent::button"
 
 
+        this.EmailId = "//input[@name='email']"
+        this.LoginPassword = "//input[@name='password']"
+        this. Loginbutton = "(//span[text()='Log in'])[2]"
+
+
         this.Vin_Field = "//input[@aria-label='VIN']"
         this.Nextbtn_Submit = "//button[@type='submit']"
         this.Year_Field = "//label[text()='Year']/following-sibling::div[1]/input"

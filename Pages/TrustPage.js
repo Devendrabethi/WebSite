@@ -72,6 +72,8 @@ class TrustPage
         await this.page.locator(this.trust_webelements.VehicleTitleTo_Field).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.trust_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleTrustName)
+
+        //await this.page.locator(this.titledocument_webelements.Individual_Field).click()
         const fileToUpload1 = 
         {
             "trustDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\trust Doc.jpg",   
@@ -87,7 +89,7 @@ class TrustPage
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-       await this.page.waitForTimeout(2000)
+       await this.page.waitForTimeout(5000)
 
      //  await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
 

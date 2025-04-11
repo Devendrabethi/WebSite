@@ -67,6 +67,14 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click()
+        await this.page.waitForTimeout(2000)
+
+
+        // await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
+        // await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
+        // await this.page.locator(this.addVIN_webelements.Loginbutton).click()
+        // await this.page.waitForTimeout(2000)
+
     }
     async VehicleDetailsone()
     {
