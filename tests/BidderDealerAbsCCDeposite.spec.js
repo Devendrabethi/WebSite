@@ -4,7 +4,7 @@ import { BidderInvidualPage } from '../Pages/BidderInvidualPage'
 import { BidderBusinessPage } from '../Pages/BidderBusinessPage'
 import { BidderDealerPage } from '../Pages/BidderDealerPage'
 
-test('test',async({page}) =>
+test('Creating Bidder Opportunity For Dealer With Absentee Package',async({page}) =>
 {
     const addvinpage = new AddVinPage(page)
     const bidderinvidualpage = new BidderInvidualPage(page)

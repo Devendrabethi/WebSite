@@ -3,7 +3,7 @@ import { AddVinPage } from '../Pages/AddVinPage'
 import { BidderInvidualPage } from '../Pages/BidderInvidualPage'
 import { BidderBusinessPage } from '../Pages/BidderBusinessPage'
 
-test('test',async({page}) =>
+test('Creating Bidder Opportunity For Business With Select Package',async({page}) =>
 {
     const addvinpage = new AddVinPage(page)
     const bidderinvidualpage = new BidderInvidualPage(page)

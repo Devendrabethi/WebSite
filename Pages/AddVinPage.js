@@ -68,17 +68,13 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click()
         await this.page.waitForTimeout(2000)
-
-
         // await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
         // await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
         // await this.page.locator(this.addVIN_webelements.Loginbutton).click()
         // await this.page.waitForTimeout(2000)
-
     }
     async VehicleDetailsone()
     {
-
         //VIN
         function generateRandomString(length) 
         {
@@ -91,8 +87,6 @@ class AddVinPage
             return result;
         }
         const randomVin = generateRandomString(Math.floor(Math.random() * (36-34)) + 15);
-        
-
         const VinNumber =randomVin;
         await this.page.locator(this.addVIN_webelements.Vin_Field).click()
         await this.page.locator(this.addVIN_webelements.Vin_Field).fill(VinNumber)
@@ -106,7 +100,6 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Select_Make).click()
         await this.page.locator(this.addVIN_webelements.Model_Field).click()
         await this.page.locator(this.addVIN_webelements.Select_Model).click()
-
         //await this.page.locator(this.addVIN_webelements.Trim_Field).fill(this.testdata.Trim)
         await this.page.locator(this.addVIN_webelements.Style_Field).fill(this.testdata.Style)
     }
@@ -123,7 +116,6 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Cylinder_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.Cylinder_4Value).click()
-
         await this.page.locator(this.addVIN_webelements.OriginalBaterryCapacity).fill(this.testdata.BatteryCapacityValue)
         // await this.page.locator(this.addVIN_webelements.PowerSource_Field).click()
         // await this.page.locator(this.addVIN_webelements.Select_PowerSourceHybrid).click()
@@ -178,7 +170,6 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-
     }
     async PowerSourceDiesel()
     {
@@ -193,7 +184,6 @@ class AddVinPage
 
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-
     }
     async VehicleDetailstwo()
     {
@@ -206,11 +196,8 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_4speedValue).click()
-
-
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
-
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
@@ -218,11 +205,8 @@ class AddVinPage
     {
     //    await this.page.locator(this.addVIN_webelements.Odometer_Field).click()
     //    await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
-
-
         await this.page.locator(this.addVIN_webelements.Condition_Vehicle_Field).click()
         await this.page.locator(this.addVIN_webelements.Select_RestoredOriginal).click()
-
         await this.page.locator(this.addVIN_webelements.OriginalEngine_Field).click()
         await this.page.locator(this.addVIN_webelements.modifiedHorsePower_Field).click()
         await this.page.waitForTimeout(1000)
@@ -231,14 +215,11 @@ class AddVinPage
     async VehicleDescp ()
     {
         await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
-
-
         await this.page.locator(this.addVIN_webelements.ShortDesc1).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.ShortDesc2).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.ShortDesc3).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.ShortDesc4).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.ShortDesc5).fill(this.testdata.ShortDescription)
-
         await this.page.locator(this.addVIN_webelements.LongDesc).fill(this.testdata.LongDescription)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }

@@ -131,7 +131,6 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.SelectDate).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
-
     }
     async AddProducts()
     {

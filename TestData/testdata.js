@@ -3,11 +3,11 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://member-uat.barrett-jackson.com/consign/vin?event=845"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.BidderPremiumURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6555" //6654 qa and uat
-        this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6657"  //6656 qa 6690 uat 6657
+        this.URL ="https://member-qa.barrett-jackson.com/consign/vin?event=845"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.BidderPremiumURL = "https://member-qa.barrett-jackson.com/bid/register?event=845&package=6565" //6654 qa and uat
+        this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=846&package=6714"  //6656 qa 6690 uat 6657
         this.Bidder_AbsenteeBidderURL = "https://member-uat.barrett-jackson.com/bid/register?event=845&package=6562"  //6562  --Absentee bidder  6655 pre prem
-        this.Bidder_Pre_premiumURL ="https://member-uat.barrett-jackson.com/bid/register?event=845&package=6654"  //6655 uat
+        this.Bidder_Pre_premiumURL ="https://member-uat.barrett-jackson.com/bid/register?event=846&package=6712"  //6655 uat
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
         this.Year = "2011"
@@ -18,8 +18,8 @@ class TestData
         this.Exterior_Color = "Black"
         this.Interior_Color = "Gray"
 
-        this.Emailid = "poimeimoyeilloi-3426@yopmail.com"
-        this.LoginPassword = "Pongal1212$1"
+        this.Emailid = "naletrepregi-6058@yopmail.com "
+        this.LoginPassword = "Nani@7896"
 
 
         this.BatteryCapacityValue = "1234"
@@ -59,7 +59,7 @@ class TestData
 
         this.CardFName = "Devendra"
         this.CardLName = "Prasad"
-        this.CardCC ="	5105 1051 0510 5100"// "	6011 0000 0000 0004"//"4111 1111 1111 1111" 5105 1051 0510 5100  3400 000000 00009
+        this.CardCC ="	4111 1111 1111 1111"// "	6011 0000 0000 0004"//"4111 1111 1111 1111" 5105 1051 0510 5100  3400 000000 00009  ameri 1111
         this.CardExp = "05/28"
         this.CVVNum = "111"
         this.ZipCOde = "11111"
