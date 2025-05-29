@@ -68,10 +68,14 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click()
         await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
-        // await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
-        // await this.page.locator(this.addVIN_webelements.Loginbutton).click()
-        // await this.page.waitForTimeout(2000)
+    }
+    async ExistingAccount()
+    {
+        await this.page.locator(this.addVIN_webelements.SignInbtn).click()
+        await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
+        await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
+        await this.page.locator(this.addVIN_webelements.Loginbutton).click()
+        await this.page.waitForTimeout(2000)
     }
     async VehicleDetailsone()
     {
@@ -90,6 +94,7 @@ class AddVinPage
         const VinNumber =randomVin;
         await this.page.locator(this.addVIN_webelements.Vin_Field).click()
         await this.page.locator(this.addVIN_webelements.Vin_Field).fill(VinNumber)
+        await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
         await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
@@ -215,12 +220,9 @@ class AddVinPage
     async VehicleDescp ()
     {
         await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
-        await this.page.locator(this.addVIN_webelements.ShortDesc1).fill(this.testdata.ShortDescription)
-        await this.page.locator(this.addVIN_webelements.ShortDesc2).fill(this.testdata.ShortDescription)
-        await this.page.locator(this.addVIN_webelements.ShortDesc3).fill(this.testdata.ShortDescription)
-        await this.page.locator(this.addVIN_webelements.ShortDesc4).fill(this.testdata.ShortDescription)
-        await this.page.locator(this.addVIN_webelements.ShortDesc5).fill(this.testdata.ShortDescription)
+        await this.page.locator(this.addVIN_webelements.ShortDesc).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.LongDesc).fill(this.testdata.LongDescription)
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
 }

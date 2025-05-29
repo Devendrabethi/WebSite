@@ -102,7 +102,7 @@ class BidderInvidualPage
     {
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).click()
-        await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
+        await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue,{timeout:4000})
         await this.page.locator(this.bidderindividual_webelements.BiddingCollateralBox).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
@@ -122,12 +122,8 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.Insurance).setInputFiles(fileToUpload2.Insurance)
         await this.page.locator(this.bidderindividual_webelements.Calendar).click()
         await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
+        await this.page.locator(this.bidderindividual_webelements.ChangeMonth).click()
+        await this.page.locator(this.bidderindividual_webelements.SelectDecember).click()
         await this.page.locator(this.bidderindividual_webelements.SelectDate).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
@@ -239,7 +235,7 @@ class BidderInvidualPage
         const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
 
         
-        await frame2.locator(this.bidderindividual_webelements.checkbox).click()
+        await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:60000})
         await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
         await this.page.waitForTimeout(1000)
         await frame2.locator(this.bidderindividual_webelements.personalsignin).click()

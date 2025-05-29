@@ -5,6 +5,7 @@ class AddMedia_WebElements
     {
         this.PhotoReq_Link = "//button[text()='View full photo requirements']"
         this.FrontPhoto = "//label[text()='Front 3/4 view']/../../../following-sibling::div/div[2]/input[@type='file']"//"(//input[@type='file'])[1]"
+        this.ContinueButton= "//button[text()='Continue']"
         this.RarePhoto = "//label[text()='Rear 3/4 view']/../../../following-sibling::div/div[2]/input[@type='file']"//"(//input[@type='file'])[2]"
         this.SidePhoto = "//label[text()='Side view']/../../../following-sibling::div/div[2]/input[@type='file']"//"(//input[@type='file'])[3]"
         this.InteriorPhoto = "//label[text()='Interior view']/../../../following-sibling::div/div[2]/input[@type='file']"//"(//input[@type='file'])[4]"

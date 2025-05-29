@@ -118,23 +118,15 @@ class BidderDealerPage
         
         await this.page.locator(this.bidderdealer_webelements.DealerExpDateCalendar).click()
         await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
+       await this.page.locator(this.bidderindividual_webelements.ChangeMonth).click()
+        await this.page.locator(this.bidderindividual_webelements.SelectDecember).click()
         await this.page.locator(this.bidderindividual_webelements.SelectDate).click()
         await this.page.locator(this.bidderdealer_webelements.ResaleDoc).setInputFiles(fileToUpload2.ResaleLicense);
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.ResaleExpDateCalandar).click()
         await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
-        await this.page.locator(this.bidderindividual_webelements.NextMonth).click()
-        await this.page.waitForTimeout(500);
+        await this.page.locator(this.bidderindividual_webelements.ChangeMonth).click()
+        await this.page.locator(this.bidderindividual_webelements.SelectDecember).click()
         await this.page.locator(this.bidderindividual_webelements.SelectDate).click()
         await this.page.locator(this.bidderdealer_webelements.VerificationOwnDoc).setInputFiles(fileToUpload2.VerificationOwnDoc);
         await this.page.waitForTimeout(1000)

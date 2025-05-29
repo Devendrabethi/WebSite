@@ -28,7 +28,7 @@ class AddVIN_WebElements
         this.Make_Field = "//label[text()='Make']/following-sibling::div[1]/input"
         this.Select_Make = "//div[@aria-label='Suggestions']/div[1]"
         this.Model_Field = "//label[text()='Model']/following-sibling::div[1]/input"
-        this.Select_Model = "//div[@data-key='4901']"
+        this.Select_Model = "(//div[@aria-label='Suggestions']/div)[1]"
         this.Trim_Field = "//input[@name='trimLevel']"
         this.Style_Field = "//input[@name='style']"
         this.PowerSource_Field = "//span[text()='Power source']/parent::div/following-sibling::button"
@@ -67,12 +67,10 @@ class AddVIN_WebElements
         this.OriginalEngine_Field = "//input[@name='originalEngine']/parent::span/following-sibling::div[text()='Yes']"
         this.modifiedHorsePower_Field = "//input[@name='modifiedHorsePower']/parent::span/following-sibling::div[text()='Yes']"
 
-        this.ShortDesc1 = "//input[@aria-label='Vehicle details, item 1']"
-        this.ShortDesc2 = "//input[@aria-label='Vehicle details, item 2']"
-        this.ShortDesc3 = "//input[@aria-label='Vehicle details, item 3']"
-        this.ShortDesc4 = "//input[@aria-label='Vehicle details, item 4']"
-        this.ShortDesc5 = "//input[@aria-label='Vehicle details, item 5']"
+        this.ShortDesc = "//textarea[@name='shortDescriptionText']"
         this.LongDesc = "//textarea[@name='longDescription']"
+
+        this.NextButton_AdditionalPhoto = "//button[@type='submit']/span[text()='Next']"
 
     }
 }

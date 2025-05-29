@@ -20,6 +20,7 @@ test('test',async({page}) =>
     //Individual Main
     await addvinpage.ConsignmentURL()
     await addvinpage.SignIn()
+    //await addvinpage.ExistingAccount()//existing
     await addvinpage.VehicleDetailsone()
     await addvinpage.PowerSource()
     await addvinpage.VehicleDetailstwo()
@@ -30,6 +31,5 @@ test('test',async({page}) =>
     await titledocument_page.VehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
-
     await trustpage.ViewMySubmission()
 })

@@ -21,7 +21,8 @@ class BidderIndividual_WebElements
         this.Crop = "//span[text()='Crop']/parent::button"
         this.Insurance = "//label[text()='Auto insurance']/../../../following-sibling::div/div[2]/input[@type='file']"
         this.Calendar = "//button[@aria-label='Calendar']"
-        this.NextMonth = "//button[@slot='next']"
+        this.ChangeMonth = "//button[@aria-label='Month']"
+        this.SelectDecember = "//div[@data-key='12']"
         this.SelectDate = "//button[@slot='next']/../following-sibling::table/tbody/tr[4]/td[4]"
 
 
