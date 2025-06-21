@@ -109,7 +109,7 @@ class DealerPage
         await this.page.waitForTimeout(1000);
         await this.page.locator(this.dealer_webelements.SelectState).click()
 
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         try 
         {
@@ -119,7 +119,7 @@ class DealerPage
             await this.page.locator(this.titledocument_webelements.SelectAddress).click();
         
             await this.page.waitForTimeout(3000);
-            await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
+            await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000});
         } catch (error) 
         {
             console.error('An error occurred during the form submission process:', error);

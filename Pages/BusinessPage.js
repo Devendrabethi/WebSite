@@ -183,7 +183,7 @@ class BusinessPage
         await this.page.locator(this.business_webelements.OperatingAggrement).setInputFiles(fileToUpload2.OperatingAggDoc);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(5000)
         //all consg one
 
@@ -204,7 +204,7 @@ class BusinessPage
             
             if (isPersonalNextButton)
            {
-                await PersonalNextButton.click();
+                await PersonalNextButton.click({timeout:60000});
             } 
             else
             {

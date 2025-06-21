@@ -20,7 +20,7 @@ class AddVinPage
     async SignIn()
     {
         //Sign IN
-        await this.page.locator(this.addVIN_webelements.SignInbtn).click()
+       // await this.page.locator(this.addVIN_webelements.SignInbtn).click()
         await this.page.locator(this.addVIN_webelements.Createbtn).click()
 
             //first and last names
@@ -71,7 +71,7 @@ class AddVinPage
     }
     async ExistingAccount()
     {
-        await this.page.locator(this.addVIN_webelements.SignInbtn).click()
+       // await this.page.locator(this.addVIN_webelements.SignInbtn).click()
         await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
         await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
         await this.page.locator(this.addVIN_webelements.Loginbutton).click()

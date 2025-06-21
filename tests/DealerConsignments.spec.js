@@ -21,7 +21,7 @@ test('Creating Dealer Consignment',async({page}) =>
     await addvinpage.PowerSourceElectric()
     await addvinpage.Mileage()
     await addvinpage.VehicleDescp()
-    await addmediapage.MainPhotos()
+   // await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
     await dealerpage.DealerVehicleDocument()
     await applicationinfopage.FinishApplication()

@@ -19,13 +19,13 @@ test('test',async({page}) =>
 
     //Individual Main
     await addvinpage.ConsignmentURL()
-    await addvinpage.SignIn()
+    await addvinpage.ExistingAccount()//existing
     await addvinpage.VehicleDetailsone()
     await addvinpage.PowerSource()
     await addvinpage.VehicleDetailstwo()
     await addvinpage.Mileage()
     await addvinpage.VehicleDescp()
-   // await addmediapage.MainPhotos()
+    //await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
     await titledocument_page.VehicleDocument()
     await applicationinfopage.FinishApplication()

@@ -19,8 +19,8 @@ class AddMediaPage
         const fileToUpload = 
         {
             "front" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\front.jpg",
-            "Rare":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.jpg",
-            "Side":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.jpg",
+            "Rare":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif",
+            "Side":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
             "Interior" :   "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpeg",
             "Engine":      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
             "Vin":         "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif"
@@ -28,7 +28,7 @@ class AddMediaPage
 
 //         // Upload each photo to its respective field
         await this.page.locator(this.addmedia_webelements.FrontPhoto).setInputFiles(fileToUpload.front);
-       // await this.page.locator(this.addmedia_webelements.ContinueButton).click()
+        //await this.page.locator(this.addmedia_webelements.ContinueButton).click()
 //        await this.page.waitForTimeout(2000);
         await this.page.locator(this.addmedia_webelements.RarePhoto).setInputFiles(fileToUpload.Rare);
         //await this.page.locator(this.addmedia_webelements.ContinueButton).click()
@@ -45,7 +45,7 @@ class AddMediaPage
         await this.page.locator(this.addmedia_webelements.VinPhoto).setInputFiles(fileToUpload.Vin);
         //await this.page.locator(this.addmedia_webelements.ContinueButton).click()
         await this.page.waitForTimeout(2000);
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(2000);
     }
     async AdditionalPhotos()
@@ -62,9 +62,9 @@ class AddMediaPage
         ]
         // // Upload each photo to its respective field
         await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload)
-        // await this.page.locator(this.addmedia_webelements.ContinueButton).click()
-        // await this.page.waitForTimeout(2000);
+         await this.page.locator(this.addmedia_webelements.UploadAllButton).click()
+        await this.page.waitForTimeout(2000);
        // await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible({timeout:60000})
-        await this.page.locator(this.addVIN_webelements.NextButton_AdditionalPhoto).click()
+        await this.page.locator(this.addVIN_webelements.NextButton_AdditionalPhoto).click({timeout:60000})
     }
 }

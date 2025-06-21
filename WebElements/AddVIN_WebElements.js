@@ -70,7 +70,7 @@ class AddVIN_WebElements
         this.ShortDesc = "//textarea[@name='shortDescriptionText']"
         this.LongDesc = "//textarea[@name='longDescription']"
 
-        this.NextButton_AdditionalPhoto = "//button[@type='submit']/span[text()='Next']"
+        this.NextButton_AdditionalPhoto = "//button[@type='submit']"
 
     }
 }

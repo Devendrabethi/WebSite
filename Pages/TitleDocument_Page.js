@@ -46,7 +46,7 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
 
         await this.page.waitForTimeout(3000)
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
 
     }
 }

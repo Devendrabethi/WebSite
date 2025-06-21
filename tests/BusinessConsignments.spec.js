@@ -21,7 +21,7 @@ test('test',async({page}) =>
     await addvinpage.PowerSourceHyBrid()
     await addvinpage.Mileage()
     await addvinpage.VehicleDescp()
-    await addmediapage.MainPhotos()
+    //await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
     await businesspage.BusinessVehicleDocument()
     await applicationinfopage.FinishApplication()

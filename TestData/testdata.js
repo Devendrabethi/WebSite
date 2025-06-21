@@ -3,8 +3,8 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=846"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
-        this.BidderPremiumURL = "https://member-uat.barrett-jackson.com/bid/register?event=846&package=6713" //6654 qa and uat
+        this.URL ="https://member-uat.barrett-jackson.com/consign/vin?event=847"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.BidderPremiumURL = "https://member-hotfixdev.barrett-jackson.com/bid/register?event=846&package=6713" //6654 qa and uat
         this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=846&package=6714"  //6656 qa 6690 uat 6657
         this.Bidder_AbsenteeBidderURL = "https://member-uat.barrett-jackson.com/bid/register?event=846&package=6562"  //6562  --Absentee bidder  6655 pre prem
         this.Bidder_Pre_premiumURL ="https://member-uat.barrett-jackson.com/bid/register?event=846&package=6712"  //6655 uat
