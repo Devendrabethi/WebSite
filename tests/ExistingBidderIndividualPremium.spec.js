@@ -8,7 +8,7 @@ test('Creating Bidder Opportunity For Individual With Premium Package with DocuS
     const bidderinvidualpage = new BidderInvidualPage(page)
 
     await bidderinvidualpage.BidderOpportunityPremium()
-    await addvinpage.SignIn()
+    await addvinpage.ExistingAccount()//existing
     await bidderinvidualpage.IndividualDetails()
     await bidderinvidualpage.IndividualRegistration()
     await bidderinvidualpage.AddressDetails()

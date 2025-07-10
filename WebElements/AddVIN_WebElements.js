@@ -21,7 +21,7 @@ class AddVIN_WebElements
         this. Loginbutton = "(//span[text()='Log in'])[2]"
 
 
-        this.Vin_Field = "//input[@aria-label='VIN']"
+        this.Vin_Field = "//input[@aria-label='Enter VIN']"
         this.Nextbtn_Submit = "//button[@type='submit']"
         this.Year_Field = "//label[text()='Year']/following-sibling::div[1]/input"
         this.Make_DropDown = "//button[@aria-label='Show suggestions']"

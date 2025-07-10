@@ -65,7 +65,7 @@ class BidderInvidualPage
     }
     async IndividualRegistration()
     {
-        await this.page.locator(this.bidderindividual_webelements.SelectIndividualBox).click()
+        await this.page.locator(this.bidderindividual_webelements.SelectIndividualBox).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
@@ -235,7 +235,7 @@ class BidderInvidualPage
         const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
 
         
-        await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:60000})
+        await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:90000})
         await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
         await this.page.waitForTimeout(1000)
         await frame2.locator(this.bidderindividual_webelements.personalsignin).click()

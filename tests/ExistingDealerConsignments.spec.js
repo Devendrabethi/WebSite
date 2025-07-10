@@ -22,7 +22,7 @@ test('Creating Dealer Consignment',async({page}) =>
     await addvinpage.VehicleDescp()
     //await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
-    await dealerpage.DealerVehicleDocument()
+    await dealerpage.AlreadyDealerVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
 

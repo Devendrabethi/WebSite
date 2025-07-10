@@ -218,7 +218,7 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.SelectState).click()
 
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.waitForTimeout(5000)
+        await this.page.waitForTimeout(8000)
        //all consg one
       // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
     // try 

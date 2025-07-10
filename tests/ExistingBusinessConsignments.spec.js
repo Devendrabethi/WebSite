@@ -22,7 +22,7 @@ test('test',async({page}) =>
     await addvinpage.VehicleDescp()
    // await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
-    await businesspage.BusinessVehicleDocument()
+    await businesspage.AlreadyBusinessVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
     await trustpage.ViewMySubmission()
