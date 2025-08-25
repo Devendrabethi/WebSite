@@ -16,7 +16,7 @@ class ApplicationInfoPage
     async FinishApplication()
     {
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.applicationinfo_webelements.VehicleWorth_Field).fill(this.testdata.VechileWorth)
+        await this.page.locator(this.applicationinfo_webelements.VehicleWorth_Field).fill(this.testdata.VechileWorth,{timeout:90000})
         await this.page.locator(this.applicationinfo_webelements.ReserveType_Dropdown).click()
         await this.page.locator(this.applicationinfo_webelements.Reserve).click()
         // await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()

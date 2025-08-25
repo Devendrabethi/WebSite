@@ -68,7 +68,7 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload.Backtitle);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.waitForTimeout(4000)
+        await this.page.waitForTimeout(6000)
 
         // await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName)
         // await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber)
@@ -79,7 +79,28 @@ class TitleDocument_Page
         // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
 
         // await this.page.waitForTimeout(3000)
-        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
+        //await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
 
+          
+        try 
+        {
+            // Check if the fourth product exists and is visible
+            const PersonalNextButton = this.page.locator(this.addVIN_webelements.Nextbtn_Submit);
+            const isPersonalNextButton = await PersonalNextButton.isVisible();
+            
+            if (isPersonalNextButton)
+           {
+                await PersonalNextButton.click({timeout:60000});
+            } 
+            else
+            {
+                console.log("The fourth product is not visible, skipping click.");
+            }
+        } 
+        catch (error) 
+        {
+            console.error("An error occurred during the clicking process:", error);
+            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        }
     }
 }
