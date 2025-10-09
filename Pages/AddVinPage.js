@@ -13,6 +13,9 @@ class AddVinPage
     }
     async ConsignmentURL()
     {
+        // const browser = await chromium.launch();
+        // const page = await browser.newPage();
+
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.URL)
         await this.page.locator(this.addVIN_webelements.Acceptpopup).click()

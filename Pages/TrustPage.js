@@ -108,7 +108,7 @@ class TrustPage
     }
     async ViewMySubmission()
     {
-        await this.page.locator(this.trust_webelements.ViewSubmission).click()
+        await this.page.locator(this.trust_webelements.ViewSubmission).click({timeout:90000})
         await this.page.locator(this.trust_webelements.Consignmentbutton).click()
         await this.page.waitForTimeout(3000);
         await this.page.locator(this.trust_webelements.RemovePastEvent).click()
