@@ -20,6 +20,7 @@ class BusinessPage
 
     async StartAnotherApp()
     {
+        await this.page.screenshot({ path: './ScreenShot/AfterSubmitPage.png', fullPage: true})
         await this.page.locator(this.business_webelements.StartAnotherApplication).click()
     }
     async BusinessVehicleDocument()
@@ -27,24 +28,6 @@ class BusinessPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.business_webelements.VehicleTitle_Field).click()
         await this.page.locator(this.business_webelements.Business_Field).click()
-
-        // //Business Name
-        // function generateRandomString(length) {
-        //     const chars = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        //     let result = '';
-        //     for (let i = 0; i < length; i++) {
-        //         result += chars.charAt(Math.floor(Math.random() * chars.length));
-        //     }
-        //     return result;
-        // }
-        // const BusinessName = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
-        // const businessname = "Business " + BusinessName;
-        // await this.page.locator(this.business_webelements.VehicleTitleTo_Field).click()
-        // await this.page.locator(this.business_webelements.VehicleTitleTo_Field).fill(businessname)
-
-
         await this.page.locator(this.business_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToBusinessName)
          //EIN NUMBER
          function generateRandomString(length) {
@@ -56,13 +39,9 @@ class BusinessPage
             return result;
         }
         const EinNumber = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
         const einnumber = EinNumber;
         await this.page.locator(this.business_webelements.Ein).click()
         await this.page.locator(this.business_webelements.Ein).fill(einnumber)
-        
-        
         //await this.page.locator(this.business_webelements.Ein).fill(this.testdata.EINNumber)
         const fileToUpload1 = 
         {
@@ -75,12 +54,12 @@ class BusinessPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentsWithBusiness.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-
         await this.page.locator(this.business_webelements.BusinessNumber).fill(this.testdata.BusinessNum)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
-
+        await this.page.screenshot({ path: './ScreenShot/BusinessDetails.png', fullPage: true})
         const fileToUpload2 = 
         {
             "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\operating agreement.jpg"
@@ -90,6 +69,7 @@ class BusinessPage
         await this.page.locator(this.business_webelements.OperatingAggrement).setInputFiles(fileToUpload2.OperatingAggDoc);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
+        await this.page.screenshot({ path: './ScreenShot/BusinessDetailswithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(2000)
 
@@ -102,8 +82,8 @@ class BusinessPage
             await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
             await this.page.waitForTimeout(500)
             await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-        
             await this.page.waitForTimeout(3000);
+            await this.page.screenshot({ path: './ScreenShot/PersonalDetailsWithBusiness.png', fullPage: true})
             await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
         } catch (error)
         {
@@ -117,24 +97,6 @@ class BusinessPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.business_webelements.VehicleTitle_Field).click()
         await this.page.locator(this.business_webelements.Business_Field).click()
-
-        // //Business Name
-        // function generateRandomString(length) {
-        //     const chars = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        //     let result = '';
-        //     for (let i = 0; i < length; i++) {
-        //         result += chars.charAt(Math.floor(Math.random() * chars.length));
-        //     }
-        //     return result;
-        // }
-        // const BusinessName = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
-        // const businessname = "Business " + BusinessName;
-        // await this.page.locator(this.business_webelements.VehicleTitleTo_Field).click()
-        // await this.page.locator(this.business_webelements.VehicleTitleTo_Field).fill(businessname)
-
-
         await this.page.locator(this.business_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToBusinessName)
          //EIN NUMBER
          function generateRandomString(length) {
@@ -151,13 +113,11 @@ class BusinessPage
         const einnumber = EinNumber;
         await this.page.locator(this.business_webelements.Ein).click()
         await this.page.locator(this.business_webelements.Ein).fill(einnumber)
-        
-        
         //await this.page.locator(this.business_webelements.Ein).fill(this.testdata.EINNumber)
         const fileToUpload1 = 
         {
-            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Front title.jpg",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Back Titile.jpg"
+            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif"
         }
 
         // Upload each photo to its respective field
@@ -165,37 +125,27 @@ class BusinessPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentWithBusiness.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-
         await this.page.locator(this.business_webelements.BusinessNumber).fill(this.testdata.BusinessNum)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-
+        await this.page.screenshot({ path: './ScreenShot/BusinessDetails.png', fullPage: true})
         const fileToUpload2 = 
         {
-            "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\operating agreement.jpg"
+            "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif"
         }
 
         // Upload each photo to its respective field
         await this.page.locator(this.business_webelements.OperatingAggrement).setInputFiles(fileToUpload2.OperatingAggDoc);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
+        await this.page.screenshot({ path: './ScreenShot/BusinessDetailsWithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(8000)
-        //all consg one
-
-      //  await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        // try 
-        // {
-            // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()    // already address present
-            // await this.page.waitForTimeout(500)
-            // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-            //await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
-
-        
         try 
         {
             // Check if the fourth product exists and is visible
@@ -204,6 +154,7 @@ class BusinessPage
             
             if (isPersonalNextButton)
            {
+            await this.page.screenshot({ path: './ScreenShot/PersonalDetailsWithBusiness.png', fullPage: true})
                 await PersonalNextButton.click({timeout:60000});
             } 
             else
@@ -216,13 +167,5 @@ class BusinessPage
             console.error("An error occurred during the clicking process:", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
-
-
-       // } 
-        // catch (error) 
-        // {
-        //     console.error('Error occurred while clicking the Next button:', error);
-        //     // Optional: Add additional actions (e.g., screenshot, retry logic) here
-        // }
     }
 }

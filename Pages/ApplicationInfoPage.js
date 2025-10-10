@@ -19,11 +19,12 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.VehicleWorth_Field).fill(this.testdata.VechileWorth,{timeout:90000})
         await this.page.locator(this.applicationinfo_webelements.ReserveType_Dropdown).click()
         await this.page.locator(this.applicationinfo_webelements.Reserve).click()
-        // await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()
-        // await this.page.waitForTimeout(3000)
-       // await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()
+        await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()
         await this.page.locator(this.applicationinfo_webelements.AnothweAuction).click()
         await this.page.locator(this.applicationinfo_webelements.SelectYes).click()
+        await this.page.screenshot({ path: './ScreenShot/VehicleWorth.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async ReviewApp()
@@ -32,6 +33,7 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.SignatureName).fill(this.testdata.Signature)
         await this.page.locator(this.applicationinfo_webelements.Calendar).click()
         await this.page.locator(this.applicationinfo_webelements.CurrentDate).click()
+        await this.page.screenshot({ path: './ScreenShot/ConsignmentReview.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.SubmitApplicaion).click()
     }
 }

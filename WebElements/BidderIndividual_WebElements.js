@@ -51,8 +51,8 @@ class BidderIndividual_WebElements
         this.CCAddress_Field = "//input[@name='addressSearch']"
         this.CCNextbtn = "//span[text()='Next']/parent::button"
 
-        this.FrameDocuSign1 = "//iframe[@id='js-library-iframe']"
-        this.FrameDocuSign2 = "//iframe[@id='ds-signing-document']"   //ds-signing-document
+        this.FrameDocuSign1 = "//iframe[contains(@id,'js-library-iframe')]"
+        this.FrameDocuSign2 = "//iframe[contains(@id,'ds-signing-document')]"   //ds-signing-document
 
         this.checkbox = "//label[@data-qa='ersd-agree-checkbox-label']"
         this.continuebtn = "//span[text()='Continue']"

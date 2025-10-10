@@ -4,10 +4,12 @@ class TestData
     constructor()
     {
         this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=846"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.MarkettingURL = "https://staging-bjz7qr.barrett-jackson.com"
+
         this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6675" //6713 qa and uat 6790
-        this.BidderSelectURL = "https://member-uat.barrett-jackson.com/bid/register?event=846&package=6715"  //6715 qa 6690 uat 6657
-        this.Bidder_AbsenteeBidderURL = "https://member-uat.barrett-jackson.com/bid/register?event=846&package=6696"  //6562  --Absentee bidder  6655 pre prem
-        this.Bidder_Pre_premiumURL ="https://member-uat.barrett-jackson.com/bid/register?event=846&package=6712"  //6712 uat
+        this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6678"  //6715 qa 6690 uat 6657
+        this.Bidder_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6696"  //6562  --Absentee bidder  6655 pre prem
+        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6674"  //6712 uat
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
         this.Year = "2015"
@@ -42,7 +44,7 @@ class TestData
 
         this.TitleToDealerName = "Devendra Dealer"
         this.DealerNumber_Value = "Deal234"
-        this.DealerNum = "(734) 854-3221"
+        this.DealerPhone = "(734) 854-3221"
         this.LicState = "Arizona"
         this.TaxId_Value = "Tax4353"
 

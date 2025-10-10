@@ -53,8 +53,8 @@ class AddMediaPage
         const fileToUpload = 
         [
              "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\front.jpg",
-             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.jpg",
-             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.jpg",
+             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif",
+             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpeg",
             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
@@ -62,9 +62,11 @@ class AddMediaPage
         ]
         // // Upload each photo to its respective field
         await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload)
-         await this.page.locator(this.addmedia_webelements.UploadAllButton).click()
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(4000);
+        await this.page.locator(this.addmedia_webelements.UploadAllButton).click()
+        await this.page.waitForTimeout(4000);
        // await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible({timeout:60000})
         await this.page.locator(this.addVIN_webelements.NextButton_AdditionalPhoto).click({timeout:60000})
+        await this.page.screenshot({ path: './ScreenShot/VehiclePhotosWithValidFormate.png', fullPage: true})
     }
 }

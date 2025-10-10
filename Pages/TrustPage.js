@@ -43,6 +43,7 @@ class TrustPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentWithTrust.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
        await this.page.waitForTimeout(2000)
 
@@ -55,8 +56,8 @@ class TrustPage
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-    
         await this.page.waitForTimeout(3000);
+        await this.page.screenshot({ path: './ScreenShot/PersonalDetailsWithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
     } catch (error)
     {
@@ -76,9 +77,9 @@ class TrustPage
         //await this.page.locator(this.titledocument_webelements.Individual_Field).click()
         const fileToUpload1 = 
         {
-            "trustDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\trust Doc.jpg",   
-            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Front title.jpg",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Back Titile.jpg"
+            "trustDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",   
+            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif"
         }
 
         // Upload each photo to its respective field
@@ -88,6 +89,7 @@ class TrustPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentWithTrust.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
        await this.page.waitForTimeout(5000)
 
@@ -98,6 +100,7 @@ class TrustPage
             // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
             // await this.page.waitForTimeout(500)
             // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+           await this.page.screenshot({ path: './ScreenShot/PersonalDetails.png', fullPage: true})
            await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
        } 
        catch (error) 
@@ -108,11 +111,14 @@ class TrustPage
     }
     async ViewMySubmission()
     {
+        await this.page.screenshot({ path: './ScreenShot/ViewSubmission.png', fullPage: true})
         await this.page.locator(this.trust_webelements.ViewSubmission).click({timeout:90000})
         await this.page.locator(this.trust_webelements.Consignmentbutton).click()
         await this.page.waitForTimeout(3000);
+        await this.page.screenshot({ path: './ScreenShot/ConsignmentDashboard.png', fullPage: true})
         await this.page.locator(this.trust_webelements.RemovePastEvent).click()
         await this.page.waitForTimeout(3000);
         await this.page.locator(this.trust_webelements.FormLibrary).click()
+        await this.page.screenshot({ path: './ScreenShot/FormLibrary.png', fullPage: true})
     }
 }

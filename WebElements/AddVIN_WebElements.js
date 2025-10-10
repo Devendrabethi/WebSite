@@ -3,6 +3,15 @@ class AddVIN_WebElements
 {
     constructor() 
     {
+
+        this.MarkingLoginButton = "(//button[text()='Log In'])[2]"
+        this.Marketting_CreateAccount = "(//button[contains(text(),'Create account')])[1]"
+        this.Marketting_ConfirmPassword = "//input[@name='passwordConfirmation']"
+        this.Marketting_Checkbox_Agree = "//input[@name='termsAndPrivacyPolice']"
+        this.Marketting_CreateAccountSignUp = "(//button[contains(text(),'Create account')])[2]"
+        this.Marketting_LoginAfterCreate = "(//button[text()='Log In'])[3]"
+
+
         this.Acceptpopup = "//button[@data-tid='banner-accept']"
         this.SignInbtn = "//span[text()='Sign In']/parent::button"
         this.Createbtn = "//span[contains(text(),'Create')]/parent::button"

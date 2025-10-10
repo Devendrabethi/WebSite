@@ -22,6 +22,7 @@ class DealerPage
 
     async StartAnotherApp()
     {
+        await this.page.screenshot({ path: './ScreenShot/AfterSubmitScreen.png', fullPage: true})
         await this.page.locator(this.business_webelements.StartAnotherApplication).click()
     }
     async DealerVehicleDocument()
@@ -29,24 +30,7 @@ class DealerPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click()
         await this.page.locator(this.dealer_webelements.Dealer_Field).click()
-
-        //Dealer Name
-        // function generateRandomString(length) {
-        //     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        //     let result = '';
-        //     for (let i = 0; i < length; i++) {
-        //         result += chars.charAt(Math.floor(Math.random() * chars.length));
-        //     }
-        //     return result;
-        // }
-        // const DealerName = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
-        // const dealername = "Dealer " + DealerName;
-        // await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).click()
-        // await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(dealername)
-        
-       await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToDealerName)
+        await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToDealerName)
         //Dealer Number
         function generateRandomString(length) {
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -57,12 +41,9 @@ class DealerPage
             return result;
         }
         const DealerNumber = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
         const dealernumber = DealerNumber;
         await this.page.locator(this.dealer_webelements.DealerNumber_Field).click()
         await this.page.locator(this.dealer_webelements.DealerNumber_Field).fill(dealernumber)
-
         //await this.page.locator(this.dealer_webelements.DealerNumber_Field).fill(this.testdata.DealerNumber_Value)
         const fileToUpload1 = 
         {
@@ -75,12 +56,12 @@ class DealerPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentsWithDealer.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-
-        await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerNum)        
+        await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
-
+        await this.page.screenshot({ path: './ScreenShot/DealerDetails.png', fullPage: true})
         const fileToUpload2 = 
         {
 
@@ -108,7 +89,7 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.ResaleLicenseState).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000);
         await this.page.locator(this.dealer_webelements.SelectState).click()
-
+        await this.page.screenshot({ path: './ScreenShot/DealerDocumentsWithDetails.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         try 
@@ -117,39 +98,20 @@ class DealerPage
             await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber);
             await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch);
             await this.page.locator(this.titledocument_webelements.SelectAddress).click();
-        
             await this.page.waitForTimeout(3000);
+            await this.page.screenshot({ path: './ScreenShot/PersonalDetails.png', fullPage: true})
             await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000});
         } catch (error) 
         {
-            console.error('An error occurred during the form submission process:', error);
+            console.error('Already Details Present', error);
             // Optional: Take a screenshot or log additional details
         }
     }
-
-
-
     async AlreadyDealerVehicleDocument()
     {
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click()
         await this.page.locator(this.dealer_webelements.Dealer_Field).click()
-
-        //Dealer Name
-        // function generateRandomString(length) {
-        //     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        //     let result = '';
-        //     for (let i = 0; i < length; i++) {
-        //         result += chars.charAt(Math.floor(Math.random() * chars.length));
-        //     }
-        //     return result;
-        // }
-        // const DealerName = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
-        // const dealername = "Dealer " + DealerName;
-        // await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).click()
-        // await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(dealername)
         
        await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToDealerName)
         //Dealer Number
@@ -162,8 +124,6 @@ class DealerPage
             return result;
         }
         const DealerNumber = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
-        
-    
         const dealernumber = DealerNumber;
         await this.page.locator(this.dealer_webelements.DealerNumber_Field).click()
         await this.page.locator(this.dealer_webelements.DealerNumber_Field).fill(dealernumber)
@@ -171,8 +131,8 @@ class DealerPage
         //await this.page.locator(this.dealer_webelements.DealerNumber_Field).fill(this.testdata.DealerNumber_Value)
         const fileToUpload1 = 
         {
-            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Front title.jpg",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Back Titile.jpg"
+            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif"
         }
 
         // Upload each photo to its respective field
@@ -180,20 +140,21 @@ class DealerPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
-        await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerNum)        
+        await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-
+        await this.page.screenshot({ path: './ScreenShot/DealerDetails.png', fullPage: true})
         const fileToUpload2 = 
         {
 
-            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Dealer License.jpg",
-            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Resale License.jpg",
+            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
+            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
             "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\operating agreement.jpg"
         }
 
@@ -216,18 +177,9 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.ResaleLicenseState).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000);
         await this.page.locator(this.dealer_webelements.SelectState).click()
-
+        await this.page.screenshot({ path: './ScreenShot/DealerDetailsWithDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(8000)
-       //all consg one
-      // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
-    // try 
-    // {
-    //     // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()        //already address present
-    //     // await this.page.waitForTimeout(500)
-    //     // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-    //     await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
-
         try 
         {
             // Check if the fourth product exists and is visible
@@ -236,6 +188,7 @@ class DealerPage
             
             if (isPersonalNextButton)
            {
+                await this.page.screenshot({ path: './ScreenShot/PersonalDetailsWithDealer.png', fullPage: true})
                 await PersonalNextButton.click();
             } 
             else
@@ -248,12 +201,5 @@ class DealerPage
             console.error("An error occurred during the clicking process:", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
-
-    //} 
-    // catch (error) 
-    // {
-    //     console.error('Error occurred while clicking the Next button:', error);
-    //     // Optional: Add additional actions (e.g., screenshot, retry logic) here
-    // }
     }
 }

@@ -18,6 +18,7 @@ test('test',async({page}) =>
     const trustpage = new TrustPage(page)
 
     //Individual Main
+    //await addvinpage.MarketingLogin()
     await addvinpage.ConsignmentURL()
     await addvinpage.SignIn()
     await addvinpage.VehicleDetailsone()

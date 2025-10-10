@@ -33,10 +33,10 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.FrontTitle).setInputFiles(fileToUpload.fronttitle);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload.Backtitle);
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(5000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(1000)
-
         await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName)
         await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber)
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
@@ -44,10 +44,9 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-
         await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/PersonalAddress.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
-
     }
      async ExistingVehicleDocument()
     {
@@ -59,7 +58,7 @@ class TitleDocument_Page
         const fileToUpload = 
         {
             "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif"
         }
 
         // Upload each photo to its respective field
@@ -68,20 +67,9 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload.Backtitle);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
-        // await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName)
-        // await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber)
-        // await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
-        // await this.page.locator(this.titledocument_webelements.SelectAddress).click()
-        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-        // await this.page.waitForTimeout(500)
-        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-
-        // await this.page.waitForTimeout(3000)
-        //await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
-
-          
         try 
         {
             // Check if the fourth product exists and is visible
@@ -91,6 +79,7 @@ class TitleDocument_Page
             if (isPersonalNextButton)
            {
                 await PersonalNextButton.click({timeout:60000});
+                await this.page.screenshot({ path: './ScreenShot/PersonalDetailswithAddress.png', fullPage: true})
             } 
             else
             {

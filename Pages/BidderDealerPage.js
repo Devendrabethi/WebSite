@@ -27,12 +27,16 @@ class BidderDealerPage
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.Bidder_AbsenteeBidderURL) 
+        await this.page.waitForTimeout(6000)
+        await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
     async BidderOpportunityPre_premium()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.Bidder_Pre_premiumURL)  
+        await this.page.waitForTimeout(6000)
+        await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
     async BidderOpportunityAbsenteeyes()
@@ -74,6 +78,7 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.SelectRepresentative).click()
         await this.page.locator(this.bidderdealer_webelements.DealerState_Field).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/BidderDealerDetails.png', fullPage: true})
             //    await this.page.locator(this.bidderdealer_webelements.SelectDealerState).click()  in UAT not working dropdown
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
@@ -92,6 +97,7 @@ class BidderDealerPage
         // Upload each photo to its respective field
         await this.page.locator(this.bidderdealer_webelements.PersonalCheckBankLGranteeDoc).setInputFiles(fileToUpload1.PersonalCheckBankLGranteeDoc);
         await this.page.waitForTimeout(2000)
+        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithFundLetter.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
     async CCDepositeDesiredBidLimit()
@@ -100,6 +106,7 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()
+        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithCreditCardHold.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
     async DealerDocument()
@@ -132,6 +139,7 @@ class BidderDealerPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.AuthorizationDoc).setInputFiles(fileToUpload2.AuthorizationDoc);
         await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/BidderDealerDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
 
     }
@@ -154,7 +162,7 @@ class BidderDealerPage
 
         await this.page.locator(this.bidderindividual_webelements.CCAddress_Field).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
-
+        await this.page.screenshot({ path: './ScreenShot/PaymentDetailsForCCDeposit.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.CCNextbtn).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
