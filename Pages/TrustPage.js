@@ -109,16 +109,4 @@ class TrustPage
            // Optional: Add additional actions (e.g., screenshot, retry logic) here
        }
     }
-    async ViewMySubmission()
-    {
-        await this.page.screenshot({ path: './ScreenShot/ViewSubmission.png', fullPage: true})
-        await this.page.locator(this.trust_webelements.ViewSubmission).click({timeout:90000})
-        await this.page.locator(this.trust_webelements.Consignmentbutton).click()
-        await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/ConsignmentDashboard.png', fullPage: true})
-        await this.page.locator(this.trust_webelements.RemovePastEvent).click()
-        await this.page.waitForTimeout(3000);
-        await this.page.locator(this.trust_webelements.FormLibrary).click()
-        await this.page.screenshot({ path: './ScreenShot/FormLibrary.png', fullPage: true})
-    }
 }

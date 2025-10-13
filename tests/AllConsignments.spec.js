@@ -66,6 +66,6 @@ test('test',async({page}) =>
     await trustpage.AlreadyTrustVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
-
-    await trustpage.ViewMySubmission()
+    await applicationinfopage.ViewMySubmission()
+    await applicationinfopage.ConsignmentDashboardwithDocument()
 })

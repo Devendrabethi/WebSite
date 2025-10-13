@@ -25,6 +25,62 @@ class DealerPage
         await this.page.screenshot({ path: './ScreenShot/AfterSubmitScreen.png', fullPage: true})
         await this.page.locator(this.business_webelements.StartAnotherApplication).click()
     }
+    async DealerWithoutDocUploadingfromDashboard()
+    {
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click()
+        await this.page.locator(this.dealer_webelements.Dealer_Field).click()
+        await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToDealerName)
+        //Dealer Number
+        function generateRandomString(length) {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+        const DealerNumber = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
+        const dealernumber = DealerNumber;
+        await this.page.locator(this.dealer_webelements.DealerNumber_Field).click()
+        await this.page.locator(this.dealer_webelements.DealerNumber_Field).fill(dealernumber)
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentsWithDealer.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
+        await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
+        await this.page.locator(this.titledocument_webelements.SelectAddress).click()
+        await this.page.screenshot({ path: './ScreenShot/DealerDetails.png', fullPage: true})
+         await this.page.locator(this.dealer_webelements.OperatingAggYES).click()
+        await this.page.locator(this.dealer_webelements.DealerExpDateCalendar).click()
+        await this.page.locator(this.dealer_webelements.CurrentDate).click()
+        await this.page.locator(this.dealer_webelements.DealerLicenseState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.locator(this.dealer_webelements.TaxId).fill(this.testdata.TaxId_Value)
+        await this.page.locator(this.dealer_webelements.ResaleExpDateCalandar).click()
+        await this.page.locator(this.dealer_webelements.CurrentDate).click()
+        await this.page.locator(this.dealer_webelements.ResaleLicenseState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.screenshot({ path: './ScreenShot/DealerDocumentsWithDetails.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
+        await this.page.waitForTimeout(2000)
+        try 
+        {
+            await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName,{timeout:90000});
+            await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber);
+            await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch);
+            await this.page.locator(this.titledocument_webelements.SelectAddress).click();
+            await this.page.waitForTimeout(3000);
+            await this.page.screenshot({ path: './ScreenShot/PersonalDetails.png', fullPage: true})
+            await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000});
+        } catch (error) 
+        {
+            console.error('Already Details Present', error);
+            // Optional: Take a screenshot or log additional details
+        }
+    }
     async DealerVehicleDocument()
     {
         await this.page.waitForTimeout(1000)

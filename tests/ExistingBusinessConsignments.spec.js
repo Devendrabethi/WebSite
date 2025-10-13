@@ -25,6 +25,6 @@ test('test',async({page}) =>
     await businesspage.AlreadyBusinessVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
-    await trustpage.ViewMySubmission()
-
+    await applicationinfopage.ViewMySubmission()
+    await applicationinfopage.ConsignmentDashboardwithDocument()
 })

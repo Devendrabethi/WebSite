@@ -30,5 +30,6 @@ test('test',async({page}) =>
     await titledocument_page.ExistingVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
-    await trustpage.ViewMySubmission()
+    await applicationinfopage.ViewMySubmission()
+    await applicationinfopage.ConsignmentDashboardwithDocument()
 })

@@ -25,7 +25,6 @@ test('Creating Dealer Consignment',async({page}) =>
     await dealerpage.AlreadyDealerVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
-
-    await trustpage.ViewMySubmission()
-
+    await applicationinfopage.ViewMySubmission()
+    await applicationinfopage.ConsignmentDashboardwithDocument()
 })

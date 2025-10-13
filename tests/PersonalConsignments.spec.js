@@ -18,7 +18,6 @@ test('test',async({page}) =>
     const trustpage = new TrustPage(page)
 
     //Individual Main
-    //await addvinpage.MarketingLogin()
     await addvinpage.ConsignmentURL()
     await addvinpage.SignIn()
     await addvinpage.VehicleDetailsone()
@@ -31,5 +30,6 @@ test('test',async({page}) =>
     await titledocument_page.VehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
-    await trustpage.ViewMySubmission()
+    await applicationinfopage.ViewMySubmission()
+    await applicationinfopage.ConsignmentDashboardwithDocument()
 })
