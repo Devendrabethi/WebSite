@@ -24,7 +24,7 @@ class BidderInvidualPage
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.BidderPremiumURL)
         await this.page.waitForTimeout(6000)
-        await this.page.reload()
+        //await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
     }
     async IndividualDetails()
@@ -111,6 +111,21 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.BiddingCollateralBox).click()
         await this.page.screenshot({ path: './ScreenShot/DesiredBidLimitWithBiddingCollateral.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+    }
+    async AdditionalWithoutDocumentUploadingfromDashboard()
+    {
+        const fileToUpload2 = 
+        {
+            "CustomerPhoto" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+        }
+        await this.page.waitForTimeout(2000);
+        // Upload each photo to its respective field
+        await this.page.locator(this.bidderindividual_webelements.CustomerPhoto).setInputFiles(fileToUpload2.CustomerPhoto);
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.bidderindividual_webelements.Crop).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/AdditionalDocument.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async AdditionalDocument()
     {
@@ -230,7 +245,7 @@ class BidderInvidualPage
         //await this.page.locator(this.bidderindividual_webelements.ZipCode).click()
         await frame.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
         await this.page.screenshot({ path: './ScreenShot/PaymentDetails.png', fullPage: true})
-        await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click()
+        await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click({timeout:90000})
         await this.page.waitForTimeout(2000)
         //await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
     }
@@ -240,7 +255,7 @@ class BidderInvidualPage
         const frame1 = await this.page.frameLocator(this.bidderindividual_webelements.FrameDocuSign1)
         const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
 
-        await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:1200000})
+        await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:120000})
         await this.page.screenshot({ path: './ScreenShot/DocuSign.png', fullPage: true})
         await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
         await this.page.waitForTimeout(1000)
@@ -260,5 +275,86 @@ class BidderInvidualPage
     async ViewBidderOpportunity()
     {
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
+        await this.page.waitForTimeout(15000)
+        await this.page.screenshot({ path: './ScreenShot/RegistrationInfo.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_Registration).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/RegistrationReg.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_Addresses).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/Addresses.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_DocumentsTab).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/RegisterDocuments.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_PaymentMethodTab).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/PaymentWithHowtoPay.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_BiddingCollateralReturnAddress).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/BiddingCollateralReturnAddress.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_AbsenteeBidsTab).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/MyAbsenteeBids.png', fullPage: true})
+    }
+    async BidderDashboardWithoutDocument()
+    {
+        await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
+        await this.page.waitForTimeout(15000)
+        await this.page.screenshot({ path: './ScreenShot/RegistrationInfo.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_Registration).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/RegistrationReg.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_Addresses).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.screenshot({ path: './ScreenShot/Addresses.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_DocumentsTab).click()
+
+            const fileToUpload = 
+        {
+           "Insurance" :               "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif",
+           "DealerLicense":            "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
+           "ResaleTaxID":              "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+           "VerificationOfOwnership":  "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
+           "AuthorizationToBid":       "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
+        }
+        await this.page.locator(this.bidderindividual_webelements.FirstDocument).click()
+        await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.Insurance)
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.locator(this.bidderindividual_webelements.SecondDocument).click()
+        await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.DealerLicense)
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.locator(this.bidderindividual_webelements.ThirdDocument).click()
+        await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.ResaleTaxID)
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.locator(this.bidderindividual_webelements.FourthDocument).click()
+        await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.VerificationOfOwnership)
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.locator(this.bidderindividual_webelements.FivthDocument).click()
+        await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.AuthorizationToBid)
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.reload()
+        //await this.page.locator(this.bidderindividual_webelements.Select_DocumentsTab).click()
+        await this.page.waitForTimeout(20000);
+        await this.page.screenshot({ path: './ScreenShot/DealerWithDocuments.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_PaymentMethodTab).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/PaymentMethod.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_BiddingCollateralReturnAddress).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/BiddingCollaterralAddress.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.Select_AbsenteeBidsTab).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/AbsenteeBidTab.png', fullPage: true})
+        
     }
 }

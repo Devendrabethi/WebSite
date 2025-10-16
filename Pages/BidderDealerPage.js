@@ -28,7 +28,7 @@ class BidderDealerPage
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.Bidder_AbsenteeBidderURL) 
         await this.page.waitForTimeout(6000)
-        await this.page.reload()
+       // await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
     async BidderOpportunityPre_premium()
@@ -36,7 +36,7 @@ class BidderDealerPage
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.Bidder_Pre_premiumURL)  
         await this.page.waitForTimeout(6000)
-        await this.page.reload()
+        //await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
     async BidderOpportunityAbsenteeyes()
@@ -100,29 +100,27 @@ class BidderDealerPage
         await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithFundLetter.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
-    async CCDepositeDesiredBidLimit()
+
+    async DealerWithoutDocUploadingfromDashboard()
     {
-        await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
-        await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
-        await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()
-        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithCreditCardHold.png', fullPage: true})
-        await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
+        await this.page.waitForTimeout(15000)
+        await this.page.screenshot({ path: './ScreenShot/BidderDealerDocuments.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+
     }
     async DealerDocument()
     {
         const fileToUpload2 = 
         {
-            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Dealer License.jpg",
-            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Resale License.jpg",
-            "VerificationOwnDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\operating agreement.jpg",
-            "AuthorizationDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\business Lpng.png"
+            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
+            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+            "VerificationOwnDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
+            "AuthorizationDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
         }
         await this.page.waitForTimeout(2000);
         // Upload each photo to its respective field
         await this.page.locator(this.bidderdealer_webelements.DealerDoc).setInputFiles(fileToUpload2.DealerLicense);
         await this.page.waitForTimeout(1000)
-        
         await this.page.locator(this.bidderdealer_webelements.DealerExpDateCalendar).click()
         await this.page.waitForTimeout(500);
        await this.page.locator(this.bidderindividual_webelements.ChangeMonth).click()
@@ -142,6 +140,15 @@ class BidderDealerPage
         await this.page.screenshot({ path: './ScreenShot/BidderDealerDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
 
+    }
+        async CCDepositeDesiredBidLimit()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
+        await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
+        await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()
+        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithCreditCardHold.png', fullPage: true})
+        await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
     async CCDepositeCardDetails()
     {

@@ -134,7 +134,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.screenshot({ path: './ScreenShot/CreateAccount.png', fullPage: true})
-        await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click()
+        await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click({timeout:90000})
         await this.page.waitForTimeout(2000)
     }
     async ExistingAccount()

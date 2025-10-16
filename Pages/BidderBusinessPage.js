@@ -26,7 +26,7 @@ class BidderBusinessPage
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.BidderSelectURL)
         await this.page.waitForTimeout(6000)
-        await this.page.reload()
+        //await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
     }
 

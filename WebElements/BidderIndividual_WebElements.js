@@ -46,6 +46,21 @@ class BidderIndividual_WebElements
 
         this.ViewBidderOpportunity = "//span[text()='View my agreement']/parent::a"
 
+        this.Select_Registration = "//div[@aria-label='Consignment details']/a[contains(@id,'info/registration')]"
+        this.Select_Addresses = "//div[@aria-label='Consignment details']/a[contains(@id,'info/addresses')]"
+        this.Select_DocumentsTab = "//div[@aria-label='Consignment details']/a[contains(@id,'documents')]"
+        this.FirstDocument = "(//p[text()='Choose document'])[1]"
+        this.AdditionalPhotos = "//input[@type='file']"
+        this.Upload_Button = "//button[text()='Upload']"
+        this.SecondDocument = "(//p[text()='Choose document'])[2]"
+        this.ThirdDocument = "(//p[text()='Choose document'])[3]"
+        this.FourthDocument = "(//p[text()='Choose document'])[4]"
+        this.FivthDocument = "(//p[text()='Choose document'])[5]"
+        this.Select_PaymentMethodTab = "//div[@aria-label='Consignment details']/a[contains(@id,'method')]"
+        this.Select_BiddingCollateralReturnAddress = "//div[@aria-label='Consignment details']/a[contains(@id,'method/registration')]"
+        this.Select_AbsenteeBidsTab = "//div[@aria-label='Consignment details']/a[contains(@id,'absentee')]"
+
+
         this.CardFullName = "//input[@name='cardholderName']"
         this.CCZipCode = "//input[@title='ZIP Code']"
         this.CCAddress_Field = "//input[@name='addressSearch']"
