@@ -93,9 +93,9 @@ class ApplicationInfoPage
         await this.page.screenshot({ path: './ScreenShot/DocumentIndividualWithDocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
         await this.page.waitForTimeout(3000);
-        await this.page.reload()
-        await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
-        await this.page.waitForTimeout(15000);
+        // await this.page.reload()
+        // await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
+        // await this.page.waitForTimeout(15000);
         await this.page.screenshot({ path: './ScreenShot/DocumentBusinessInfoWithDocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.ApplicantInfoTab).click()
         await this.page.waitForTimeout(3000);
@@ -103,6 +103,72 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.Applicant_Address).click()
         await this.page.waitForTimeout(3000);
         await this.page.screenshot({ path: './ScreenShot/ApplicantInfo.png', fullPage: true})
+
+         await this.page.locator(this.applicationinfo_webelements.MyAccount_Button).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.applicationinfo_webelements.ViewAccount).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.applicationinfo_webelements.EditAccount).click()
+        await this.page.screenshot({ path: './ScreenShot/ViewAccount.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.Close_ViewAccount).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.applicationinfo_webelements.Document).click()
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './ScreenShot/DocumentWithoutdocuments.png', fullPage: true})
+           const fileToUpload1 = 
+        {
+            "Passport_Document" :       "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
+            "Insurance_Document":       "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+            "DriverLicense_Document":   "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif",
+            "Bank_Document" :           "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\business Lpng.png",
+            "AdditionalBankLetter_Document":         "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic"
+        }
+        await this.page.locator(this.applicationinfo_webelements.Passport_Document).click()
+        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Passport_Document)
+        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(3000);
+        await this.page.locator(this.applicationinfo_webelements.Insurance_Document).click()
+        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Insurance_Document)
+        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(3000);
+        await this.page.locator(this.applicationinfo_webelements.DriverLicense_Document).click()
+        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.DriverLicense_Document)
+        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(3000);
+        await this.page.locator(this.applicationinfo_webelements.Bank_Document).click()
+        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Bank_Document)
+        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(3000);
+        await this.page.locator(this.applicationinfo_webelements.AdditionalBankLetter_Document).click()
+        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.AdditionalBankLetter_Document)
+        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.screenshot({ path: './ScreenShot/DocumentPersonalWithdocuments.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.Business_Document).click()
+        await this.page.waitForTimeout(3000);
+        await this.page.screenshot({ path: './ScreenShot/DocumentBusinessDocument.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.Addresses).click()
+        await this.page.waitForTimeout(6000);
+        await this.page.screenshot({ path: './ScreenShot/MalilingAddress.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.AddNew_Address).click()
+        await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
+        await this.page.locator(this.applicationinfo_webelements.SelectAddress).click()
+        await this.page.locator(this.applicationinfo_webelements.AddressType_Dropdowm).click()
+        await this.page.locator(this.applicationinfo_webelements.Mailing).click()
+        await this.page.locator(this.applicationinfo_webelements.VehicleTitiling).click()
+        await this.page.locator(this.applicationinfo_webelements.TitlePaperwork).click()
+        await this.page.locator(this.applicationinfo_webelements.BiddingColl).click()
+        await this.page.locator(this.applicationinfo_webelements.ProceedPayment).click()
+        await this.page.goBack();
+        await this.page.waitForTimeout(4000);
+        await this.page.goForward(); 
+        await this.page.waitForTimeout(2000);
+        await this.page.locator(this.applicationinfo_webelements.SaveChanges).click()
+        await this.page.waitForTimeout(12000);
+        await this.page.screenshot({ path: './ScreenShot/MalilingAddresswithall.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.Close_ViewAccount).click()
+        await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
+        await this.page.waitForTimeout(5000);
     }
     async ConsignmentDashboardwithoutDocument()
     {

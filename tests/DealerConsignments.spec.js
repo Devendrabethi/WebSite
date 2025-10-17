@@ -16,7 +16,6 @@ test('Creating Dealer Consignment',async({page}) =>
     //Dealer
     await addvinpage.ConsignmentURL()
     await addvinpage.SignIn()
-    //await addvinpage.ExistingAccount()//Existing
     await addvinpage.VehicleDetailsone()
     await addvinpage.PowerSourceElectric()
     await addvinpage.Mileage()

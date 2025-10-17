@@ -16,7 +16,6 @@ test('test',async({page}) =>
     //Business
     await addvinpage.ConsignmentURL()
     await addvinpage.SignIn()
-    //await addvinpage.ExistingAccount()//Existing
     await addvinpage.VehicleDetailsone()
     await addvinpage.PowerSourceHyBrid()
     await addvinpage.Mileage()

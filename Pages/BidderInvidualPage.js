@@ -241,8 +241,8 @@ class BidderInvidualPage
         await frame.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
         await frame.locator(this.bidderindividual_webelements.Cvv).fill(this.testdata.CVVNum)
         await frame.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
-        await this.page.screenshot({ path: './ScreenShot/PaymentDetails.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click({timeout:90000})
+        await this.page.screenshot({ path: './ScreenShot/PaymentDetails.png', fullPage: true})
         await this.page.waitForTimeout(2000)
     }
 
