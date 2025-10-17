@@ -75,19 +75,13 @@ class AddVinPage
 
     async ConsignmentURL()
     {
-        // const browser = await chromium.launch();
-        // const page = await browser.newPage();
-
         await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(this.testdata.URL)
-        //await this.page.waitForTimeout(6000)
-        //await this.page.reload()
         await this.page.locator(this.addVIN_webelements.Acceptpopup).click()
     }
     async SignIn()
     {
         //Sign IN
-       // await this.page.locator(this.addVIN_webelements.SignInbtn).click()
         await this.page.locator(this.addVIN_webelements.Createbtn).click()
 
             //first and last names
@@ -204,7 +198,6 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_4speedValue).click()
-
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
@@ -229,7 +222,6 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_Field).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.TransmissionSpeed_4speedValue).click()
-
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
