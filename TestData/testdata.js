@@ -3,13 +3,13 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=846"//Hotfixqa: https://member-hotfixqa.barrett-jackson.com/consign/vin?event=845  //uat: https://bjac-uat.crm.dynamics.com/main.aspx?appid=a7691afc-ad8a-ef11-ac21-000d3a5c4875
+        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=847"
         this.MarkettingURL = "https://staging-bjz7qr.barrett-jackson.com"
-        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6675" // uat qa
-        this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6678"  //uat qa
-        this.Bidder_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6696"  //uat qa
-        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6678"  //uat qa
-        this.RegularBidderMobilia = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6663" //uat qa
+        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6739" // uat qa 6739
+        this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6742"  //uat qa 6742
+        this.Bidder_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6723"  //uat qa 6723
+        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6738"  //uat qa 6738
+        this.RegularBidderMobilia = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6725" //uat qa 6725
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
         this.Year = "2015"

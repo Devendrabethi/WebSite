@@ -53,6 +53,7 @@ class ApplicationInfoPage
     async ConsignmentDashboardwithDocument()
     {
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
+        await this.page.locator(this.applicationinfo_webelements.RemovePastEvent).click()
         await this.page.locator(this.applicationinfo_webelements.SelectFirstVehicle).click()
         await this.page.screenshot({ path: './ScreenShot/VehicleInformation.png', fullPage: true})
         await this.page.waitForTimeout(10000)
@@ -106,6 +107,7 @@ class ApplicationInfoPage
     async ConsignmentDashboardwithoutDocument()
     {
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
+        await this.page.locator(this.applicationinfo_webelements.RemovePastEvent).click()
         await this.page.locator(this.applicationinfo_webelements.SelectFirstVehicle).click()
         await this.page.screenshot({ path: './ScreenShot/VehicleInformation.png', fullPage: true})
         await this.page.waitForTimeout(10000)

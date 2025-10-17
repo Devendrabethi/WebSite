@@ -86,29 +86,20 @@ class BidderInvidualPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        //await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
-       // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.locator(this.bidderindividual_webelements.TitlePaperwork).fill(this.testdata.TitlePaperworkAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
         await this.page.waitForTimeout(1000)
-        //await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderindividual_webelements.Vehicleaddress).fill(this.testdata.VehicleAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
         await this.page.waitForTimeout(1000)
-       // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
-       // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-
        // await this.page.locator(this.titledocument_webelements.CheckboxforAllAddress).click()
         await this.page.locator(this.bidderindividual_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-       // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.screenshot({ path: './ScreenShot/BidderIndividualMailingAddress.png', fullPage: true})
-       // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-      
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
     async RegularBidderMobiliaAddressDetails()
@@ -175,8 +166,7 @@ class BidderInvidualPage
         }
         catch (error) 
         {
-            console.error("An error occurred during the clicking process:", error);
-            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+            console.error("No Products", error);
         }
         try
         {
@@ -185,7 +175,7 @@ class BidderInvidualPage
         }
         catch (error) 
         {
-            console.error("An error occurred during the clicking process:", error);
+            console.error("No Products", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
         try
@@ -195,7 +185,7 @@ class BidderInvidualPage
         }
         catch (error) 
         {
-            console.error("An error occurred during the clicking process:", error);
+            console.error("No Products", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
         try 
@@ -215,11 +205,10 @@ class BidderInvidualPage
             }
         } catch (error) {
             console.error("An error occurred during the clicking process:", error);
-            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
         try 
         {
-            // Check if the fourth product exists and is visible
+            // Check if the fivth product exists and is visible
             const FivethProductLocator = this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity);
             const isFivethProductVisible = await FivethProductLocator.isVisible();
             
@@ -230,19 +219,15 @@ class BidderInvidualPage
             } 
             else
             {
-                console.log("The fourth product is not visible, skipping click.");
+                console.log("The fivth product is not visible, skipping click.");
             }
         } catch (error) {
             console.error("An error occurred during the clicking process:", error);
-            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
 
         await this.page.screenshot({ path: './ScreenShot/Products.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
         await this.page.waitForTimeout(2000)
-        // await this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity).click()
-        // await this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity).click()
-        // await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
     async CardDetails()
     {
@@ -252,19 +237,13 @@ class BidderInvidualPage
         await this.page.waitForTimeout(2000)
 
         const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
-
-        //await this.page.locator(this.bidderindividual_webelements.CardNum).click()
         await frame.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
-        //await this.page.locator(this.bidderindividual_webelements.CardExpDate).click()
         await frame.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
-        //await this.page.locator(this.bidderindividual_webelements.Cvv).click()
         await frame.locator(this.bidderindividual_webelements.Cvv).fill(this.testdata.CVVNum)
-        //await this.page.locator(this.bidderindividual_webelements.ZipCode).click()
         await frame.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
         await this.page.screenshot({ path: './ScreenShot/PaymentDetails.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click({timeout:90000})
         await this.page.waitForTimeout(2000)
-        //await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
     }
 
     async PersonalDocuSign()
@@ -360,7 +339,6 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
         await this.page.waitForTimeout(5000);
         await this.page.reload()
-        //await this.page.locator(this.bidderindividual_webelements.Select_DocumentsTab).click()
         await this.page.waitForTimeout(20000);
         await this.page.screenshot({ path: './ScreenShot/DealerWithDocuments.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_PaymentMethodTab).click()
