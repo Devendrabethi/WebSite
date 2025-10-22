@@ -87,6 +87,7 @@ class BidderDealerPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
+        await this.page.keyboard.press('Tab')
         await this.page.locator(this.bidderdealer_webelements.PersonalCheckBox).click()
 
         const fileToUpload1 = 
@@ -96,7 +97,7 @@ class BidderDealerPage
         await this.page.waitForTimeout(2000);
         // Upload each photo to its respective field
         await this.page.locator(this.bidderdealer_webelements.PersonalCheckBankLGranteeDoc).setInputFiles(fileToUpload1.PersonalCheckBankLGranteeDoc);
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithFundLetter.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }

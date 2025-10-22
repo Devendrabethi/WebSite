@@ -127,6 +127,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
         await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
+        await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/CreateAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click({timeout:90000})
         await this.page.waitForTimeout(2000)
@@ -276,7 +277,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Odometer_Field).fill(this.testdata.Odometer)
         await this.page.locator(this.addVIN_webelements.ShortDesc).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.LongDesc).fill(this.testdata.LongDescription)
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/VehicleDescription.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }

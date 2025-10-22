@@ -3,12 +3,12 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=847"
+        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=846"
         this.MarkettingURL = "https://staging-bjz7qr.barrett-jackson.com"
-        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6739" // uat qa 6739
+        this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6675" // uat qa 6739
         this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6742"  //uat qa 6742
         this.Bidder_AbsenteeBidderURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6723"  //uat qa 6723
-        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6738"  //uat qa 6738
+        this.Bidder_Pre_premiumURL ="https://member-hotfixqa.barrett-jackson.com/bid/register?event=846&package=6675"  //uat qa 6738
         this.RegularBidderMobilia = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6725" //uat qa 6725
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
