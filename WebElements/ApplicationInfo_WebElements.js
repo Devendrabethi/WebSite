@@ -25,7 +25,7 @@ class ApplicationInfo_WebElements
         //Dashboard
         this.Consignmentbutton = "//div[text()='Consignments']/parent::div"
         this.SelectFirstVehicle = "(//div[contains(@class,'view')]/div[text()='View'])[1]"
-        this.Modifield_Horsepower_Text = "//p[text()='Vehicle details']/parent::div/ul/li[17]"
+        this.Modifield_Horsepower_Text = "//p[text()='Vehicle details']/parent::div/ul/li/div[text()='Modified horsepower']"
         this.ShortDescription = "//div[@aria-label='Consignment details']/a[contains(@id,'description')][1]"
         this.LongDescription = "//div[@aria-label='Consignment details']/a[contains(@id,'long-description')]"
         this.MediaTab = "//div[@aria-label='Consignment details']/a[contains(@id,'media')]"
