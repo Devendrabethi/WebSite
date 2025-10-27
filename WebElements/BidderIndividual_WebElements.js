@@ -32,6 +32,11 @@ class BidderIndividual_WebElements
         this.FourthProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[4]/td[3]/div/div/button[2]"
         this.MuscleLoungeQuantity = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[5]/td[3]/div/div/button[2]"
 
+        this.CardDetails_Checkbox = "//label[contains(text(),'My billing contact')]"
+        this.Slect_ExistingAddress = "//button[text()='Select an existing address']"
+        this.Select_MailingAddress = "//p[text()='Mailing Address']"
+        this.ConfirmSelection = "//span[text()='Confirm Selection']"
+
         this.CardFirstName = "//input[@name='firstNameCard']"
         this.CardLastName = "//input[@name='lastNameCard']"
 
@@ -76,5 +81,10 @@ class BidderIndividual_WebElements
         this.BuyerInitialSecondPage = "(//div[text()='Initial'])[1]"
         this.BuyerInitialThirdPage = "(//div[text()='Initial'])[2]"
         this.SubmitApplication = "//span[text()='Submit application']"
+
+        this.Absentee_Personalsignin = "(//div[text()='Sign'])[1]"
+        this.Absentee_PrintName = "//label[text()='Required - PRINT NAME']/preceding-sibling::input"
+        this.Absentee_SignatureRequired = "(//div[text()='Sign'])[2]"
+
     }
 }

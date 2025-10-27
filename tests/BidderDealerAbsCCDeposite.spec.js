@@ -23,7 +23,7 @@ test('Creating Bidder Opportunity For Dealer With Absentee Package',async({page}
     await bidderdealerpage.DealerDocument()
     //await bidderinvidualpage.AddProducts()
     await bidderinvidualpage.CardDetails()
-    await bidderinvidualpage.PersonalDocuSign()
+    await bidderinvidualpage.AbsenteeDocuSign()
     await bidderdealerpage.CCDepositeCardDetails()
 
 })

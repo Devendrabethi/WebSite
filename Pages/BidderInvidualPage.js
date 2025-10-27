@@ -5,6 +5,7 @@ import { AddMedia_WebElements } from '../WebElements/AddMedia_WebElements.js'
 import { TitleDocument_WebElements } from '../WebElements/TitleDocument_WebElements.js'  
 import { Business_WeElements } from '../WebElements/Business_WeElements.js' 
 import { BidderIndividual_WebElements } from '../WebElements/BidderIndividual_WebElements.js' 
+import { ApplicationInfo_WebElements } from '../WebElements/ApplicationInfo_WebElements.js'  
 
 exports.BidderInvidualPage =
 class BidderInvidualPage
@@ -17,6 +18,7 @@ class BidderInvidualPage
         this.titledocument_webelements =  new TitleDocument_WebElements()
         this.business_webelements =  new Business_WeElements()
         this.bidderindividual_webelements =  new BidderIndividual_WebElements()
+        this.applicationinfo_webelements =  new ApplicationInfo_WebElements()
         this.testdata = new TestData()
     }
     async BidderOpportunityPremium()
@@ -234,10 +236,16 @@ class BidderInvidualPage
     async CardDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.CardFirstName).fill(this.testdata.CardFName)
-        await this.page.locator(this.bidderindividual_webelements.CardLastName).fill(this.testdata.CardLName)
+        await this.page.locator(this.bidderindividual_webelements.CardDetails_Checkbox).click()
+        await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
+        await this.page.locator(this.applicationinfo_webelements.SelectAddress).click()
         await this.page.waitForTimeout(2000)
-
+        await this.page.screenshot({ path: './ScreenShot/Entered New Address in Payment Page.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
+        await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
+        await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
+        await this.page.screenshot({ path: './ScreenShot/Billing existing address.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
         const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
         await frame.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
         await frame.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
@@ -269,6 +277,28 @@ class BidderInvidualPage
         await this.page.screenshot({ path: './ScreenShot/DocuSignSubmit.png', fullPage: true})
         await frame1.locator(this.bidderindividual_webelements.SubmitApplication).click()
         
+    }
+    async AbsenteeDocuSign()
+    {
+        const frame1 = await this.page.frameLocator(this.bidderindividual_webelements.FrameDocuSign1)
+        const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
+
+        await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:120000})
+        await this.page.screenshot({ path: './ScreenShot/DocuSign.png', fullPage: true})
+        await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
+        await this.page.waitForTimeout(1000)
+        await frame2.locator(this.bidderindividual_webelements.Absentee_Personalsignin).click()
+        await this.page.screenshot({ path: './ScreenShot/PersonalDocuSign.png', fullPage: true})
+        await frame2.locator(this.bidderindividual_webelements.AdoptandSign).click()
+        await this.page.waitForTimeout(15000)
+        await frame2.locator(this.bidderindividual_webelements.BuyerInitialSecondPage).click()
+        await this.page.waitForTimeout(1000)
+        await frame2.locator(this.bidderindividual_webelements.BuyerInitialThirdPage).click()
+        await this.page.waitForTimeout(1000)
+        await frame2.locator(this.bidderindividual_webelements.Absentee_PrintName).fill(this.testdata.Signature)
+        await frame2.locator(this.bidderindividual_webelements.Absentee_SignatureRequired).click()
+        await this.page.screenshot({ path: './ScreenShot/DocuSignSubmit.png', fullPage: true})
+        await frame1.locator(this.bidderindividual_webelements.SubmitApplication).click()
     }
 
     async ViewBidderOpportunity()

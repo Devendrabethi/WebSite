@@ -57,6 +57,7 @@ class ApplicationInfo_WebElements
         this.AddNew_Address = "//button[text()='Add new']"
         this.MallingAddress = "(//input[@name='addressSearch'])[1]"
         this.SelectAddress = "(//div[contains(@data-key, 'address.')])[1]"
+        this.RetrySearch = "//button[text()='Retry search']"
         this.AddressType_Dropdowm = "//span[text()='Address type']/following-sibling::button"
         this.Mailing = "//label[text()='Mailing']"
         this.VehicleTitiling = "//label[text()='Vehicle Titling']"

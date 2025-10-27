@@ -7,6 +7,7 @@ import { Business_WeElements } from '../WebElements/Business_WeElements.js'
 import { BidderIndividual_WebElements } from '../WebElements/BidderIndividual_WebElements.js' 
 import { BidderBusiness_WebElements } from '../WebElements/BidderBusiness_WebElements.js' 
 import { BidderDealer_WebElements } from '../WebElements/BidderDealer_WebElements.js' 
+import { ApplicationInfo_WebElements } from '../WebElements/ApplicationInfo_WebElements.js'  
 
 exports.BidderDealerPage =
 class BidderDealerPage
@@ -21,6 +22,7 @@ class BidderDealerPage
         this.bidderindividual_webelements =  new BidderIndividual_WebElements()
         this.bidderbusiness_webelements =  new BidderBusiness_WebElements()
         this.bidderdealer_webelements =  new BidderDealer_WebElements()
+        this.applicationinfo_webelements =  new ApplicationInfo_WebElements()
         this.testdata = new TestData()
     }
     async BidderOpportunityAbsentee()
@@ -154,7 +156,17 @@ class BidderDealerPage
     async CCDepositeCardDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.CardFullName).fill(this.testdata.CCCardFullName)
+        //await this.page.locator(this.bidderindividual_webelements.CardFullName).fill(this.testdata.CCCardFullName)
+        await this.page.locator(this.bidderindividual_webelements.CardDetails_Checkbox).click()
+        await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
+        await this.page.locator(this.applicationinfo_webelements.SelectAddress).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.screenshot({ path: './ScreenShot/Entered New Address in Payment Page.png', fullPage: true})
+        await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
+        await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
+        await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
+        await this.page.screenshot({ path: './ScreenShot/Billing existing address.png', fullPage: true})
+        await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
         await this.page.waitForTimeout(2000)
 
         const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
@@ -168,8 +180,8 @@ class BidderDealerPage
         //await this.page.locator(this.bidderindividual_webelements.ZipCode).click()
         await frame.locator(this.bidderindividual_webelements.CCZipCode).fill(this.testdata.CCZIpCode)
 
-        await this.page.locator(this.bidderindividual_webelements.CCAddress_Field).fill(this.testdata.AddressSearch)
-        await this.page.locator(this.titledocument_webelements.SelectAddress).click()
+        // await this.page.locator(this.bidderindividual_webelements.CCAddress_Field).fill(this.testdata.AddressSearch)
+        // await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.screenshot({ path: './ScreenShot/PaymentDetailsForCCDeposit.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.CCNextbtn).click()
         await this.page.waitForTimeout(2000)
