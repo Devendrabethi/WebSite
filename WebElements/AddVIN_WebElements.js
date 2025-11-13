@@ -29,6 +29,16 @@ class AddVIN_WebElements
         this.LoginPassword = "//input[@name='password']"
         this. Loginbutton = "(//span[text()='Log in'])[2]"
 
+        this.EnterEmail = "//input[@placeholder='Enter your inbox here']"
+        this.CheckInbox = "//button[@title='Check Inbox @yopmail.com']"
+        this.IframeYopmail = "//iframe[@name='ifmail']"
+        this.ClickHere = "//a[text()='Click here']"
+        this.MemberEnterEmail = "//input[@placeholder='your-email@email.com']"
+        this.ResetPassword = "//span[text()='Reset password']"
+        this.PleaseLogin_Button = "//button[text()='please log in here']"
+        this.ForgotPassword = "//button[text()='Forgot password?']"
+        this.ResetEmail = "//span[text()='Send password reset email']"
+
 
         this.Vin_Field = "//input[@aria-label='Enter VIN']"
         this.Nextbtn_Submit = "//button[@type='submit']"

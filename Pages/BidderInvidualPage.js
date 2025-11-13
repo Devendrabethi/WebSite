@@ -86,7 +86,7 @@ class BidderInvidualPage
     async AddressDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress)
+        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress,{timeout:60000})
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderindividual_webelements.TitlePaperwork).fill(this.testdata.TitlePaperworkAddress)

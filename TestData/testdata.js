@@ -3,7 +3,8 @@ class TestData
 {
     constructor()
     {
-        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=846"
+        this.URL ="https://member-hotfixqa.barrett-jackson.com/consign/vin?event=847"
+        this.Yopmail = "https://yopmail.com"
         this.MarkettingURL = "https://staging-bjz7qr.barrett-jackson.com"
         this.BidderPremiumURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6739" // uat qa 6739
         this.BidderSelectURL = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6742"  //uat qa 6742

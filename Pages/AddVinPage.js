@@ -10,6 +10,7 @@ class AddVinPage
         this.page = page
         this.addVIN_webelements =  new AddVIN_WebElements()
         this.testdata = new TestData()
+        this.emailid = "";
     }
 
     async MarketingLogin ()
@@ -119,9 +120,9 @@ class AddVinPage
         const randomEmail = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
         
     
-        const emailid = randomEmail+"@yopmail.com";
+        this.emailid = randomEmail+"@yopmail.com";
         await this.page.locator(this.addVIN_webelements.Email).click()
-        await this.page.locator(this.addVIN_webelements.Email).fill(emailid)
+        await this.page.locator(this.addVIN_webelements.Email).fill(this.emailid)
 
         //Password
         await this.page.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
@@ -131,6 +132,52 @@ class AddVinPage
         await this.page.screenshot({ path: './ScreenShot/CreateAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click({timeout:90000})
         await this.page.waitForTimeout(2000)
+    }
+    async ConfirmEmail()
+    {
+        const context = this.page.context();
+        const page1 = await context.newPage();
+        await page1.goto(this.testdata.Yopmail);
+        await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
+        await page1.locator(this.addVIN_webelements.CheckInbox).click()
+        await this.page.waitForTimeout(5000)
+        const frame = await page1.frameLocator(this.addVIN_webelements.IframeYopmail)
+        await this.page.screenshot({ path: './ScreenShot/Yopmail.png', fullPage: true})
+        if(!frame) throw new Error('Iframe not found')
+        await frame.locator(this.addVIN_webelements.ClickHere).click()
+
+         const [newPage] = await Promise.all
+             ([
+                this.page.context().waitForEvent('page'),
+            ]);
+            await newPage.waitForLoadState('load');
+            await this.page.screenshot({ path: './ScreenShot/ConfirmationEmail.png', fullPage: true})
+        await this.page.waitForTimeout(5000)
+        await newPage.close();
+        await this.page.waitForTimeout(2000)
+        await page1.close();
+        await this.page.screenshot({ path: './ScreenShot/PleaseLoginScreen.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.PleaseLogin_Button).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.addVIN_webelements.ForgotPassword).click()
+        await this.page.screenshot({ path: './ScreenShot/ForgotPasswordScreen.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.ResetEmail).click()
+        await page1.goto(this.testdata.Yopmail);
+        await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
+        await page1.locator(this.addVIN_webelements.CheckInbox).click()
+        await this.page.waitForTimeout(5000)
+        await frame.locator(this.addVIN_webelements.ClickHere).click()
+        await newPage.locator(this.addVIN_webelements.MemberEnterEmail).fill(this.emailid,{timeout:90000})
+        await this.page.waitForTimeout(5000)
+        await newPage.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
+        await newPage.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
+        await this.page.screenshot({ path: './ScreenShot/ResetPassword.png', fullPage: true})
+        await newPage.locator(this.addVIN_webelements.ResetPassword).click()
+        await newPage.close();
+        await this.page.waitForTimeout(2000)
+        await page1.close();
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.addVIN_webelements.Loginbutton).click()
     }
     async ExistingAccount()
     {
