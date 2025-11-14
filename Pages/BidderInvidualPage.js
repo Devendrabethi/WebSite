@@ -86,7 +86,7 @@ class BidderInvidualPage
     async AddressDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress,{timeout:60000})
+        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.TitlePaperworkAddress,{timeout:60000})  //BiddingAddress
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderindividual_webelements.TitlePaperwork).fill(this.testdata.TitlePaperworkAddress)
@@ -100,7 +100,7 @@ class BidderInvidualPage
        // await this.page.locator(this.titledocument_webelements.CheckboxforAllAddress).click()
         await this.page.locator(this.bidderindividual_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        await this.page.waitForTimeout(500)
+        await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/BidderIndividualMailingAddress.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
@@ -238,7 +238,7 @@ class BidderInvidualPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.CardDetails_Checkbox).click()
         await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
-        await this.page.locator(this.applicationinfo_webelements.SelectAddress).click()
+        await this.page.locator(this.applicationinfo_webelements.SelectAddress).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/Entered New Address in Payment Page.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()

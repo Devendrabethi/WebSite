@@ -169,6 +169,7 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.Close_ViewAccount).click()
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
         await this.page.waitForTimeout(5000);
+        await this.page.locator(this.applicationinfo_webelements.RemovePastEvent).click()
     }
     async ConsignmentDashboardwithoutDocument()
     {
