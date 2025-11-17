@@ -43,7 +43,7 @@ class TrustPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentWithTrust.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/12.4 VehicleDocumentWithTrust.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
        await this.page.waitForTimeout(2000)
 
@@ -57,7 +57,7 @@ class TrustPage
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/PersonalDetailsWithDocument.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/12.5 PersonalDetailsWithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
     } catch (error)
     {
@@ -89,7 +89,7 @@ class TrustPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentWithTrust.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/12.6 VehicleDocumentWithTrust.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
        await this.page.waitForTimeout(5000)
 
@@ -100,7 +100,7 @@ class TrustPage
             // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
             // await this.page.waitForTimeout(500)
             // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-           await this.page.screenshot({ path: './ScreenShot/PersonalDetails.png', fullPage: true})
+           await this.page.screenshot({ path: './ScreenShot/12.7 PersonalDetails.png', fullPage: true})
            await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click();
        } 
        catch (error) 

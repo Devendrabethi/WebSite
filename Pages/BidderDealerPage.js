@@ -80,7 +80,7 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.SelectRepresentative).click()
         await this.page.locator(this.bidderdealer_webelements.DealerState_Field).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/BidderDealerDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/50.1 BidderDealerDetails.png', fullPage: true})
             //    await this.page.locator(this.bidderdealer_webelements.SelectDealerState).click()  in UAT not working dropdown
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
@@ -100,7 +100,7 @@ class BidderDealerPage
         // Upload each photo to its respective field
         await this.page.locator(this.bidderdealer_webelements.PersonalCheckBankLGranteeDoc).setInputFiles(fileToUpload1.PersonalCheckBankLGranteeDoc);
         await this.page.waitForTimeout(5000)
-        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithFundLetter.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/54.1 DesireBidLimitWithFundLetter.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
 
@@ -140,7 +140,7 @@ class BidderDealerPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.AuthorizationDoc).setInputFiles(fileToUpload2.AuthorizationDoc);
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/BidderDealerDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/56.1 BidderDealerDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
 
     }
@@ -150,7 +150,7 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()
-        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithCreditCardHold.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/67.2 DesireBidLimitWithCreditCardHold.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
     async CCDepositeCardDetails()
@@ -161,11 +161,11 @@ class BidderDealerPage
         await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.applicationinfo_webelements.SelectAddress).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/Entered New Address in Payment Page.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/67.3 Entered New Address in Payment Page.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
         await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
         await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
-        await this.page.screenshot({ path: './ScreenShot/Billing existing address.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/67.4 Billing existing address.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
         await this.page.waitForTimeout(2000)
 
@@ -182,7 +182,7 @@ class BidderDealerPage
 
         // await this.page.locator(this.bidderindividual_webelements.CCAddress_Field).fill(this.testdata.AddressSearch)
         // await this.page.locator(this.titledocument_webelements.SelectAddress).click()
-        await this.page.screenshot({ path: './ScreenShot/PaymentDetailsForCCDeposit.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/67.5 PaymentDetailsForCCDeposit.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.CCNextbtn).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()

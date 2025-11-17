@@ -1,11 +1,11 @@
 import{test} from '@playwright/test'
-import { AddVinPage } from '../Pages/AddVinPage'
-import { AddMediaPage } from '../Pages/AddMediaPage'
-import { TitleDocument_Page } from '../Pages/TitleDocument_Page'
-import { ApplicationInfoPage } from '../Pages/ApplicationInfoPage'
-import { BusinessPage } from '../Pages/BusinessPage'
-import { DealerPage } from '../Pages/DealerPage'
-import { TrustPage } from '../Pages/TrustPage'
+import { AddVinPage } from '../../Pages/AddVinPage'
+import { AddMediaPage } from '../../Pages/AddMediaPage'
+import { TitleDocument_Page } from '../../Pages/TitleDocument_Page'
+import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
+import { BusinessPage } from '../../Pages/BusinessPage'
+import { DealerPage } from '../../Pages/DealerPage'
+import { TrustPage } from '../../Pages/TrustPage'
 
 test('test',async({page}) =>
 {
@@ -17,17 +17,16 @@ test('test',async({page}) =>
     const dealerpage = new DealerPage(page)
     const trustpage = new TrustPage(page)
 
-    //Individual Main
+    //Trust
     await addvinpage.ConsignmentURL()
     await addvinpage.SignIn()
-    //await addvinpage.ConfirmEmail()
     await addvinpage.VehicleDetailsone()
-    await addvinpage.PowerSource()
-    await addvinpage.VehicleDetailstwo()
+    await addvinpage.PowerSourceDiesel()
     await addvinpage.Mileage()
     await addvinpage.VehicleDescp()
+    //await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
-    await titledocument_page.VehicleDocument()
+    await trustpage.TrustVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
     await applicationinfopage.ViewMySubmission()

@@ -129,7 +129,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.waitForTimeout(5000)
-        await this.page.screenshot({ path: './ScreenShot/CreateAccount.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/1 CreateAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click({timeout:90000})
         await this.page.waitForTimeout(2000)
     }
@@ -142,7 +142,7 @@ class AddVinPage
         await page1.locator(this.addVIN_webelements.CheckInbox).click()
         await this.page.waitForTimeout(5000)
         const frame = await page1.frameLocator(this.addVIN_webelements.IframeYopmail)
-        await this.page.screenshot({ path: './ScreenShot/Yopmail.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/2 Yopmail.png', fullPage: true})
         if(!frame) throw new Error('Iframe not found')
         await frame.locator(this.addVIN_webelements.ClickHere).click()
 
@@ -151,16 +151,16 @@ class AddVinPage
                 this.page.context().waitForEvent('page'),
             ]);
             await newPage.waitForLoadState('load');
-            await this.page.screenshot({ path: './ScreenShot/ConfirmationEmail.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/3 ConfirmationEmail.png', fullPage: true})
         await this.page.waitForTimeout(5000)
         await newPage.close();
         await this.page.waitForTimeout(2000)
         await page1.close();
-        await this.page.screenshot({ path: './ScreenShot/PleaseLoginScreen.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/4 PleaseLoginScreen.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.PleaseLogin_Button).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.ForgotPassword).click()
-        await this.page.screenshot({ path: './ScreenShot/ForgotPasswordScreen.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/5 ForgotPasswordScreen.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.ResetEmail).click()
         await page1.goto(this.testdata.Yopmail);
         await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
@@ -171,7 +171,7 @@ class AddVinPage
         await this.page.waitForTimeout(5000)
         await newPage.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
         await newPage.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
-        await this.page.screenshot({ path: './ScreenShot/ResetPassword.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/6 ResetPassword.png', fullPage: true})
         await newPage.locator(this.addVIN_webelements.ResetPassword).click()
         await newPage.close();
         await this.page.waitForTimeout(2000)
@@ -184,7 +184,7 @@ class AddVinPage
        // await this.page.locator(this.addVIN_webelements.SignInbtn).click()
         await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
         await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
-        await this.page.screenshot({ path: './ScreenShot/LoginAccount.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/1.1 LoginAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Loginbutton).click()
         await this.page.waitForTimeout(2000)
     }
@@ -206,14 +206,22 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Vin_Field).click()
         await this.page.locator(this.addVIN_webelements.Vin_Field).fill(VinNumber)
         await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible()
-        await this.page.screenshot({ path: './ScreenShot/VinPage.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/7 VinPage.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
         await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
-        await this.page.locator(this.addVIN_webelements.Year_Field).fill(this.testdata.Year)
-        await this.page.locator(this.addVIN_webelements.Make_Field).fill(this.testdata.Audi)
+
+        const randomYear = this.testdata.vehicleYears[ Math.floor(Math.random() * this.testdata.vehicleYears.length)]
+        await this.page.fill(this.addVIN_webelements.Year_Field, randomYear);
+
+       // await this.page.locator(this.addVIN_webelements.Year_Field).fill(this.testdata.Year)
+
+        const randomVehicle = this.testdata.vehicleMakes[ Math.floor(Math.random() * this.testdata.vehicleMakes.length)]
+        await this.page.fill(this.addVIN_webelements.Make_Field, randomVehicle);
+
+       // await this.page.locator(this.addVIN_webelements.Make_Field).fill(this.testdata.Audi)
         await this.page.locator(this.addVIN_webelements.Select_Make).click()
         await this.page.locator(this.addVIN_webelements.Model_Field).click()
         await this.page.locator(this.addVIN_webelements.Select_Model).click()
@@ -249,7 +257,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleDetailswithHybrid.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/8 VehicleDetailswithHybrid.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
     }
@@ -273,7 +281,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleDetailswithEletric.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/8.1 VehicleDetailswithEletric.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async PowerSourceDiesel()
@@ -286,7 +294,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Cylinder_4Value).click()
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
-        await this.page.screenshot({ path: './ScreenShot/VehicleDetailswithDiesel.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/8.2 VehicleDetailswithDiesel.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
@@ -304,7 +312,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ExteriorColor_Field).fill(this.testdata.Exterior_Color)
         await this.page.locator(this.addVIN_webelements.InteriorColor_Field).fill(this.testdata.Interior_Color)
         await this.page.locator(this.addVIN_webelements.Checkbox).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleDetailswithGasoline.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/8.3 VehicleDetailswithGasoline.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async Mileage()
@@ -316,7 +324,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.OriginalEngine_Field).click()
         await this.page.locator(this.addVIN_webelements.modifiedHorsePower_Field).click()
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/VehicleCondition.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/9 VehicleCondition.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async VehicleDescp ()
@@ -325,7 +333,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.ShortDesc).fill(this.testdata.ShortDescription)
         await this.page.locator(this.addVIN_webelements.LongDesc).fill(this.testdata.LongDescription)
         await this.page.waitForTimeout(5000)
-        await this.page.screenshot({ path: './ScreenShot/VehicleDescription.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/10 VehicleDescription.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
 }

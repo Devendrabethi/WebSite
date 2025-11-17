@@ -1,7 +1,7 @@
 import{test} from '@playwright/test'
-import { AddVinPage } from '../Pages/AddVinPage'
-import { BidderInvidualPage } from '../Pages/BidderInvidualPage'
-import { BidderBusinessPage } from '../Pages/BidderBusinessPage'
+import { AddVinPage } from '../../Pages/AddVinPage'
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
+import { BidderBusinessPage } from '../../Pages/BidderBusinessPage'
 
 test('Creating Bidder Opportunity For Business With Select Package',async({page}) =>
 {
@@ -10,7 +10,7 @@ test('Creating Bidder Opportunity For Business With Select Package',async({page}
     const bidderbusinesspage = new BidderBusinessPage(page)
 
     await bidderbusinesspage.BidderOpportunitySelect()
-    await addvinpage.SignIn()
+    await addvinpage.ExistingAccount()//existing
     await bidderinvidualpage.IndividualDetails()
     await bidderbusinesspage.BusinessRegistration()
     await bidderinvidualpage.AddressDetails()

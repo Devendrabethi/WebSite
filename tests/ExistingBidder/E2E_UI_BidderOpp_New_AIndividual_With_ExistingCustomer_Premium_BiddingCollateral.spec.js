@@ -1,6 +1,6 @@
 import{test} from '@playwright/test'
-import { AddVinPage } from '../Pages/AddVinPage'
-import { BidderInvidualPage } from '../Pages/BidderInvidualPage'
+import { AddVinPage } from '../../Pages/AddVinPage'
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
 
 test('Creating Bidder Opportunity For Individual With Premium Package with DocuSign',async({page}) =>
 {

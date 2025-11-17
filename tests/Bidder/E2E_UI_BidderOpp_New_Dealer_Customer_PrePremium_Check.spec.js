@@ -1,8 +1,8 @@
 import{test} from '@playwright/test'
-import { AddVinPage } from '../Pages/AddVinPage'
-import { BidderInvidualPage } from '../Pages/BidderInvidualPage'
-import { BidderBusinessPage } from '../Pages/BidderBusinessPage'
-import { BidderDealerPage } from '../Pages/BidderDealerPage'
+import { AddVinPage } from '../../Pages/AddVinPage'
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
+import { BidderBusinessPage } from '../../Pages/BidderBusinessPage'
+import { BidderDealerPage } from '../../Pages/BidderDealerPage'
 
 test('Creating Bidder Opportunity For Dealer With Pre-Premium Package',async({page}) =>
 {

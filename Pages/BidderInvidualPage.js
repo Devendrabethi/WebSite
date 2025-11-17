@@ -73,14 +73,14 @@ class BidderInvidualPage
             await this.page.locator(this.addVIN_webelements.Lastname).fill(lastName);
 
             await this.page.locator(this.bidderindividual_webelements.MobileNumber_Field).fill(this.testdata.MobileNum);
-            await this.page.screenshot({ path: './ScreenShot/BidderPersonalDetailsWithDriverLicence.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/50 BidderPersonalDetailsWithDriverLicence.png', fullPage: true})
             await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async IndividualRegistration()
     {
         await this.page.locator(this.bidderindividual_webelements.SelectIndividualBox).click({timeout:60000})
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/BidderIndividualRegistration.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/51 BidderIndividualRegistration.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
     async AddressDetails()
@@ -101,7 +101,7 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/BidderIndividualMailingAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/52 BidderIndividualMailingAddress.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
     async RegularBidderMobiliaAddressDetails()
@@ -109,7 +109,7 @@ class BidderInvidualPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
-        await this.page.screenshot({ path: './ScreenShot/BidderReglarIndividualMailingAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/53 BidderReglarIndividualMailingAddress.png', fullPage: true})
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
@@ -120,7 +120,7 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue,{timeout:4000})
         await this.page.keyboard.press('Tab')
         await this.page.locator(this.bidderindividual_webelements.BiddingCollateralBox).click()
-        await this.page.screenshot({ path: './ScreenShot/DesiredBidLimitWithBiddingCollateral.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/54 DesiredBidLimitWithBiddingCollateral.png', fullPage: true})
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
@@ -136,7 +136,7 @@ class BidderInvidualPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Crop).click()
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/AdditionalDocument.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/55 AdditionalDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async AdditionalDocument()
@@ -158,7 +158,7 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.ChangeMonth).click()
         await this.page.locator(this.bidderindividual_webelements.SelectDecember).click()
         await this.page.locator(this.bidderindividual_webelements.SelectDate).click()
-        await this.page.screenshot({ path: './ScreenShot/AdditionalDocument.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/56 AdditionalDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
     async AddProducts()
@@ -229,7 +229,7 @@ class BidderInvidualPage
             console.error("An error occurred during the clicking process:", error);
         }
 
-        await this.page.screenshot({ path: './ScreenShot/Products.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/58 Products.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
         await this.page.waitForTimeout(2000)
     }
@@ -240,11 +240,11 @@ class BidderInvidualPage
         await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.applicationinfo_webelements.SelectAddress).click({timeout:60000})
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/Entered New Address in Payment Page.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/59 Entered New Address in Payment Page.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
         await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
         await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
-        await this.page.screenshot({ path: './ScreenShot/Billing existing address.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/60 Billing existing address.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
         const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
         await frame.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
@@ -253,7 +253,7 @@ class BidderInvidualPage
         await frame.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.SubmitOpportunity).click({timeout:90000})
-        await this.page.screenshot({ path: './ScreenShot/PaymentDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/61 PaymentDetails.png', fullPage: true})
         await this.page.waitForTimeout(2000)
     }
 
@@ -263,18 +263,18 @@ class BidderInvidualPage
         const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
 
         await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:120000})
-        await this.page.screenshot({ path: './ScreenShot/DocuSign.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/62 DocuSign.png', fullPage: true})
         await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
         await this.page.waitForTimeout(1000)
         await frame2.locator(this.bidderindividual_webelements.personalsignin).click()
-        await this.page.screenshot({ path: './ScreenShot/PersonalDocuSign.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/63 PersonalDocuSign.png', fullPage: true})
         await frame2.locator(this.bidderindividual_webelements.AdoptandSign).click()
         await this.page.waitForTimeout(15000)
         await frame2.locator(this.bidderindividual_webelements.BuyerInitialSecondPage).click()
         await this.page.waitForTimeout(1000)
         await frame2.locator(this.bidderindividual_webelements.BuyerInitialThirdPage).click()
         await this.page.waitForTimeout(1000)
-        await this.page.screenshot({ path: './ScreenShot/DocuSignSubmit.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/64 DocuSignSubmit.png', fullPage: true})
         await frame1.locator(this.bidderindividual_webelements.SubmitApplication).click()
         
     }
@@ -284,11 +284,11 @@ class BidderInvidualPage
         const frame2 = await frame1.frameLocator(this.bidderindividual_webelements.FrameDocuSign2)
 
         await frame2.locator(this.bidderindividual_webelements.checkbox).click({timeout:120000})
-        await this.page.screenshot({ path: './ScreenShot/DocuSign.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/65 DocuSign.png', fullPage: true})
         await frame2.locator(this.bidderindividual_webelements.continuebtn).click()
         await this.page.waitForTimeout(1000)
         await frame2.locator(this.bidderindividual_webelements.Absentee_Personalsignin).click()
-        await this.page.screenshot({ path: './ScreenShot/PersonalDocuSign.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/66 PersonalDocuSign.png', fullPage: true})
         await frame2.locator(this.bidderindividual_webelements.AdoptandSign).click()
         await this.page.waitForTimeout(15000)
         await frame2.locator(this.bidderindividual_webelements.BuyerInitialSecondPage).click()
@@ -297,7 +297,7 @@ class BidderInvidualPage
         await this.page.waitForTimeout(1000)
         await frame2.locator(this.bidderindividual_webelements.Absentee_PrintName).fill(this.testdata.Signature)
         await frame2.locator(this.bidderindividual_webelements.Absentee_SignatureRequired).click()
-        await this.page.screenshot({ path: './ScreenShot/DocuSignSubmit.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/67 DocuSignSubmit.png', fullPage: true})
         await frame1.locator(this.bidderindividual_webelements.SubmitApplication).click()
     }
 
@@ -305,37 +305,37 @@ class BidderInvidualPage
     {
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
         await this.page.waitForTimeout(15000)
-        await this.page.screenshot({ path: './ScreenShot/RegistrationInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/68 RegistrationInfo.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_Registration).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/RegistrationReg.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/69 RegistrationReg.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_Addresses).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/Addresses.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/70 Addresses.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_DocumentsTab).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/RegisterDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/71 RegisterDocuments.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_PaymentMethodTab).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/PaymentWithHowtoPay.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/72 PaymentWithHowtoPay.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_BiddingCollateralReturnAddress).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/BiddingCollateralReturnAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/73 BiddingCollateralReturnAddress.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_AbsenteeBidsTab).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/MyAbsenteeBids.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/74 MyAbsenteeBids.png', fullPage: true})
     }
     async BidderDashboardWithoutDocument()
     {
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
         await this.page.waitForTimeout(15000)
-        await this.page.screenshot({ path: './ScreenShot/RegistrationInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/75 RegistrationInfo.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_Registration).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/RegistrationReg.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/76 RegistrationReg.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_Addresses).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/Addresses.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/77 Addresses.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_DocumentsTab).click()
 
             const fileToUpload = 
@@ -373,16 +373,16 @@ class BidderInvidualPage
         await this.page.waitForTimeout(5000);
         await this.page.reload()
         await this.page.waitForTimeout(20000);
-        await this.page.screenshot({ path: './ScreenShot/DealerWithDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/78 DealerWithDocuments.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_PaymentMethodTab).click()
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/PaymentMethod.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/79 PaymentMethod.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_BiddingCollateralReturnAddress).click()
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/BiddingCollaterralAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/80 BiddingCollaterralAddress.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.Select_AbsenteeBidsTab).click()
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/AbsenteeBidTab.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/81 AbsenteeBidTab.png', fullPage: true})
         
     }
 }

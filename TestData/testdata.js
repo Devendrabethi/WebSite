@@ -13,14 +13,16 @@ class TestData
         this.RegularBidderMobilia = "https://member-hotfixqa.barrett-jackson.com/bid/register?event=847&package=6725" //uat qa 6725
         this.Password = "Pongal1212$1"
         this.ConfirmPassword = "Pongal1212$1"
-        this.Year = "2015"
-        this.Audi = "BMW"
+        this.vehicleYears = ["2014", "2013", "2016", "2017", "2018", "2019"];
+        this.vehicleMakes = ["BMW", "FORD", "MERCEDES-BENZ", "TOYOTA", "AUDI", "DODGE"];
+    //this.Year = "2015"
+    // this.Audi = "BMW"
         this.Trim = "Turbo Premium"
         this.Style = "SUV"
         this.Engine = "L/121"
         this.Exterior_Color = "Black"
         this.Interior_Color = "Gray"
-
+    //Existing Account    
         this.Emailid = "zogrofrannoro-9311@yopmail.com"
         this.LoginPassword = "Baadalsoft@1"
 

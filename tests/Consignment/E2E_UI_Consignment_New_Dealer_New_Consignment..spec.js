@@ -1,9 +1,9 @@
 import{test} from '@playwright/test'
-import { AddVinPage } from '../Pages/AddVinPage'
-import { AddMediaPage } from '../Pages/AddMediaPage'
-import { ApplicationInfoPage } from '../Pages/ApplicationInfoPage'
-import { DealerPage } from '../Pages/DealerPage'
-import { TrustPage } from '../Pages/TrustPage'
+import { AddVinPage } from '../../Pages/AddVinPage'
+import { AddMediaPage } from '../../Pages/AddMediaPage'
+import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
+import { DealerPage } from '../../Pages/DealerPage'
+import { TrustPage } from '../../Pages/TrustPage'
 
 test('Creating Dealer Consignment',async({page}) =>
 {

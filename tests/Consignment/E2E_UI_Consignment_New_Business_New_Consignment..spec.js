@@ -1,9 +1,9 @@
 import{test} from '@playwright/test'
-import { AddVinPage } from '../Pages/AddVinPage'
-import { AddMediaPage } from '../Pages/AddMediaPage'
-import { ApplicationInfoPage } from '../Pages/ApplicationInfoPage'
-import { BusinessPage } from '../Pages/BusinessPage'
-import { TrustPage } from '../Pages/TrustPage'
+import { AddVinPage } from '../../Pages/AddVinPage'
+import { AddMediaPage } from '../../Pages/AddMediaPage'
+import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
+import { BusinessPage } from '../../Pages/BusinessPage'
+import { TrustPage } from '../../Pages/TrustPage'
 
 test('test',async({page}) =>
 {
@@ -15,14 +15,14 @@ test('test',async({page}) =>
 
     //Business
     await addvinpage.ConsignmentURL()
-    await addvinpage.ExistingAccount()//Existing
+    await addvinpage.SignIn()
     await addvinpage.VehicleDetailsone()
     await addvinpage.PowerSourceHyBrid()
     await addvinpage.Mileage()
     await addvinpage.VehicleDescp()
-   // await addmediapage.MainPhotos()
+    //await addmediapage.MainPhotos()
     await addmediapage.AdditionalPhotos()
-    await businesspage.AlreadyBusinessVehicleDocument()
+    await businesspage.BusinessVehicleDocument()
     await applicationinfopage.FinishApplication()
     await applicationinfopage.ReviewApp()
     await applicationinfopage.ViewMySubmission()

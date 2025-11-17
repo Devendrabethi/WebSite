@@ -20,7 +20,7 @@ class BusinessPage
 
     async StartAnotherApp()
     {
-        await this.page.screenshot({ path: './ScreenShot/AfterSubmitPage.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/19.1 AfterSubmitPage.png', fullPage: true})
         await this.page.locator(this.business_webelements.StartAnotherApplication).click()
     }
     async BusinessVehicleDocument()
@@ -125,7 +125,7 @@ class BusinessPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/VehicleDocumentWithBusiness.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/15 VehicleDocumentWithBusiness.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.locator(this.business_webelements.BusinessNumber).fill(this.testdata.BusinessNum)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
@@ -133,7 +133,7 @@ class BusinessPage
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-        await this.page.screenshot({ path: './ScreenShot/BusinessDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/15.1 BusinessDetails.png', fullPage: true})
         const fileToUpload2 = 
         {
             "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif"
@@ -143,7 +143,7 @@ class BusinessPage
         await this.page.locator(this.business_webelements.OperatingAggrement).setInputFiles(fileToUpload2.OperatingAggDoc);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
-        await this.page.screenshot({ path: './ScreenShot/BusinessDetailsWithDocument.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/15.2 BusinessDetailsWithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(8000)
         try 
@@ -154,7 +154,7 @@ class BusinessPage
             
             if (isPersonalNextButton)
            {
-            await this.page.screenshot({ path: './ScreenShot/PersonalDetailsWithBusiness.png', fullPage: true})
+            await this.page.screenshot({ path: './ScreenShot/15.3 PersonalDetailsWithBusiness.png', fullPage: true})
                 await PersonalNextButton.click({timeout:60000});
             } 
             else

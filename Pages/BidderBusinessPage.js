@@ -62,7 +62,7 @@ class BidderBusinessPage
         await this.page.locator(this.bidderbusiness_webelements.RelationshipBusiness).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderbusiness_webelements.SelectOwner).click()
-        await this.page.screenshot({ path: './ScreenShot/BusinessDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/50.2 BusinessDetails.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }
     async DesiredBidLimit()
@@ -73,12 +73,12 @@ class BidderBusinessPage
         await this.page.keyboard.press('Tab')
         await this.page.locator(this.bidderbusiness_webelements.FinancingBox).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithFinancing.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/54.2 DesireBidLimitWithFinancing.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderbusiness_webelements.SelectRadiobtn).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/DesireBidLimitWithFinancingOption.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/54.3 DesireBidLimitWithFinancingOption.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.SubmitFinancing).click()
     }
     async BusinessDocument()
@@ -91,7 +91,7 @@ class BidderBusinessPage
         // Upload each photo to its respective field
         await this.page.locator(this.bidderbusiness_webelements.BusinessDoc).setInputFiles(fileToUpload2.businessL);
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/BusinessDocument.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/56.2 BusinessDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
 
     }

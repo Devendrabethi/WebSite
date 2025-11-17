@@ -34,7 +34,7 @@ class TitleDocument_Page
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload.Backtitle);
         await this.page.waitForTimeout(5000);
-        await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/12 VehicleDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName)
@@ -45,7 +45,7 @@ class TitleDocument_Page
         await this.page.waitForTimeout(500)
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.waitForTimeout(3000)
-        await this.page.screenshot({ path: './ScreenShot/PersonalAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/13 PersonalAddress.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
     }
      async ExistingVehicleDocument()
@@ -67,7 +67,7 @@ class TitleDocument_Page
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload.Backtitle);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/12.1 VehicleDocuments.png', fullPage: true})
         await this.page.waitForTimeout(6000)
 
         try 
@@ -79,7 +79,7 @@ class TitleDocument_Page
             if (isPersonalNextButton)
            {
                 await PersonalNextButton.click({timeout:60000});
-                await this.page.screenshot({ path: './ScreenShot/PersonalDetailswithAddress.png', fullPage: true})
+                await this.page.screenshot({ path: './ScreenShot/12.3 PersonalDetailswithAddress.png', fullPage: true})
             } 
             else
             {

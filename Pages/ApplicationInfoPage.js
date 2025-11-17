@@ -21,11 +21,11 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.Reserve).click()
         await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()
         await this.page.waitForTimeout(5000)
-        await this.page.screenshot({ path: './ScreenShot/ConsignmentSpecialist.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/16 ConsignmentSpecialist.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Select_ConsignmentSpecialist).click()
         await this.page.locator(this.applicationinfo_webelements.AnothweAuction).click()
         await this.page.locator(this.applicationinfo_webelements.SelectYes).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleWorth.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/17 VehicleWorth.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async ReviewApp()
@@ -34,37 +34,37 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.SignatureName).fill(this.testdata.Signature)
         await this.page.locator(this.applicationinfo_webelements.Calendar).click()
         await this.page.locator(this.applicationinfo_webelements.CurrentDate).click()
-        await this.page.screenshot({ path: './ScreenShot/ConsignmentReview.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/18 ConsignmentReview.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.SubmitApplicaion).click()
     }
         async ViewMySubmission()
     {
         await this.page.locator(this.applicationinfo_webelements.ViewSubmission).click({timeout:90000})
-        await this.page.screenshot({ path: './ScreenShot/ViewSubmission.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/19 ViewSubmission.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
         await this.page.waitForTimeout(5000);
-        await this.page.screenshot({ path: './ScreenShot/ConsignmentDashboard.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/20 ConsignmentDashboard.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.RemovePastEvent).click()
         await this.page.waitForTimeout(5000);
         await this.page.locator(this.applicationinfo_webelements.FormLibrary).click()
         await this.page.waitForTimeout(5000);
-        await this.page.screenshot({ path: './ScreenShot/FormLibrary.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/21 FormLibrary.png', fullPage: true})
     }
     async ConsignmentDashboardwithDocument()
     {
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
         await this.page.locator(this.applicationinfo_webelements.RemovePastEvent).click()
         await this.page.locator(this.applicationinfo_webelements.SelectFirstVehicle).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleInformation.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/22 VehicleInformation.png', fullPage: true})
         await this.page.waitForTimeout(10000)
         await this.page.locator(this.applicationinfo_webelements.Modifield_Horsepower_Text).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/23 VehicleDetails.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.ShortDescription).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/VehicleShortDescription.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/24 VehicleShortDescription.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.LongDescription).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/VehicleShortDescription.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/25 VehicleShortDescription.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.MediaTab).click()
         await this.page.locator(this.applicationinfo_webelements.UploadMedia_Button).click()
          const fileToUpload = 
@@ -84,37 +84,37 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(25000);
         await this.page.locator(this.applicationinfo_webelements.DocumentTab).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/DocumentInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/26 DocumentInfo.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
         await this.page.waitForTimeout(3000);
         await this.page.reload()
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
         await this.page.waitForTimeout(15000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentIndividualWithDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/27 DocumentIndividualWithDocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
         await this.page.waitForTimeout(3000);
         // await this.page.reload()
         // await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
         // await this.page.waitForTimeout(15000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentBusinessInfoWithDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/28 DocumentBusinessInfoWithDocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.ApplicantInfoTab).click()
         await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/ApplicantInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/29 ApplicantInfo.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Applicant_Address).click()
         await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/ApplicantInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/30 ApplicantInfo.png', fullPage: true})
 
          await this.page.locator(this.applicationinfo_webelements.MyAccount_Button).click()
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.ViewAccount).click()
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.EditAccount).click()
-        await this.page.screenshot({ path: './ScreenShot/ViewAccount.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/31 ViewAccount.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Close_ViewAccount).click()
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.Document).click()
         await this.page.waitForTimeout(2000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentWithoutdocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/32 DocumentWithoutdocuments.png', fullPage: true})
            const fileToUpload1 = 
         {
             "Passport_Document" :       "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
@@ -143,13 +143,13 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.AdditionalBankLetter_Document)
         await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
         await this.page.waitForTimeout(5000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentPersonalWithdocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/33 DocumentPersonalWithdocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Business_Document).click()
         await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentBusinessDocument.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/34 DocumentBusinessDocument.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Addresses).click()
         await this.page.waitForTimeout(6000);
-        await this.page.screenshot({ path: './ScreenShot/MalilingAddress.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/35 MalilingAddress.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.AddNew_Address).click()
         await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.applicationinfo_webelements.SelectAddress).click()
@@ -165,7 +165,7 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.SaveChanges).click()
         await this.page.waitForTimeout(12000);
-        await this.page.screenshot({ path: './ScreenShot/MalilingAddresswithall.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/36 MalilingAddresswithall.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Close_ViewAccount).click()
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
         await this.page.waitForTimeout(5000);
@@ -176,16 +176,16 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.Consignmentbutton).click()
         await this.page.locator(this.applicationinfo_webelements.RemovePastEvent).click()
         await this.page.locator(this.applicationinfo_webelements.SelectFirstVehicle).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleInformation.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/37 VehicleInformation.png', fullPage: true})
         await this.page.waitForTimeout(10000)
         await this.page.locator(this.applicationinfo_webelements.Modifield_Horsepower_Text).click()
-        await this.page.screenshot({ path: './ScreenShot/VehicleDetails.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/38 VehicleDetails.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.ShortDescription).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/VehicleShortDescription.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/39 VehicleShortDescription.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.LongDescription).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/VehicleShortDescription.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/40 VehicleShortDescription.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.MediaTab).click()
         await this.page.locator(this.applicationinfo_webelements.UploadMedia_Button).click()
          const fileToUpload = 
@@ -205,7 +205,7 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(25000);
         await this.page.locator(this.applicationinfo_webelements.DocumentTab).click()
         await this.page.waitForTimeout(2000)
-        await this.page.screenshot({ path: './ScreenShot/DocumentInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/41 DocumentInfo.png', fullPage: true})
         const fileToUpload1 = 
         {
             "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
@@ -213,7 +213,7 @@ class ApplicationInfoPage
             "trustDoc":         "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
         }
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
-        await this.page.screenshot({ path: './ScreenShot/DocumentIndividual.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/42 DocumentIndividual.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.FirstDocument).click()
         await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.fronttitle)
         await this.page.waitForTimeout(2000);
@@ -232,9 +232,9 @@ class ApplicationInfoPage
         await this.page.reload()
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
         await this.page.waitForTimeout(15000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentIndividualWithDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/43 DocumentIndividualWithDocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
-        await this.page.screenshot({ path: './ScreenShot/DocumentBusiness.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/44 DocumentBusiness.png', fullPage: true})
          await this.page.locator(this.applicationinfo_webelements.FirstDocument).click()
         await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.fronttitle)
         await this.page.waitForTimeout(2000);
@@ -253,12 +253,12 @@ class ApplicationInfoPage
         await this.page.reload()
         await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
         await this.page.waitForTimeout(15000);
-        await this.page.screenshot({ path: './ScreenShot/DocumentBusinessInfoWithDocuments.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/45 DocumentBusinessInfoWithDocuments.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.ApplicantInfoTab).click()
         await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/ApplicantInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/46 ApplicantInfo.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.Applicant_Address).click()
         await this.page.waitForTimeout(3000);
-        await this.page.screenshot({ path: './ScreenShot/ApplicantInfo.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/47 ApplicantInfo.png', fullPage: true})
     }
 }
