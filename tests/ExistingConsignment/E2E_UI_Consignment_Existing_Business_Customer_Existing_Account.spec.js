@@ -4,7 +4,7 @@ import { AddMediaPage } from '../../Pages/AddMediaPage'
 import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
 import { BusinessPage } from '../../Pages/BusinessPage'
 
-test('Business Consignment Flow', async ({ page }) => {
+test('Existing account and creating Business Consignment flow', async ({ page }) => {
 
   const addvinpage = new AddVinPage(page);
   const addmediapage = new AddMediaPage(page);
@@ -15,48 +15,42 @@ test('Business Consignment Flow', async ({ page }) => {
     await addvinpage.ConsignmentURL();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
-    await addvinpage.SignIn();
+  await test.step("2. Sign In with Existing Account", async () => {
+    await addvinpage.ExistingAccount();
   });
 
-  await test.step("3. Enter Vehicle Details (Part 1)", async () => {
+  await test.step("3. Fill Vehicle Details - Part 1", async () => {
     await addvinpage.VehicleDetailsone();
-  });
-
-  await test.step("4. Select Power Source (Hybrid)", async () => {
     await addvinpage.PowerSourceHyBrid();
   });
 
-  await test.step("5. Enter Mileage", async () => {
+  await test.step("4. Fill Vehicle Details - Part 2", async () => {
     await addvinpage.Mileage();
-  });
-
-  await test.step("6. Enter Vehicle Description", async () => {
     await addvinpage.VehicleDescp();
   });
 
-  await test.step("7. Upload Additional Photos", async () => {
-    // await addmediapage.MainPhotos();
+  await test.step("5. Upload Additional Photos", async () => {
+    // await addmediapage.MainPhotos(); // optional
     await addmediapage.AdditionalPhotos();
   });
 
-  await test.step("8. Creating BUsiness account and Upload Business Vehicle Documents", async () => {
-    await businesspage.BusinessVehicleDocument();
+  await test.step("6. Creating Bsiness account and Upload Existing Business Vehicle Documents", async () => {
+    await businesspage.AlreadyBusinessVehicleDocument();
   });
 
-  await test.step("9. Finish Application", async () => {
+  await test.step("7. Finish Application", async () => {
     await applicationinfopage.FinishApplication();
   });
 
-  await test.step("10. Review Application", async () => {
+  await test.step("8. Review Application", async () => {
     await applicationinfopage.ReviewApp();
   });
 
-  await test.step("11. View Submission", async () => {
+  await test.step("9. View My Submission", async () => {
     await applicationinfopage.ViewMySubmission();
   });
 
-  await test.step("12. Open Consignment Dashboard (With Documents)", async () => {
+  await test.step("10. Verify Consignment Dashboard with Document", async () => {
     await applicationinfopage.ConsignmentDashboardwithDocument();
   });
 

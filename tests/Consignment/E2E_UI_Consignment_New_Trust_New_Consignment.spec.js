@@ -1,34 +1,63 @@
 import{test} from '@playwright/test'
 import { AddVinPage } from '../../Pages/AddVinPage'
 import { AddMediaPage } from '../../Pages/AddMediaPage'
-import { TitleDocument_Page } from '../../Pages/TitleDocument_Page'
 import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
-import { BusinessPage } from '../../Pages/BusinessPage'
-import { DealerPage } from '../../Pages/DealerPage'
 import { TrustPage } from '../../Pages/TrustPage'
 
-test('test',async({page}) =>
-{
-    const addvinpage = new AddVinPage(page)
-    const addmediapage = new AddMediaPage(page)
-    const titledocument_page = new TitleDocument_Page(page)
-    const applicationinfopage = new ApplicationInfoPage(page)
-    const businesspage = new BusinessPage(page)
-    const dealerpage = new DealerPage(page)
-    const trustpage = new TrustPage(page)
+test('Trust Consignment Flow', async ({ page }) => {
 
-    //Trust
-    await addvinpage.ConsignmentURL()
-    await addvinpage.SignIn()
-    await addvinpage.VehicleDetailsone()
-    await addvinpage.PowerSourceDiesel()
-    await addvinpage.Mileage()
-    await addvinpage.VehicleDescp()
-    //await addmediapage.MainPhotos()
-    await addmediapage.AdditionalPhotos()
-    await trustpage.TrustVehicleDocument()
-    await applicationinfopage.FinishApplication()
-    await applicationinfopage.ReviewApp()
-    await applicationinfopage.ViewMySubmission()
-    await applicationinfopage.ConsignmentDashboardwithDocument()
-})
+  const addvinpage = new AddVinPage(page);
+  const addmediapage = new AddMediaPage(page);
+  const applicationinfopage = new ApplicationInfoPage(page);
+  const trustpage = new TrustPage(page);
+
+  await test.step("1. Open Consignment URL", async () => {
+    await addvinpage.ConsignmentURL();
+  });
+
+  await test.step("2. Sign In and creating new account", async () => {
+    await addvinpage.SignIn();
+  });
+
+  await test.step("3. Enter Vehicle Details (Part 1)", async () => {
+    await addvinpage.VehicleDetailsone();
+  });
+
+  await test.step("4. Select Power Source (Diesel)", async () => {
+    await addvinpage.PowerSourceDiesel();
+  });
+
+  await test.step("5. Enter Mileage", async () => {
+    await addvinpage.Mileage();
+  });
+
+  await test.step("6. Enter Vehicle Description", async () => {
+    await addvinpage.VehicleDescp();
+  });
+
+  await test.step("7. Upload Additional Photos", async () => {
+    // await addmediapage.MainPhotos();
+    await addmediapage.AdditionalPhotos();
+  });
+
+  await test.step("8. Creating Trust account and Upload Trust Vehicle Documents", async () => {
+    await trustpage.TrustVehicleDocument();
+  });
+
+  await test.step("9. Finish Application", async () => {
+    await applicationinfopage.FinishApplication();
+  });
+
+  await test.step("10. Review Application", async () => {
+    await applicationinfopage.ReviewApp();
+  });
+
+  await test.step("11. View Submission", async () => {
+    await applicationinfopage.ViewMySubmission();
+  });
+
+  await test.step("12. Open Consignment Dashboard (With Documents)", async () => {
+    await applicationinfopage.ConsignmentDashboardwithDocument();
+  });
+
+});

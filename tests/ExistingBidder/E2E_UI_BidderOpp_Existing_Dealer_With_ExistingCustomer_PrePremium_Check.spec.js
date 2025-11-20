@@ -1,23 +1,24 @@
 import{test} from '@playwright/test'
 import { AddVinPage } from '../../Pages/AddVinPage'
 import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
+import { BidderBusinessPage } from '../../Pages/BidderBusinessPage'
 import { BidderDealerPage } from '../../Pages/BidderDealerPage'
 
-test('Creating Bidder Opportunity For Dealer With Pre-Premium Package', async ({ page }) => {
+test('Existing account and Creating Bidder Opportunity For Dealer With Pre-Premium Package', async ({ page }) => {
 
   const addvinpage = new AddVinPage(page);
   const bidderinvidualpage = new BidderInvidualPage(page);
   const bidderdealerpage = new BidderDealerPage(page);
 
-  await test.step("1. Start Dealer Pre-Premium Opportunity", async () => {
+  await test.step("1. Start Dealer Pre-Premium Opportunity Flow", async () => {
     await bidderdealerpage.BidderOpportunityPre_premium();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
-    await addvinpage.SignIn();
+  await test.step("2. Sign In with Existing Account", async () => {
+    await addvinpage.ExistingAccount(); // existing account
   });
 
-  await test.step("3. Enter Individual Details", async () => {
+  await test.step("3. Fill Individual Details", async () => {
     await bidderinvidualpage.IndividualDetails();
   });
 
@@ -33,11 +34,11 @@ test('Creating Bidder Opportunity For Dealer With Pre-Premium Package', async ({
     await bidderdealerpage.DesiredBidLimit();
   });
 
-  await test.step("7. Upload Additional Documents (Individual)", async () => {
+  await test.step("7. Upload Additional Documents", async () => {
     await bidderinvidualpage.AdditionalDocument();
   });
 
-  await test.step("8. Upload Dealer Documents", async () => {
+  await test.step("8. Creating Dealer account and Upload Dealer Documents", async () => {
     await bidderdealerpage.DealerDocument();
   });
 
@@ -49,11 +50,11 @@ test('Creating Bidder Opportunity For Dealer With Pre-Premium Package', async ({
     await bidderinvidualpage.CardDetails();
   });
 
-  await test.step("11. Complete DocuSign (Personal)", async () => {
+  await test.step("11. Complete Personal DocuSign", async () => {
     await bidderinvidualpage.PersonalDocuSign();
   });
 
-  await test.step("12. View Created Bidder Opportunity", async () => {
+  await test.step("12. View Bidder Opportunity", async () => {
     await bidderinvidualpage.ViewBidderOpportunity();
   });
 

@@ -3,21 +3,21 @@ import { AddVinPage } from '../../Pages/AddVinPage'
 import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
 import { BidderBusinessPage } from '../../Pages/BidderBusinessPage'
 
-test('Creating Bidder Opportunity For Business With Select Package', async ({ page }) => {
+test('Existing account and Creating Bidder Opportunity For Business With Select Package', async ({ page }) => {
 
   const addvinpage = new AddVinPage(page);
   const bidderinvidualpage = new BidderInvidualPage(page);
   const bidderbusinesspage = new BidderBusinessPage(page);
 
-  await test.step("1. Start Business with Select Package Opportunity", async () => {
+  await test.step("1. Start Business Select Opportunity Flow", async () => {
     await bidderbusinesspage.BidderOpportunitySelect();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
-    await addvinpage.SignIn();
+  await test.step("2. Sign In with Existing Account", async () => {
+    await addvinpage.ExistingAccount(); // existing account
   });
 
-  await test.step("3. Enter Individual Details", async () => {
+  await test.step("3. Fill Individual Details", async () => {
     await bidderinvidualpage.IndividualDetails();
   });
 
@@ -33,11 +33,11 @@ test('Creating Bidder Opportunity For Business With Select Package', async ({ pa
     await bidderbusinesspage.DesiredBidLimit();
   });
 
-  await test.step("7. Upload Additional Documents (Individual)", async () => {
+  await test.step("7. Upload Additional Documents", async () => {
     await bidderinvidualpage.AdditionalDocument();
   });
 
-  await test.step("8. Upload Business Documents", async () => {
+  await test.step("8. Creating business account and Upload Business Documents", async () => {
     await bidderbusinesspage.BusinessDocument();
   });
 
@@ -49,11 +49,11 @@ test('Creating Bidder Opportunity For Business With Select Package', async ({ pa
     await bidderinvidualpage.CardDetails();
   });
 
-  await test.step("11. Complete DocuSign Process", async () => {
+  await test.step("11. Complete Personal DocuSign", async () => {
     await bidderinvidualpage.PersonalDocuSign();
   });
 
-  await test.step("12. View Created Bidder Opportunity", async () => {
+  await test.step("12. View Bidder Opportunity", async () => {
     await bidderinvidualpage.ViewBidderOpportunity();
   });
 

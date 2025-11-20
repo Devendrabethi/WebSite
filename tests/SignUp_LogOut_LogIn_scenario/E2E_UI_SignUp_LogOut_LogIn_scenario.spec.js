@@ -1,18 +1,24 @@
 import{test} from '@playwright/test'
 import { AddVinPage } from '../../Pages/AddVinPage'
-import { AddMediaPage } from '../../Pages/AddMediaPage'
-import { TitleDocument_Page } from '../../Pages/TitleDocument_Page'
-import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
-import { BusinessPage } from '../../Pages/BusinessPage'
-import { DealerPage } from '../../Pages/DealerPage'
-import { TrustPage } from '../../Pages/TrustPage'
 
-test('test',async({page}) =>
-{
-    const addvinpage = new AddVinPage(page)
+test('CReating new account sign in and confirm email and Forgot password', async ({ page }) => {
+  const addvinpage = new AddVinPage(page);
 
-    //Individual Main
-    await addvinpage.ConsignmentURL()
-    await addvinpage.SignIn()
-    await addvinpage.ConfirmEmail()
-})
+  await test.step("1. Open Consignment URL", async () => {
+    await addvinpage.ConsignmentURL();
+  });
+
+  await test.step("2. Sign In and creating new account", async () => {
+    await addvinpage.SignIn();
+  });
+
+  await test.step("3. Confirm Email", async () => {
+    await addvinpage.ConfirmEmail();
+  });
+    await test.step("4. Forgot password and Reset the password and Sign In", async () => {
+    await addvinpage.Forgotpassword();
+  });
+    await test.step("4. Logout", async () => {
+    await addvinpage.LogOut();
+  });
+});

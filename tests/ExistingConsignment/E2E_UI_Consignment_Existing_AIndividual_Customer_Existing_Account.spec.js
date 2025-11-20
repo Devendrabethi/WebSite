@@ -4,7 +4,7 @@ import { AddMediaPage } from '../../Pages/AddMediaPage'
 import { TitleDocument_Page } from '../../Pages/TitleDocument_Page'
 import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
 
-test('Consignment Individual Flow', async ({ page }) => {
+test('Existing account and creating Consignment with Individual Flow', async ({ page }) => {
 
   const addvinpage = new AddVinPage(page);
   const addmediapage = new AddMediaPage(page);
@@ -15,59 +15,43 @@ test('Consignment Individual Flow', async ({ page }) => {
     await addvinpage.ConsignmentURL();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
-    await addvinpage.SignIn();
+  await test.step("2. Sign In with Existing Account", async () => {
+    await addvinpage.ExistingAccount(); // existing account
   });
 
-  // await test.step("Confirm Email", async () => {
-  //   await addvinpage.ConfirmEmail();
-  // });
-
-  //  await test.step("Login", async () => {
-  //   await addvinpage.LoginIn();
-  // });
-
-  await test.step("3. Enter Vehicle Details Part 1", async () => {
+  await test.step("3. Fill Vehicle Details - Part 1", async () => {
     await addvinpage.VehicleDetailsone();
-  });
-
-  await test.step("4. Select Power Source", async () => {
     await addvinpage.PowerSource();
   });
 
-  await test.step("5. Enter Vehicle Details Part 2", async () => {
+  await test.step("4. Fill Vehicle Details - Part 2", async () => {
     await addvinpage.VehicleDetailstwo();
-  });
-
-  await test.step("6. Enter Mileage", async () => {
     await addvinpage.Mileage();
-  });
-
-  await test.step("7. Enter Vehicle Description", async () => {
     await addvinpage.VehicleDescp();
   });
 
-  await test.step("8. Upload Additional Photos", async () => {
+  await test.step("5. Upload Additional Photos", async () => {
+    // await addmediapage.MainPhotos(); // optional
     await addmediapage.AdditionalPhotos();
   });
 
-  await test.step("9. Upload Vehicle Documents", async () => {
-    await titledocument_page.VehicleDocument();
+  await test.step("6. Upload Existing Vehicle Documents", async () => {
+    await titledocument_page.ExistingVehicleDocument();
   });
 
-  await test.step("10. Finish Application", async () => {
+  await test.step("7. Finish Application", async () => {
     await applicationinfopage.FinishApplication();
   });
 
-  await test.step("11. Review Application", async () => {
+  await test.step("8. Review Application", async () => {
     await applicationinfopage.ReviewApp();
   });
 
-  await test.step("12. View Submission", async () => {
+  await test.step("9. View My Submission", async () => {
     await applicationinfopage.ViewMySubmission();
   });
 
-  await test.step("13. Open Consignment Dashboard (With Documents)", async () => {
+  await test.step("10. Verify Consignment Dashboard with Document", async () => {
     await applicationinfopage.ConsignmentDashboardwithDocument();
   });
 

@@ -131,7 +131,7 @@ class AddVinPage
         await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/1 CreateAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.CreateAccountbtn).click({timeout:90000})
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(10000)
     }
     async ConfirmEmail()
     {
@@ -140,7 +140,6 @@ class AddVinPage
         await page1.goto(this.testdata.Yopmail);
         await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
         await page1.locator(this.addVIN_webelements.CheckInbox).click()
-        await this.page.waitForTimeout(5000)
         const frame = await page1.frameLocator(this.addVIN_webelements.IframeYopmail)
         await this.page.screenshot({ path: './ScreenShot/2 Yopmail.png', fullPage: true})
         if(!frame) throw new Error('Iframe not found')
@@ -150,34 +149,78 @@ class AddVinPage
              ([
                 this.page.context().waitForEvent('page'),
             ]);
-            await newPage.waitForLoadState('load');
-            await this.page.screenshot({ path: './ScreenShot/3 ConfirmationEmail.png', fullPage: true})
-        await this.page.waitForTimeout(5000)
+        await newPage.waitForLoadState('load');
+        
+        await this.page.waitForTimeout(8000)
         await newPage.close();
         await this.page.waitForTimeout(2000)
         await page1.close();
-        await this.page.screenshot({ path: './ScreenShot/4 PleaseLoginScreen.png', fullPage: true})
+        //await this.page.bringToFront();
+    }
+    async LoginIn ()
+    {
+        await this.page.waitForTimeout(2000)
+        //await this.page.setViewportSize({ width: 1920, height: 1080 });
+        await this.page.screenshot({ path: './ScreenShot/3 PleaseLoginScreen.png', fullPage: true})
+        await this.page.locator(this.addVIN_webelements.PleaseLogin_Button).click()
+        await this.page.waitForTimeout(2000)
+         await this.page.locator(this.addVIN_webelements.Loginbutton).click()
+        await this.page.waitForTimeout(5000)
+    }
+    async Forgotpassword()
+    {
+        await this.page.waitForTimeout(2000)
+        //await this.page.setViewportSize({ width: 1920, height: 1080 });
+        await this.page.screenshot({ path: './ScreenShot/3 PleaseLoginScreen.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.PleaseLogin_Button).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.ForgotPassword).click()
-        await this.page.screenshot({ path: './ScreenShot/5 ForgotPasswordScreen.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/4 ForgotPasswordScreen.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.ResetEmail).click()
+        await this.page.waitForTimeout(8000)
+        //await page1.bringToFront();
+        const context = this.page.context();
+        const page1 = await context.newPage();
         await page1.goto(this.testdata.Yopmail);
+        await page1.locator(this.addVIN_webelements.EnterEmail).clear()
         await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
         await page1.locator(this.addVIN_webelements.CheckInbox).click()
+        const frame = await page1.frameLocator(this.addVIN_webelements.IframeYopmail)
+        if(!frame) throw new Error('Iframe not found')
+        //await frame.locator(this.addVIN_webelements.ClickHere).click()
         await this.page.waitForTimeout(5000)
-        await frame.locator(this.addVIN_webelements.ClickHere).click()
+         const [newPage] = await Promise.all
+             ([
+                this.page.context().waitForEvent('page'),
+                 await frame.locator(this.addVIN_webelements.ClickHere).click()
+            ]);
+        await newPage.waitForLoadState('load');
         await newPage.locator(this.addVIN_webelements.MemberEnterEmail).fill(this.emailid,{timeout:90000})
         await this.page.waitForTimeout(5000)
         await newPage.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
         await newPage.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
-        await this.page.screenshot({ path: './ScreenShot/6 ResetPassword.png', fullPage: true})
         await newPage.locator(this.addVIN_webelements.ResetPassword).click()
+        await this.page.waitForTimeout(10000)
         await newPage.close();
         await this.page.waitForTimeout(2000)
         await page1.close();
         await this.page.waitForTimeout(2000)
+        await this.page.setViewportSize({ width: 1920, height: 1080 });
+        //await this.page.bringToFront();
         await this.page.locator(this.addVIN_webelements.Loginbutton).click()
+        await this.page.waitForTimeout(8000)
+        await this.page.screenshot({ path: './ScreenShot/5 Logged In.png', fullPage: true})
+        await this.page.waitForTimeout(1000)
+    }
+    async LogOut ()
+    {
+        await this.page.locator(this.addVIN_webelements.Logout).click()
+        await this.page.waitForTimeout(5000)
+        await this.page.screenshot({ path: './ScreenShot/5.1 Logout Screen.png', fullPage: true})
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.addVIN_webelements.LogoutButton).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.screenshot({ path: './ScreenShot/5.2 Home Screen Screen.png', fullPage: true})
     }
     async ExistingAccount()
     {

@@ -182,52 +182,53 @@ class BidderInvidualPage
             console.error("No Products", error);
             // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
         }
-        try
-        {
-            await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
-            await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
-        }
-        catch (error) 
-        {
-            console.error("No Products", error);
-            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
-        }
-        try 
-        {
-            // Check if the fourth product exists and is visible
-            const fourthProductLocator = this.page.locator(this.bidderindividual_webelements.FourthProduct);
-            const isFourthProductVisible = await fourthProductLocator.isVisible();
+        // try
+        // {
+        //     await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
+        //     await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
+        // }
+        // catch (error) 
+        // {
+        //     console.error("No Products", error);
+        //     // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
+        // }
+        // try 
+        // {
+        //     // Check if the fourth product exists and is visible
+        //     const fourthProductLocator = this.page.locator(this.bidderindividual_webelements.FourthProduct);
+        //     const isFourthProductVisible = await fourthProductLocator.isVisible();
             
-            if (isFourthProductVisible)
-           {
-                await fourthProductLocator.click();
-                await fourthProductLocator.click();
-            } 
-            else
-            {
-                console.log("The fourth product is not visible, skipping click.");
-            }
-        } catch (error) {
-            console.error("An error occurred during the clicking process:", error);
-        }
-        try 
-        {
-            // Check if the fivth product exists and is visible
-            const FivethProductLocator = this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity);
-            const isFivethProductVisible = await FivethProductLocator.isVisible();
+        //     if (isFourthProductVisible)
+        //    {
+        //         await fourthProductLocator.click();
+        //         await fourthProductLocator.click();
+        //     } 
+        //     else
+        //     {
+        //         console.log("The fourth product is not visible, skipping click.");
+        //     }
+        // } catch (error) {
+        //     console.error("An error occurred during the clicking process:", error);
+        // }
+        // try 
+        // {
+        //     // Check if the fivth product exists and is visible
+        //     const FivethProductLocator = this.page.locator(this.bidderindividual_webelements.MuscleLoungeQuantity);
+        //     const isFivethProductVisible = await FivethProductLocator.isVisible();
             
-            if (isFivethProductVisible)
-           {
-                await FivethProductLocator.click();
-                await FivethProductLocator.click();
-            } 
-            else
-            {
-                console.log("The fivth product is not visible, skipping click.");
-            }
-        } catch (error) {
-            console.error("An error occurred during the clicking process:", error);
-        }
+        //     if (isFivethProductVisible)
+        //    {
+        //         await FivethProductLocator.click();
+        //         await FivethProductLocator.click();
+        //     } 
+        //     else
+        //     {
+        //         console.log("The fivth product is not visible, skipping click.");
+        //     }
+        // } 
+        // catch (error) {
+        //     console.error("An error occurred during the clicking process:", error);
+        // }
 
         await this.page.screenshot({ path: './ScreenShot/58 Products.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
