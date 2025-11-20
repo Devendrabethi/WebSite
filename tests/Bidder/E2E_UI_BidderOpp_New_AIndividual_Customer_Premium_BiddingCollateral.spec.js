@@ -17,6 +17,14 @@ test(
       await addvinpage.SignIn();
     });
 
+    // await test.step("Confirm Email", async () => {
+    //   await addvinpage.ConfirmEmail();
+    // });
+
+    //  await test.step("Login", async () => {
+    //   await addvinpage.LoginIn();
+    // });
+
     await test.step("3. Fill Individual Details", async () => {
       await bidderinvidualpage.IndividualDetails();
     });

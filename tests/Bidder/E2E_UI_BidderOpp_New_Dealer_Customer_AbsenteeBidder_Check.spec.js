@@ -17,6 +17,14 @@ test('Creating Bidder Opportunity For Dealer With Absentee Package', async ({ pa
     await addvinpage.SignIn();
   });
 
+    // await test.step("Confirm Email", async () => {
+    //   await addvinpage.ConfirmEmail();
+    // });
+
+    //  await test.step("Login", async () => {
+    //   await addvinpage.LoginIn();
+    // });
+
   await test.step("3. Confirm Absentee Package Selection", async () => {
     await bidderdealerpage.BidderOpportunityAbsenteeyes();
   });
