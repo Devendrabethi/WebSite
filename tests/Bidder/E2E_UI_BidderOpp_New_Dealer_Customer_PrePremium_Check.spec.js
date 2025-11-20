@@ -13,7 +13,7 @@ test('Creating Bidder Opportunity For Dealer With Pre-Premium Package', async ({
     await bidderdealerpage.BidderOpportunityPre_premium();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
+  await test.step("2. Creating new account", async () => {
     await addvinpage.SignIn();
   });
 

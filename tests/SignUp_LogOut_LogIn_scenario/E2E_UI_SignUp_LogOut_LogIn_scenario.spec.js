@@ -8,7 +8,7 @@ test('CReating new account sign in and confirm email and Forgot password', async
     await addvinpage.ConsignmentURL();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
+  await test.step("2. Creating new account", async () => {
     await addvinpage.SignIn();
   });
 

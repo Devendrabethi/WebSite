@@ -11,7 +11,7 @@ test('Creating Bidder Opportunity For Individual With Regular Bidder Mobilia Pac
     await bidderinvidualpage.BidderOpportunityRegularBidderMobilia();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
+  await test.step("2. Creating new account", async () => {
     await addvinpage.SignIn();
   });
 

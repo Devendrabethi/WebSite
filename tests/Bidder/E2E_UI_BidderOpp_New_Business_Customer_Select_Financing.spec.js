@@ -13,7 +13,7 @@ test('Creating Bidder Opportunity For Business With Select Package', async ({ pa
     await bidderbusinesspage.BidderOpportunitySelect();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
+  await test.step("2. Creating new account", async () => {
     await addvinpage.SignIn();
   });
 

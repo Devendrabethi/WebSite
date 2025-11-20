@@ -13,7 +13,7 @@ test(
       await bidderinvidualpage.BidderOpportunityPremium();
     });
 
-    await test.step("2. Sign In and creating new account", async () => {
+    await test.step("2. Creating new account", async () => {
       await addvinpage.SignIn();
     });
 

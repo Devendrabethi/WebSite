@@ -16,9 +16,17 @@ test('Creating Dealer Consignment without documents on flow and uploading docume
     await addvinpage.ConsignmentURL();
   });
 
-  await test.step("2. Sign In and creating new account", async () => {
+  await test.step("2. Creating new account", async () => {
     await addvinpage.SignIn();
   });
+
+  // await test.step("Confirm Email", async () => {
+  //   await addvinpage.ConfirmEmail();
+  // });
+
+  //  await test.step("Login", async () => {
+  //   await addvinpage.LoginIn();
+  // });
 
   await test.step("3. Enter Vehicle Details (Part 1)", async () => {
     await addvinpage.VehicleDetailsone();

@@ -24,9 +24,17 @@ test('Consignment Flow – Individual, Business, Dealer, Trust Applications', as
     await addvinpage.ConsignmentURL();
   });
 
-  await test.step("2. Individual: Sign In and creating new account", async () => {
+  await test.step("2. Individual: Creating new account", async () => {
     await addvinpage.SignIn();
   });
+
+  // await test.step("Confirm Email", async () => {
+  //   await addvinpage.ConfirmEmail();
+  // });
+
+  //  await test.step("Login", async () => {
+  //   await addvinpage.LoginIn();
+  // });
 
   await test.step("3. Individual: Enter Vehicle Details", async () => {
     await addvinpage.VehicleDetailsone();
