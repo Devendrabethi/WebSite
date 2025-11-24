@@ -1,5 +1,11 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from "dotenv"
+
+dotenv.config({
+  path: process.env.TEST_ENV ?`./env-files/.env.${process.env.TEST_ENV}` : `./env-files/.env.hotfixqa`  // TEST_ENV is the variable name 
+  //path:`./env-files/.env.${process.env.TEST_ENV}` // direct from terminal
+})
 
 /**
  * Read environment variables from file.
@@ -32,26 +38,27 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    screenshot: 'on',
-    video: 'on',
-    trace: 'on',
+    headless: false, //falese means we can see browser
+     video: 'on',
+    screenshot :'on',
+    trace: 'on'
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],    viewport: { width: 1920, height: 950 } },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],    viewport: { width: 1920, height: 950 } },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'],    viewport: { width: 1920, height: 950 } },
     },
 
     /* Test against mobile viewports. */
@@ -67,11 +74,12 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      use: { ...devices['Desktop Edge'], channel: 'msedge' ,    viewport: { width: 1920, height: 950 }},
     },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' ,      viewport: { width: 1920, height: 950 }},
+
     },
   ],
 

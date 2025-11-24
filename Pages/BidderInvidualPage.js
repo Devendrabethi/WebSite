@@ -24,7 +24,7 @@ class BidderInvidualPage
     async BidderOpportunityPremium()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.BidderPremiumURL)
+        await this.page.goto(process.env.BidderPremiumURL)
         await this.page.waitForTimeout(6000)
         //await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
@@ -32,7 +32,7 @@ class BidderInvidualPage
        async BidderOpportunityRegularBidderMobilia()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.RegularBidderMobilia)
+        await this.page.goto(process.env.RegularBidderMobilia)
         await this.page.waitForTimeout(6000)
         //await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
@@ -86,7 +86,7 @@ class BidderInvidualPage
     async AddressDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.TitlePaperworkAddress,{timeout:60000})  //BiddingAddress
+        await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress,{timeout:60000})  //BiddingAddress
         await this.page.locator(this.bidderindividual_webelements.SelectAddress).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderindividual_webelements.TitlePaperwork).fill(this.testdata.TitlePaperworkAddress)

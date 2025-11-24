@@ -16,7 +16,7 @@ class AddVinPage
     async MarketingLogin ()
     {
         await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.MarkettingURL)
+        await this.page.goto(process.env.MarkettingURL)
         await this.page.locator(this.addVIN_webelements.MarkingLoginButton).click()
         await this.page.locator(this.addVIN_webelements.Marketting_CreateAccount).click()
         
@@ -60,8 +60,8 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Email).fill(emailid)
 
         //Password
-        await this.page.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
-        await this.page.locator(this.addVIN_webelements.Marketting_ConfirmPassword).fill(this.testdata.ConfirmPassword)
+        await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password)
+        await this.page.locator(this.addVIN_webelements.Marketting_ConfirmPassword).fill(process.env.ConfirmPassword)
         await this.page.locator(this.addVIN_webelements.Marketting_Checkbox_Agree).click()
         await this.page.screenshot({ path: './ScreenShot/CreateAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Marketting_CreateAccountSignUp).click()
@@ -69,15 +69,15 @@ class AddVinPage
 
         await this.page.locator(this.addVIN_webelements.MarkingLoginButton).click()
         await this.page.locator(this.addVIN_webelements.Email).fill(emailid)
-        await this.page.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
+        await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password)
         await this.page.locator(this.addVIN_webelements.Marketting_LoginAfterCreate).click()
         await this.page.waitForTimeout(15000)
     }
 
     async ConsignmentURL()
     {
-        await this.page.setViewportSize({ width: 1920, height: 950 })
-        await this.page.goto(this.testdata.URL)
+        //await this.page.setViewportSize({ width: 1920, height: 950 })
+        await this.page.goto(process.env.URL)
         await this.page.locator(this.addVIN_webelements.Acceptpopup).click()
     }
     async SignIn()
@@ -125,8 +125,8 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Email).fill(this.emailid)
 
         //Password
-        await this.page.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
-        await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
+        await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password)
+        await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword)
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/1 CreateAccount.png', fullPage: true})
@@ -137,7 +137,7 @@ class AddVinPage
     {
         const context = this.page.context();
         const page1 = await context.newPage();
-        await page1.goto(this.testdata.Yopmail);
+        await page1.goto(process.env.Yopmail);
         await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
         await page1.locator(this.addVIN_webelements.CheckInbox).click()
         const frame = await page1.frameLocator(this.addVIN_webelements.IframeYopmail)
@@ -181,7 +181,7 @@ class AddVinPage
         //await page1.bringToFront();
         const context = this.page.context();
         const page1 = await context.newPage();
-        await page1.goto(this.testdata.Yopmail);
+        await page1.goto(process.env.Yopmail);
         await page1.locator(this.addVIN_webelements.EnterEmail).clear()
         await page1.locator(this.addVIN_webelements.EnterEmail).fill(this.emailid,{timeout:90000})
         await page1.locator(this.addVIN_webelements.CheckInbox).click()
@@ -197,8 +197,8 @@ class AddVinPage
         await newPage.waitForLoadState('load');
         await newPage.locator(this.addVIN_webelements.MemberEnterEmail).fill(this.emailid,{timeout:90000})
         await this.page.waitForTimeout(5000)
-        await newPage.locator(this.addVIN_webelements.Password).fill(this.testdata.Password)
-        await newPage.locator(this.addVIN_webelements.ConfirmPassword).fill(this.testdata.ConfirmPassword)
+        await newPage.locator(this.addVIN_webelements.Password).fill(process.env.Password)
+        await newPage.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword)
         await newPage.locator(this.addVIN_webelements.ResetPassword).click()
         await this.page.waitForTimeout(10000)
         await newPage.close();
@@ -225,8 +225,8 @@ class AddVinPage
     async ExistingAccount()
     {
        // await this.page.locator(this.addVIN_webelements.SignInbtn).click()
-        await this.page.locator(this.addVIN_webelements.EmailId).fill(this.testdata.Emailid)
-        await this.page.locator(this.addVIN_webelements.LoginPassword).fill(this.testdata.LoginPassword)
+        await this.page.locator(this.addVIN_webelements.EmailId).fill(process.env.Emailid)
+        await this.page.locator(this.addVIN_webelements.LoginPassword).fill(process.env.LoginPassword)
         await this.page.screenshot({ path: './ScreenShot/1.1 LoginAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Loginbutton).click()
         await this.page.waitForTimeout(2000)
