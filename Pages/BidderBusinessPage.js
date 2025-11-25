@@ -90,7 +90,7 @@ class BidderBusinessPage
         await this.page.waitForTimeout(2000);
         // Upload each photo to its respective field
         await this.page.locator(this.bidderbusiness_webelements.BusinessDoc).setInputFiles(fileToUpload2.businessL);
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/56.2 BusinessDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
 

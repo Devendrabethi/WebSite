@@ -139,7 +139,7 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.VerificationOwnDoc).setInputFiles(fileToUpload2.VerificationOwnDoc);
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.AuthorizationDoc).setInputFiles(fileToUpload2.AuthorizationDoc);
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/56.1 BidderDealerDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
 
@@ -150,7 +150,7 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()
-        await this.page.screenshot({ path: './ScreenShot/67.2 DesireBidLimitWithCreditCardHold.png', fullPage: true})
+        await this.page.screenshot({ path: './ScreenShot/52.2 DesireBidLimitWithCreditCardHold.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
     }
     async CCDepositeCardDetails()
