@@ -1,73 +1,95 @@
-import{test} from '@playwright/test'
-import { AddVinPage } from '../../Pages/AddVinPage'
-import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
-import { BidderDealerPage } from '../../Pages/BidderDealerPage'
+import { test } from '@playwright/test';
+import { AddVinPage } from '../../Pages/AddVinPage';
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage';
+import { BidderDealerPage } from '../../Pages/BidderDealerPage';
 
-test('Creating Bidder Opportunity For Dealer With Absentee Package', async ({ page }) => {
+let browser;
+let context;
+let page;
 
-  const addvinpage = new AddVinPage(page);
-  const bidderinvidualpage = new BidderInvidualPage(page);
-  const bidderdealerpage = new BidderDealerPage(page);
+let addvinpage;
+let bidderinvidualpage;
+let bidderdealerpage;
 
-  await test.step("1. Start Dealer Absentee Package Opportunity", async () => {
-    await bidderdealerpage.BidderOpportunityAbsentee();
-  });
+test.describe('Bidder Opportunity - Dealer with Absentee Package', () => {
 
-  await test.step("2. Creating new account", async () => {
-    await addvinpage.SignIn();
-  });
+    test.beforeAll(async ({ playwright }) => {
+        // Launch browser manually
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
 
-    // await test.step("Confirm Email", async () => {
+        // Initialize Page Objects
+        addvinpage = new AddVinPage(page);
+        bidderinvidualpage = new BidderInvidualPage(page);
+        bidderdealerpage = new BidderDealerPage(page);
+    });
+
+    test('01. Start Dealer Absentee Package Opportunity', async () => {
+        await bidderdealerpage.BidderOpportunityAbsentee();
+    });
+
+    test('02. Create New Account', async () => {
+        await addvinpage.SignIn();
+    });
+
+    // test('Confirm Email', async () => {
     //   await addvinpage.ConfirmEmail();
     // });
 
-    //  await test.step("Login", async () => {
+    // test('Login', async () => {
     //   await addvinpage.LoginIn();
     // });
 
-  await test.step("3. Confirm Absentee Package Selection", async () => {
-    await bidderdealerpage.BidderOpportunityAbsenteeyes();
-  });
+    test('03. Confirm Absentee Package Selection', async () => {
+        await bidderdealerpage.BidderOpportunityAbsenteeyes();
+    });
 
-  await test.step("4. Enter Individual Details", async () => {
-    await bidderinvidualpage.IndividualDetails();
-  });
+    test('04. Enter Individual Details', async () => {
+        await bidderinvidualpage.IndividualDetails();
+    });
 
-  await test.step("5. Complete Dealer Registration", async () => {
-    await bidderdealerpage.DealerRegistration();
-  });
+    test('05. Complete Dealer Registration', async () => {
+        await bidderdealerpage.DealerRegistration();
+    });
 
-  await test.step("6. Enter Address Details", async () => {
-    await bidderinvidualpage.AddressDetails();
-  });
+    test('06. Enter Address Details', async () => {
+        await bidderinvidualpage.AddressDetails();
+    });
 
-  await test.step("7. Set Desired Bid Limit / CC Deposit", async () => {
-    await bidderdealerpage.CCDepositeDesiredBidLimit();
-  });
+    test('07. Set Desired Bid Limit / CC Deposit', async () => {
+        await bidderdealerpage.CCDepositeDesiredBidLimit();
+    });
 
-  await test.step("8. Upload Additional Documents (Individual)", async () => {
-    await bidderinvidualpage.AdditionalDocument();
-  });
+    test('08. Upload Individual Documents', async () => {
+        await bidderinvidualpage.AdditionalDocument();
+    });
 
-  await test.step("9. Upload Dealer Documents", async () => {
-    await bidderdealerpage.DealerDocument();
-  });
+    test('09. Upload Dealer Documents', async () => {
+        await bidderdealerpage.DealerDocument();
+    });
 
-  // If AddProducts is not needed for Dealer Absentee, leave it commented
-  // await test.step("X. Add Products", async () => {
-  //   await bidderinvidualpage.AddProducts();
-  // });
+    // If Add Products is not required for Dealer Absentee, keep commented
+    // test('Add Products', async () => {
+    //     await bidderinvidualpage.AddProducts();
+    // });
 
-  await test.step("10. Enter Card Details (Individual)", async () => {
-    await bidderinvidualpage.CardDetails();
-  });
+    test('10. Enter Card Details (Individual)', async () => {
+        await bidderinvidualpage.CardDetails();
+    });
 
-  await test.step("11. Complete Absentee DocuSign", async () => {
-    await bidderinvidualpage.AbsenteeDocuSign();
-  });
+    test('11. Complete Absentee DocuSign', async () => {
+        await bidderinvidualpage.AbsenteeDocuSign();
+    });
 
-  await test.step("12. Enter Dealer CC Deposit Card Details", async () => {
-    await bidderdealerpage.CCDepositeCardDetails();
-  });
+    test('12. Enter Dealer CC Deposit Card Details', async () => {
+        await bidderdealerpage.CCDepositeCardDetails();
+    });
+
+    test.afterAll(async () => {
+        console.log('Dealer Absentee workflow completed.');
+        await page.close();     
+        // await browser.close(); // Uncomment if you want to close browser
+    });
 
 });

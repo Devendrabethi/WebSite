@@ -1,58 +1,80 @@
-import{test} from '@playwright/test'
-import { AddVinPage } from '../../Pages/AddVinPage'
-import { AddMediaPage } from '../../Pages/AddMediaPage'
-import { TitleDocument_Page } from '../../Pages/TitleDocument_Page'
-import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
+import { test } from '@playwright/test'
+import { AddVinPage } from '../../Pages/AddVinPage.js'
+import { AddMediaPage } from '../../Pages/AddMediaPage.js'
+import { TitleDocument_Page } from '../../Pages/TitleDocument_Page.js'
+import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage.js'
 
-test('Existing account and creating Consignment with Individual Flow', async ({ page }) => {
+let browser
+let context
+let page
 
-  const addvinpage = new AddVinPage(page);
-  const addmediapage = new AddMediaPage(page);
-  const titledocument_page = new TitleDocument_Page(page);
-  const applicationinfopage = new ApplicationInfoPage(page);
+let addvinpage
+let addmediapage
+let titledocument_page
+let applicationinfopage
 
-  await test.step("1. Open Consignment URL", async () => {
-    await addvinpage.ConsignmentURL();
-  });
+test.describe('Existing Account for Individual Consignment Flow', () => {
 
-  await test.step("2. Sign In with Existing Account", async () => {
-    await addvinpage.ExistingAccount(); // existing account
-  });
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch()
+        context = await browser.newContext()
+        page = await context.newPage()
 
-  await test.step("3. Fill Vehicle Details - Part 1", async () => {
-    await addvinpage.VehicleDetailsone();
-    await addvinpage.PowerSource();
-  });
+        // Initialize Page Objects
+        addvinpage = new AddVinPage(page)
+        addmediapage = new AddMediaPage(page)
+        titledocument_page = new TitleDocument_Page(page)
+        applicationinfopage = new ApplicationInfoPage(page)
+    })
 
-  await test.step("4. Fill Vehicle Details - Part 2", async () => {
-    await addvinpage.VehicleDetailstwo();
-    await addvinpage.Mileage();
-    await addvinpage.VehicleDescp();
-  });
+    test('01. Open Consignment URL', async () => {
+        await addvinpage.ConsignmentURL()
+    })
 
-  await test.step("5. Upload Additional Photos", async () => {
-    // await addmediapage.MainPhotos(); // optional
-    await addmediapage.AdditionalPhotos();
-  });
+    test('02. Sign In with Existing Account', async () => {
+        await addvinpage.ExistingAccount()
+    })
 
-  await test.step("6. Upload Existing Vehicle Documents", async () => {
-    await titledocument_page.ExistingVehicleDocument();
-  });
+    test('03. Fill Vehicle Details - Part 1', async () => {
+        await addvinpage.VehicleDetailsone()
+        await addvinpage.PowerSource()
+    })
 
-  await test.step("7. Finish Application", async () => {
-    await applicationinfopage.FinishApplication();
-  });
+    test('04. Fill Vehicle Details - Part 2', async () => {
+        await addvinpage.VehicleDetailstwo()
+        await addvinpage.Mileage()
+        await addvinpage.VehicleDescp()
+    })
 
-  await test.step("8. Review Application", async () => {
-    await applicationinfopage.ReviewApp();
-  });
+    test('05. Upload Additional Photos', async () => {
+        // await addmediapage.MainPhotos(); // optional
+        await addmediapage.AdditionalPhotos()
+    })
 
-  await test.step("9. View My Submission", async () => {
-    await applicationinfopage.ViewMySubmission();
-  });
+    test('06. Upload Existing Vehicle Documents', async () => {
+        await titledocument_page.ExistingVehicleDocument()
+    })
 
-  await test.step("10. Verify Consignment Dashboard with Document", async () => {
-    await applicationinfopage.ConsignmentDashboardwithDocument();
-  });
+    test('07. Finish Application', async () => {
+        await applicationinfopage.FinishApplication()
+    })
 
-});
+    test('08. Review Application', async () => {
+        await applicationinfopage.ReviewApp()
+    })
+
+    test('09. View My Submission', async () => {
+        await applicationinfopage.ViewMySubmission()
+    })
+
+    test('10. Verify Consignment Dashboard with Document', async () => {
+        await applicationinfopage.ConsignmentDashboardwithDocument()
+    })
+
+    test.afterAll(async () => {
+        console.log('Individual Consignment Flow Completed.')
+        await page.close()
+        // await browser.close() // enable if desired
+    })
+
+})

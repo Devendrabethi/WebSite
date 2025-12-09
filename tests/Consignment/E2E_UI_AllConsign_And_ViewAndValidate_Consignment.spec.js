@@ -1,150 +1,176 @@
-import{test} from '@playwright/test'
-import { AddVinPage } from '../../Pages/AddVinPage'
-import { AddMediaPage } from '../../Pages/AddMediaPage'
-import { TitleDocument_Page } from '../../Pages/TitleDocument_Page'
-import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage'
-import { BusinessPage } from '../../Pages/BusinessPage'
-import { DealerPage } from '../../Pages/DealerPage'
-import { TrustPage } from '../../Pages/TrustPage'
+import { test } from '@playwright/test'
+import { AddVinPage } from '../../Pages/AddVinPage.js'
+import { AddMediaPage } from '../../Pages/AddMediaPage.js'
+import { TitleDocument_Page } from '../../Pages/TitleDocument_Page.js'
+import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage.js'
+import { BusinessPage } from '../../Pages/BusinessPage.js'
+import { DealerPage } from '../../Pages/DealerPage.js'
+import { TrustPage } from '../../Pages/TrustPage.js'
 
-test('Consignment Flow – Individual, Business, Dealer, Trust Applications', async ({ page }) => {
+let browser
+let context
+let page
 
-  const addvinpage = new AddVinPage(page);
-  const addmediapage = new AddMediaPage(page);
-  const titledocument_page = new TitleDocument_Page(page);
-  const applicationinfopage = new ApplicationInfoPage(page);
-  const businesspage = new BusinessPage(page);
-  const dealerpage = new DealerPage(page);
-  const trustpage = new TrustPage(page);
+let addvinpage
+let addmediapage
+let titledocument_page
+let applicationinfopage
+let businesspage
+let dealerpage
+let trustpage
 
-  // -------------------------------
-  // 🌟 INDIVIDUAL APPLICATION
-  // -------------------------------
-  await test.step("1. Individual: Consignment", async () => {
-    await addvinpage.ConsignmentURL();
-  });
+test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignment', () => {
 
-  await test.step("2. Individual: Creating new account", async () => {
-    await addvinpage.SignIn();
-  });
+    test.beforeAll(async ({ playwright }) => {
+        // Launch browser
+        browser = await playwright.chromium.launch()
+        context = await browser.newContext()
+        page = await context.newPage()
 
-  // await test.step("Confirm Email", async () => {
-  //   await addvinpage.ConfirmEmail();
-  // });
+        // Initialize Page Objects
+        addvinpage = new AddVinPage(page)
+        addmediapage = new AddMediaPage(page)
+        titledocument_page = new TitleDocument_Page(page)
+        applicationinfopage = new ApplicationInfoPage(page)
+        businesspage = new BusinessPage(page)
+        dealerpage = new DealerPage(page)
+        trustpage = new TrustPage(page)
+    })
 
-  //  await test.step("Login", async () => {
-  //   await addvinpage.LoginIn();
-  // });
+    // ----------------------------------------------------------
+    // 🌟  INDIVIDUAL APPLICATION
+    // ----------------------------------------------------------
+    
+    test('01. Individual: Consignment URL', async () => {
+        await addvinpage.ConsignmentURL()
+    })
 
-  await test.step("3. Individual: Enter Vehicle Details", async () => {
-    await addvinpage.VehicleDetailsone();
-    await addvinpage.PowerSource();
-    await addvinpage.VehicleDetailstwo();
-    await addvinpage.Mileage();
-    await addvinpage.VehicleDescp();
-  });
+    test('02. Individual: Create New Account', async () => {
+        await addvinpage.SignIn()
+    })
 
-  await test.step("4. Individual: Upload Photos", async () => {
-    // await addmediapage.MainPhotos();
-    await addmediapage.AdditionalPhotos();
-  });
+     // test('Confirm Email', async () => {
+    //     await addvinpage.ConfirmEmail()
+    // })
 
-  await test.step("5. Individual: Upload Vehicle Documents", async () => {
-    await titledocument_page.VehicleDocument();
-  });
+    // test('Login', async () => {
+    //     await addvinpage.LoginIn()
+    // })
 
-  await test.step("6. Individual: Finish Application & Review", async () => {
-    await applicationinfopage.FinishApplication();
-    await applicationinfopage.ReviewApp();
-  });
+    test('03. Individual: Enter Vehicle Details', async () => {
+        await addvinpage.VehicleDetailsone()
+        await addvinpage.PowerSource()
+        await addvinpage.VehicleDetailstwo()
+        await addvinpage.Mileage()
+        await addvinpage.VehicleDescp()
+    })
 
-  // -------------------------------
-  // 🌟 BUSINESS APPLICATION
-  // -------------------------------
-  await test.step("7. Business: Start Another Application With Business", async () => {
-    await businesspage.StartAnotherApp();
-  });
+    test('04. Individual: Upload Photos', async () => {
+        await addmediapage.AdditionalPhotos()
+    })
 
-  await test.step("8. Business: Enter Vehicle Details", async () => {
-    await addvinpage.VehicleDetailsone();
-    await addvinpage.PowerSourceHyBrid();
-    await addvinpage.Mileage();
-    await addvinpage.VehicleDescp();
-  });
+    test('05. Individual: Upload Vehicle Documents', async () => {
+        await titledocument_page.VehicleDocument()
+    })
 
-  await test.step("9. Business: Upload Photos", async () => {
-    // await addmediapage.MainPhotos();
-    await addmediapage.AdditionalPhotos();
-  });
+    test('06. Individual: Finish Application & Review', async () => {
+        await applicationinfopage.FinishApplication()
+        await applicationinfopage.ReviewApp()
+    })
 
-  await test.step("10. Business: Creating Business account and Upload Vehicle Documents", async () => {
-    await businesspage.AlreadyBusinessVehicleDocument();
-  });
+    // ----------------------------------------------------------
+    // 🌟  BUSINESS APPLICATION
+    // ----------------------------------------------------------
 
-  await test.step("11. Business: Finish Application & Review", async () => {
-    await applicationinfopage.FinishApplication();
-    await applicationinfopage.ReviewApp();
-  });
+    test('07. Business: Start Another Application', async () => {
+        await businesspage.StartAnotherApp()
+    })
 
-  // -------------------------------
-  // 🌟 DEALER APPLICATION
-  // -------------------------------
-  await test.step("12. Dealer: Start Another Application With Dealer", async () => {
-    await businesspage.StartAnotherApp();
-  });
+    test('08. Business: Enter Vehicle Details', async () => {
+        await addvinpage.VehicleDetailsone()
+        await addvinpage.PowerSourceHyBrid()
+        await addvinpage.Mileage()
+        await addvinpage.VehicleDescp()
+    })
 
-  await test.step("13. Dealer: Enter Vehicle Details", async () => {
-    await addvinpage.VehicleDetailsone();
-    await addvinpage.PowerSourceElectric();
-    await addvinpage.Mileage();
-    await addvinpage.VehicleDescp();
-  });
+    test('09. Business: Upload Photos', async () => {
+        await addmediapage.AdditionalPhotos()
+    })
 
-  await test.step("14. Dealer: Upload Photos", async () => {
-    // await addmediapage.MainPhotos();
-    await addmediapage.AdditionalPhotos();
-  });
+    test('10. Business: Upload Vehicle Docs (Already Business)', async () => {
+        await businesspage.AlreadyBusinessVehicleDocument()
+    })
 
-  await test.step("15. Dealer: Creating Dealer account and Upload Vehicle Documents", async () => {
-    await dealerpage.AlreadyDealerVehicleDocument();
-  });
+    test('11. Business: Finish Application & Review', async () => {
+        await applicationinfopage.FinishApplication()
+        await applicationinfopage.ReviewApp()
+    })
 
-  await test.step("16. Dealer: Finish Application & Review", async () => {
-    await applicationinfopage.FinishApplication();
-    await applicationinfopage.ReviewApp();
-  });
+    // ----------------------------------------------------------
+    // 🌟  DEALER APPLICATION
+    // ----------------------------------------------------------
 
-  // -------------------------------
-  // 🌟 TRUST APPLICATION
-  // -------------------------------
-  await test.step("17. Trust: Start Another Application With Trust", async () => {
-    await businesspage.StartAnotherApp();
-  });
+    test('12. Dealer: Start Another Application', async () => {
+        await businesspage.StartAnotherApp()
+    })
 
-  await test.step("18. Trust: Enter Vehicle Details", async () => {
-    await addvinpage.VehicleDetailsone();
-    await addvinpage.PowerSourceDiesel();
-    await addvinpage.Mileage();
-    await addvinpage.VehicleDescp();
-  });
+    test('13. Dealer: Enter Vehicle Details', async () => {
+        await addvinpage.VehicleDetailsone()
+        await addvinpage.PowerSourceElectric()
+        await addvinpage.Mileage()
+        await addvinpage.VehicleDescp()
+    })
 
-  await test.step("19. Trust: Upload Photos", async () => {
-    // await addmediapage.MainPhotos();
-    await addmediapage.AdditionalPhotos();
-  });
+    test('14. Dealer: Upload Photos', async () => {
+        await addmediapage.AdditionalPhotos()
+    })
 
-  await test.step("20. Trust: Upload Vehicle Documents", async () => {
-    await trustpage.AlreadyTrustVehicleDocument();
-  });
+    test('15. Dealer: Upload Vehicle Docs (Already Dealer)', async () => {
+        await dealerpage.AlreadyDealerVehicleDocument()
+    })
 
-  await test.step("21. Trust: Finish Application & Review", async () => {
-    await applicationinfopage.FinishApplication();
-    await applicationinfopage.ReviewApp();
-  });
+    test('16. Dealer: Finish Application & Review', async () => {
+        await applicationinfopage.FinishApplication()
+        await applicationinfopage.ReviewApp()
+    })
 
-  await test.step("22. Trust: View Submission & Dashboard", async () => {
-    await applicationinfopage.ViewMySubmission();
-    await applicationinfopage.ConsignmentDashboardwithDocument();
-  });
+    // ----------------------------------------------------------
+    // 🌟  TRUST APPLICATION
+    // ----------------------------------------------------------
 
-});
+    test('17. Trust: Start Another Application', async () => {
+        await businesspage.StartAnotherApp()
+    })
+
+    test('18. Trust: Enter Vehicle Details', async () => {
+        await addvinpage.VehicleDetailsone()
+        await addvinpage.PowerSourceDiesel()
+        await addvinpage.Mileage()
+        await addvinpage.VehicleDescp()
+    })
+
+    test('19. Trust: Upload Photos', async () => {
+        await addmediapage.AdditionalPhotos()
+    })
+
+    test('20. Trust: Upload Vehicle Docs (Trust)', async () => {
+        await trustpage.AlreadyTrustVehicleDocument()
+    })
+
+    test('21. Trust: Finish Application & Review', async () => {
+        await applicationinfopage.FinishApplication()
+        await applicationinfopage.ReviewApp()
+    })
+
+    test('22. Trust: View Submission & Dashboard', async () => {
+        await applicationinfopage.ViewMySubmission()
+        await applicationinfopage.ConsignmentDashboardwithDocument()
+    })
+
+    test.afterAll(async () => {
+        console.log('Consignment Flow for all applicant types completed.')
+        await page.close()
+        // await browser.close() // uncomment if you want browser to close
+    })
+
+})

@@ -1,24 +1,47 @@
-import{test} from '@playwright/test'
-import { AddVinPage } from '../../Pages/AddVinPage'
+import { test } from '@playwright/test';
+import { AddVinPage } from '../../Pages/AddVinPage';
 
-test('CReating new account sign in and confirm email and Forgot password', async ({ page }) => {
-  const addvinpage = new AddVinPage(page);
+let browser;
+let context;
+let page;
+let addvinpage;
 
-  await test.step("1. Open Consignment URL", async () => {
-    await addvinpage.ConsignmentURL();
-  });
+test.describe('Consignment Account Creation Workflow', () => {
 
-  await test.step("2. Creating new account", async () => {
-    await addvinpage.SignIn();
-  });
+    test.beforeAll(async ({ playwright }) => {
+        // Launch browser manually (same style as second example)
+        browser = await playwright.chromium.launch();
+        context = await browser.newContext();
+        page = await context.newPage();
 
-  await test.step("3. Confirm Email", async () => {
-    await addvinpage.ConfirmEmail();
-  });
-    await test.step("4. Forgot password and Reset the password and Sign In", async () => {
-    await addvinpage.Forgotpassword();
-  });
-    await test.step("4. Logout", async () => {
-    await addvinpage.LogOut();
-  });
+        // Initialize Page Objects
+        addvinpage = new AddVinPage(page);
+    });
+
+    test('01. Open Consignment URL', async () => {
+        await addvinpage.ConsignmentURL();
+    });
+
+    test('02. Creating new account', async () => {
+        await addvinpage.SignIn();
+    });
+
+    test('03. Confirm Email', async () => {
+        await addvinpage.ConfirmEmail();
+    });
+
+    test('04. Forgot password → Reset → Sign In', async () => {
+        await addvinpage.Forgotpassword();
+    });
+
+    test('05. Logout', async () => {
+        await addvinpage.LogOut();
+    });
+
+    test.afterAll(async () => {
+        console.log('All tests completed.');
+        await page.close();
+        // await browser.close(); // uncomment to close browser fully
+    });
+
 });

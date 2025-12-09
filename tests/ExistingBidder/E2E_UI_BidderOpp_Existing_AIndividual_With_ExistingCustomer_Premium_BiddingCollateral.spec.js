@@ -1,53 +1,74 @@
-import{test} from '@playwright/test'
-import { AddVinPage } from '../../Pages/AddVinPage'
-import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
-test('Existing account and Creating Bidder Opportunity For Individual With Premium Package with DocuSign', async ({ page }) => {
+import { test } from '@playwright/test'
+import { AddVinPage } from '../../Pages/AddVinPage.js'
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage.js'
 
-  const addvinpage = new AddVinPage(page);
-  const bidderinvidualpage = new BidderInvidualPage(page);
+let browser
+let context
+let page
 
-  await test.step("1. Start Premium Opportunity Flow", async () => {
-    await bidderinvidualpage.BidderOpportunityPremium();
-  });
+let addvinpage
+let bidderinvidualpage
 
-  await test.step("2. Sign In with Existing Account", async () => {
-    await addvinpage.ExistingAccount(); // existing account
-  });
+test.describe('Existing Account for Premium Bidder Opportunity Flow', () => {
 
-  await test.step("3. Fill Individual Details", async () => {
-    await bidderinvidualpage.IndividualDetails();
-  });
+    test.beforeAll(async ({ playwright }) => {
+        browser = await playwright.chromium.launch()
+        context = await browser.newContext()
+        page = await context.newPage()
 
-  await test.step("4. Complete Individual Registration", async () => {
-    await bidderinvidualpage.IndividualRegistration();
-  });
+        // Initialize Page Objects
+        addvinpage = new AddVinPage(page)
+        bidderinvidualpage = new BidderInvidualPage(page)
+    })
 
-  await test.step("5. Enter Address Details", async () => {
-    await bidderinvidualpage.AddressDetails();
-  });
+    test('01. Start Premium Opportunity Flow', async () => {
+        await bidderinvidualpage.BidderOpportunityPremium()
+    })
 
-  await test.step("6. Set Desired Bid Limit", async () => {
-    await bidderinvidualpage.DesiredBidLimit();
-  });
+    test('02. Sign In with Existing Account', async () => {
+        await addvinpage.ExistingAccount()
+    })
 
-  await test.step("7. Upload Additional Documents", async () => {
-    await bidderinvidualpage.AdditionalDocument();
-  });
+    test('03. Fill Individual Details', async () => {
+        await bidderinvidualpage.IndividualDetails()
+    })
 
-  await test.step("8. Add Products", async () => {
-    await bidderinvidualpage.AddProducts();
-  });
+    test('04. Complete Individual Registration', async () => {
+        await bidderinvidualpage.IndividualRegistration()
+    })
 
-  await test.step("9. Enter Card Details", async () => {
-    await bidderinvidualpage.CardDetails();
-  });
+    test('05. Enter Address Details', async () => {
+        await bidderinvidualpage.AddressDetails()
+    })
 
-  await test.step("10. Complete Personal DocuSign", async () => {
-    await bidderinvidualpage.PersonalDocuSign();
-  });
+    test('06. Set Desired Bid Limit', async () => {
+        await bidderinvidualpage.DesiredBidLimit()
+    })
 
-  await test.step("11. View Bidder Opportunity", async () => {
-    await bidderinvidualpage.ViewBidderOpportunity();
-  });
+    test('07. Upload Additional Documents', async () => {
+        await bidderinvidualpage.AdditionalDocument()
+    })
 
-});
+    test('08. Add Products', async () => {
+        await bidderinvidualpage.AddProducts()
+    })
+
+    test('09. Enter Card Details', async () => {
+        await bidderinvidualpage.CardDetails()
+    })
+
+    test('10. Complete Personal DocuSign', async () => {
+        await bidderinvidualpage.PersonalDocuSign()
+    })
+
+    test('11. View Bidder Opportunity', async () => {
+        await bidderinvidualpage.ViewBidderOpportunity()
+    })
+
+    test.afterAll(async () => {
+        console.log('Existing Account Premium Bidder Flow Completed.')
+        await page.close()
+        // await browser.close() // enable if desired
+    })
+
+})

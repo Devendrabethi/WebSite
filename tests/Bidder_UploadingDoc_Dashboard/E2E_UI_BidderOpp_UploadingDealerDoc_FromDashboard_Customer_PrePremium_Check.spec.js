@@ -1,88 +1,90 @@
-import{test} from '@playwright/test'
-import { AddVinPage } from '../../Pages/AddVinPage'
-import { BidderInvidualPage } from '../../Pages/BidderInvidualPage'
-import { BidderDealerPage } from '../../Pages/BidderDealerPage'
+import { test } from '@playwright/test'
+import { AddVinPage } from '../../Pages/AddVinPage.js'
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage.js'
+import { BidderDealerPage } from '../../Pages/BidderDealerPage.js'
 
-// test('Creating Bidder Opportunity For Dealer With Pre-Premium Package Uploading documents in Dashboard',async({page}) =>
-// {
-//     const addvinpage = new AddVinPage(page)
-//     const bidderinvidualpage = new BidderInvidualPage(page)
-//     const bidderdealerpage = new BidderDealerPage(page)
+let browser
+let context
+let page
 
-//     await bidderdealerpage.BidderOpportunityPre_premium()
-//     await addvinpage.SignIn()
-//     await bidderinvidualpage.IndividualDetails()
-//     await bidderdealerpage.DealerRegistration()
-//     await bidderinvidualpage.AddressDetails()
-//     await bidderdealerpage.DesiredBidLimit()
-//     await bidderinvidualpage.AdditionalWithoutDocumentUploadingfromDashboard()
-//     await bidderdealerpage.DealerWithoutDocUploadingfromDashboard()
-//     await bidderinvidualpage.AddProducts()
-//     await bidderinvidualpage.CardDetails()
-//     await bidderinvidualpage.PersonalDocuSign()
-//     await bidderinvidualpage.BidderDashboardWithoutDocument()
-// })
+let addvinpage
+let bidderinvidualpage
+let bidderdealerpage
 
-test('Creating Bidder Opportunity For Dealer With Pre-Premium Package Uploading documents in Dashboard', async ({ page }) => {
+test.describe('Bidder Opportunity - Dealer Pre-Premium (Upload Documents in Dashboard)', () => {
 
-  const addvinpage = new AddVinPage(page);
-  const bidderinvidualpage = new BidderInvidualPage(page);
-  const bidderdealerpage = new BidderDealerPage(page);
+    test.beforeAll(async ({ playwright }) => {
+        // Launch browser
+        browser = await playwright.chromium.launch()
+        context = await browser.newContext()
+        page = await context.newPage()
 
-  await test.step("1. Start Dealer Pre-Premium Opportunity", async () => {
-    await bidderdealerpage.BidderOpportunityPre_premium();
-  });
+        // Initialize Page Objects
+        addvinpage = new AddVinPage(page)
+        bidderinvidualpage = new BidderInvidualPage(page)
+        bidderdealerpage = new BidderDealerPage(page)
+    })
 
-  await test.step("2. Creating new account", async () => {
-    await addvinpage.SignIn();
-  });
+    test('01. Start Dealer Pre-Premium Opportunity', async () => {
+        await bidderdealerpage.BidderOpportunityPre_premium()
+    })
 
-    // await test.step("Confirm Email", async () => {
-    //   await addvinpage.ConfirmEmail();
-    // });
+    test('02. Create New Account', async () => {
+        await addvinpage.SignIn()
+    })
 
-    //  await test.step("Login", async () => {
-    //   await addvinpage.LoginIn();
-    // });
+    // test('Confirm Email', async () => {
+    //     await addvinpage.ConfirmEmail()
+    // })
 
-  await test.step("3. Enter Individual Details", async () => {
-    await bidderinvidualpage.IndividualDetails();
-  });
+    // test('Login', async () => {
+    //     await addvinpage.LoginIn()
+    // })
 
-  await test.step("4. Complete Dealer Registration", async () => {
-    await bidderdealerpage.DealerRegistration();
-  });
+    test('03. Enter Individual Details', async () => {
+        await bidderinvidualpage.IndividualDetails()
+    })
 
-  await test.step("5. Enter Address Details", async () => {
-    await bidderinvidualpage.AddressDetails();
-  });
+    test('04. Complete Dealer Registration', async () => {
+        await bidderdealerpage.DealerRegistration()
+    })
 
-  await test.step("6. Set Desired Bid Limit", async () => {
-    await bidderdealerpage.DesiredBidLimit();
-  });
+    test('05. Enter Address Details', async () => {
+        await bidderinvidualpage.AddressDetails()
+    })
 
-  await test.step("7. Proceed Without Uploading Individual Documents", async () => {
-    await bidderinvidualpage.AdditionalWithoutDocumentUploadingfromDashboard();
-  });
+    test('06. Set Desired Bid Limit', async () => {
+        await bidderdealerpage.DesiredBidLimit()
+    })
 
-  await test.step("8. Proceed Without Uploading Dealer Documents", async () => {
-    await bidderdealerpage.DealerWithoutDocUploadingfromDashboard();
-  });
+    test('07. Continue Without Uploading Individual Documents', async () => {
+        await bidderinvidualpage.AdditionalWithoutDocumentUploadingfromDashboard()
+    })
 
-  await test.step("9. Add Products", async () => {
-    await bidderinvidualpage.AddProducts();
-  });
+    test('08. Continue Without Uploading Dealer Documents', async () => {
+        await bidderdealerpage.DealerWithoutDocUploadingfromDashboard()
+    })
 
-  await test.step("10. Enter Card Details", async () => {
-    await bidderinvidualpage.CardDetails();
-  });
+    test('09. Add Products', async () => {
+        await bidderinvidualpage.AddProducts()
+    })
 
-  await test.step("11. Complete DocuSign", async () => {
-    await bidderinvidualpage.PersonalDocuSign();
-  });
+    test('10. Enter Card Details', async () => {
+        await bidderinvidualpage.CardDetails()
+    })
 
-  await test.step("12. Upload Documents Later From Dashboard", async () => {
-    await bidderinvidualpage.BidderDashboardWithoutDocument();
-  });
+    test('11. Complete DocuSign', async () => {
+        await bidderinvidualpage.PersonalDocuSign()
+    })
 
-});
+    test('12. Upload Documents Later from Dashboard', async () => {
+        await bidderinvidualpage.BidderDashboardWithoutDocument()
+    })
+
+    test.afterAll(async () => {
+        console.log('Dealer Pre-Premium (Dashboard Upload) workflow completed.')
+        await page.close()
+        // await browser.close() // Uncomment to close browser
+    })
+
+})
