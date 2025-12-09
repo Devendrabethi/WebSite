@@ -17,8 +17,19 @@ async function globalSetup() {
     path.join(allureResultsDir, 'environment.properties'),
     `Environment=${env}\n`
   );
+  // Prepare executor info JSON
+  const executor = {
+    name: 'Devendra Prasad',
+    buildName: 'v1.13.19'
+  };
+  // Write executor.json file (one file, JSON string)
+  fs.writeFileSync(
+    path.join(allureResultsDir, 'executor.json'),
+    JSON.stringify(executor, null, 2)
+  );
 
   console.log(`✔ Allure environment set to: ${env}`);
+  console.log(`✔ Executor info written to executor.json`);
 }
 
 module.exports = globalSetup;
