@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "atodev":   "cross-env TEST_ENV=atodev npx playwright test --project=\"Google Chrome\"",
-  "atoqa":    "cross-env TEST_ENV=atoqa npx playwright test --project=\"Google Chrome\"",
-  "hotfixdev":"cross-env TEST_ENV=hotfixdev npx playwright test --project=\"Google Chrome\"",
-  "hotfixqa": "cross-env TEST_ENV=hotfixqa npx playwright test --project=\"Google Chrome\"",
-  "uat":      "cross-env TEST_ENV=uat npx playwright test --project=\"Google Chrome\""
-},
-"Comment": "//browsers available chromium firefox webkit \"Microsoft Edge\" \"Google Chrome\"",
+    "atodev": "cross-env TEST_ENV=atodev npx playwright test --project=\"Google Chrome\"",
+    "atoqa": "cross-env TEST_ENV=atoqa npx playwright test --project=\"Google Chrome\"",
+    "hotfixdev": "cross-env TEST_ENV=hotfixdev npx playwright test --project=\"Google Chrome\"",
+    "hotfixqa": "cross-env TEST_ENV=hotfixqa npx playwright test --project=\"Google Chrome\"",
+    "uat": "cross-env TEST_ENV=uat npx playwright test --project=\"Google Chrome\""
+  },
+  "Comment": "//browsers available chromium firefox webkit \"Microsoft Edge\" \"Google Chrome\"",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "cross-env": "^5.1.2",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "fs-extra": "^11.3.2"
   }
 }
