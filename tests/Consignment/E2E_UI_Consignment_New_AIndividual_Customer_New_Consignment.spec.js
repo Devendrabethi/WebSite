@@ -36,55 +36,55 @@ test.describe('Consignment Individual Flow', () => {
         await addvinpage.SignIn()
     })
 
-    // test('Confirm Email', async () => {
-    //     await addvinpage.ConfirmEmail()
-    // })
+    test.skip('03. Confirm Email', async () => {
+        await addvinpage.ConfirmEmail()
+    })
 
-    // test('Login', async () => {
-    //     await addvinpage.LoginIn()
-    // })
+    test.skip('04. Login', async () => {
+        await addvinpage.LoginIn()
+    })
 
-    test('03. Enter Vehicle Details Part 1', async () => {
+    test('05. Enter Vehicle Details Part 1', async () => {
         await addvinpage.VehicleDetailsone()
     })
 
-    test('04. Select Power Source', async () => {
+    test('06. Select Power Source', async () => {
         await addvinpage.PowerSource()
     })
 
-    test('05. Enter Vehicle Details Part 2', async () => {
+    test('07. Enter Vehicle Details Part 2', async () => {
         await addvinpage.VehicleDetailstwo()
     })
 
-    test('06. Enter Mileage', async () => {
+    test('08. Enter Mileage', async () => {
         await addvinpage.Mileage()
     })
 
-    test('07. Enter Vehicle Description', async () => {
+    test('09. Enter Vehicle Description', async () => {
         await addvinpage.VehicleDescp()
     })
 
-    test('08. Upload Additional Photos', async () => {
+    test('10. Upload Additional Photos', async () => {
         await addmediapage.AdditionalPhotos()
     })
 
-    test('09. Upload Vehicle Documents', async () => {
+    test('11. Upload Vehicle Documents', async () => {
         await titledocument_page.VehicleDocument()
     })
 
-    test('10. Finish Application', async () => {
+    test('12. Finish Application', async () => {
         await applicationinfopage.FinishApplication()
     })
 
-    test('11. Review Application', async () => {
+    test('13. Review Application', async () => {
         await applicationinfopage.ReviewApp()
     })
 
-    test('12. View Submission', async () => {
+    test('14. View Submission', async () => {
         await applicationinfopage.ViewMySubmission()
     })
 
-    test('13. Open Consignment Dashboard (With Documents)', async () => {
+    test('15. Open Consignment Dashboard (With Documents)', async () => {
         await applicationinfopage.ConsignmentDashboardwithDocument()
     })
 

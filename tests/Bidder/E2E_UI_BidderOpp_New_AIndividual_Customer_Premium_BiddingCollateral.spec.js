@@ -29,47 +29,47 @@ test.describe('Bidder Opportunity - Individual Premium Package with DocuSign', (
         await addvinpage.SignIn();
     });
 
-    // test('Confirm Email', async () => {
-    //     await addvinpage.ConfirmEmail();
-    // });
+    test.skip('03. Confirm Email', async () => {
+        await addvinpage.ConfirmEmail();
+    });
 
-    // test('Login', async () => {
-    //     await addvinpage.LoginIn();
-    // });
+    test.skip('04. Login', async () => {
+        await addvinpage.LoginIn();
+    });
 
-    test('03. Fill Individual Details', async () => {
+    test('05. Fill Individual Details', async () => {
         await bidderinvidualpage.IndividualDetails();
     });
 
-    test('04. Complete Registration', async () => {
+    test('06. Complete Registration', async () => {
         await bidderinvidualpage.IndividualRegistration();
     });
 
-    test('05. Enter Address Details', async () => {
+    test('07. Enter Address Details', async () => {
         await bidderinvidualpage.AddressDetails();
     });
 
-    test('06. Desired Bid Limit', async () => {
+    test('08. Desired Bid Limit', async () => {
         await bidderinvidualpage.DesiredBidLimit();
     });
 
-    test('07. Upload Additional Documents', async () => {
+    test('09. Upload Additional Documents', async () => {
         await bidderinvidualpage.AdditionalDocument();
     });
 
-    test('08. Add Products', async () => {
+    test('10. Add Products', async () => {
         await bidderinvidualpage.AddProducts();
     });
 
-    test('09. Enter Card Details', async () => {
+    test('11. Enter Card Details', async () => {
         await bidderinvidualpage.CardDetails();
     });
 
-    test('10. Complete DocuSign', async () => {
+    test('12. Complete DocuSign', async () => {
         await bidderinvidualpage.PersonalDocuSign();
     });
 
-    test('11. View Opportunity', async () => {
+    test('13. View Opportunity', async () => {
         await bidderinvidualpage.ViewBidderOpportunity();
     });
 

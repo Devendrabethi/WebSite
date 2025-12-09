@@ -33,39 +33,39 @@ test.describe('Bidder Opportunity - Dealer with Absentee Package', () => {
         await addvinpage.SignIn();
     });
 
-    // test('Confirm Email', async () => {
-    //   await addvinpage.ConfirmEmail();
-    // });
+    test.skip('03. Confirm Email', async () => {
+      await addvinpage.ConfirmEmail();
+    });
 
-    // test('Login', async () => {
-    //   await addvinpage.LoginIn();
-    // });
+    test.skip('04. Login', async () => {
+      await addvinpage.LoginIn();
+    });
 
-    test('03. Confirm Absentee Package Selection', async () => {
+    test('05. Confirm Absentee Package Selection', async () => {
         await bidderdealerpage.BidderOpportunityAbsenteeyes();
     });
 
-    test('04. Enter Individual Details', async () => {
+    test('06. Enter Individual Details', async () => {
         await bidderinvidualpage.IndividualDetails();
     });
 
-    test('05. Complete Dealer Registration', async () => {
+    test('07. Complete Dealer Registration', async () => {
         await bidderdealerpage.DealerRegistration();
     });
 
-    test('06. Enter Address Details', async () => {
+    test('08. Enter Address Details', async () => {
         await bidderinvidualpage.AddressDetails();
     });
 
-    test('07. Set Desired Bid Limit / CC Deposit', async () => {
+    test('09. Set Desired Bid Limit / CC Deposit', async () => {
         await bidderdealerpage.CCDepositeDesiredBidLimit();
     });
 
-    test('08. Upload Individual Documents', async () => {
+    test('10. Upload Individual Documents', async () => {
         await bidderinvidualpage.AdditionalDocument();
     });
 
-    test('09. Upload Dealer Documents', async () => {
+    test('11. Upload Dealer Documents', async () => {
         await bidderdealerpage.DealerDocument();
     });
 
@@ -74,15 +74,15 @@ test.describe('Bidder Opportunity - Dealer with Absentee Package', () => {
     //     await bidderinvidualpage.AddProducts();
     // });
 
-    test('10. Enter Card Details (Individual)', async () => {
+    test('12. Enter Card Details (Individual)', async () => {
         await bidderinvidualpage.CardDetails();
     });
 
-    test('11. Complete Absentee DocuSign', async () => {
+    test('13. Complete Absentee DocuSign', async () => {
         await bidderinvidualpage.AbsenteeDocuSign();
     });
 
-    test('12. Enter Dealer CC Deposit Card Details', async () => {
+    test('14. Enter Dealer CC Deposit Card Details', async () => {
         await bidderdealerpage.CCDepositeCardDetails();
     });
 

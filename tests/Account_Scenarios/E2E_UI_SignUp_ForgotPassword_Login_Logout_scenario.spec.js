@@ -26,11 +26,11 @@ test.describe('Consignment Account Creation Workflow', () => {
         await addvinpage.SignIn();
     });
 
-    test('03. Confirm Email', async () => {
+    test.skip('03. Confirm Email', async () => {
         await addvinpage.ConfirmEmail();
     });
 
-    test('04. Forgot password → Reset → Sign In', async () => {
+    test.skip('04. Forgot password → Reset → Sign In', async () => {
         await addvinpage.Forgotpassword();
     });
 

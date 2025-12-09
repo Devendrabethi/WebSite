@@ -33,51 +33,51 @@ test.describe('Bidder Opportunity - Dealer Pre-Premium (Upload Documents in Dash
         await addvinpage.SignIn()
     })
 
-    // test('Confirm Email', async () => {
-    //     await addvinpage.ConfirmEmail()
-    // })
+    test.skip('03. Confirm Email', async () => {
+        await addvinpage.ConfirmEmail()
+    })
 
-    // test('Login', async () => {
-    //     await addvinpage.LoginIn()
-    // })
+    test.skip('04. Login', async () => {
+        await addvinpage.LoginIn()
+    })
 
-    test('03. Enter Individual Details', async () => {
+    test('05. Enter Individual Details', async () => {
         await bidderinvidualpage.IndividualDetails()
     })
 
-    test('04. Complete Dealer Registration', async () => {
+    test('06. Complete Dealer Registration', async () => {
         await bidderdealerpage.DealerRegistration()
     })
 
-    test('05. Enter Address Details', async () => {
+    test('07. Enter Address Details', async () => {
         await bidderinvidualpage.AddressDetails()
     })
 
-    test('06. Set Desired Bid Limit', async () => {
+    test('08. Set Desired Bid Limit', async () => {
         await bidderdealerpage.DesiredBidLimit()
     })
 
-    test('07. Continue Without Uploading Individual Documents', async () => {
+    test('09. Continue Without Uploading Individual Documents', async () => {
         await bidderinvidualpage.AdditionalWithoutDocumentUploadingfromDashboard()
     })
 
-    test('08. Continue Without Uploading Dealer Documents', async () => {
+    test('10. Continue Without Uploading Dealer Documents', async () => {
         await bidderdealerpage.DealerWithoutDocUploadingfromDashboard()
     })
 
-    test('09. Add Products', async () => {
+    test('11. Add Products', async () => {
         await bidderinvidualpage.AddProducts()
     })
 
-    test('10. Enter Card Details', async () => {
+    test('12. Enter Card Details', async () => {
         await bidderinvidualpage.CardDetails()
     })
 
-    test('11. Complete DocuSign', async () => {
+    test('13. Complete DocuSign', async () => {
         await bidderinvidualpage.PersonalDocuSign()
     })
 
-    test('12. Upload Documents Later from Dashboard', async () => {
+    test('14. Upload Documents Later from Dashboard', async () => {
         await bidderinvidualpage.BidderDashboardWithoutDocument()
     })
 
