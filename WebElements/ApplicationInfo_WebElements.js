@@ -20,7 +20,7 @@ class ApplicationInfo_WebElements
         this.Consignmentbutton = "//div[text()='Consignments']/parent::div"
         this.FormLibrary = "//span[text()='Form Library']/parent::a"
         this.Filterbutton = "//button[text()='Filter']"
-        this.RemovePastEvent = "//span[text()='Event: Scottsdale Fall 2025']/../parent::button"
+        this.RemovePastEvent = "//span[text()='Event: Scottsdale 2026']/../parent::button"
 
         //Dashboard
         this.Consignmentbutton = "//div[text()='Consignments']/parent::div"

@@ -34,7 +34,8 @@ class AddVinPage
         const randomFirstName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
         const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
 
-        const firstName = "Dev" + randomFirstName;
+        //const firstName = "Devendra" + randomFirstName;
+        const firstName = "Devendra"
         const lastName = "Ind" + randomLastName;
 
         // Fill the form fields with the generated names
