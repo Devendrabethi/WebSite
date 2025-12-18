@@ -61,7 +61,7 @@ class AddMediaPage
             "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\2023_mclaren_artura_coupe_base_fq_oem_15_500.jpg.webp"
         ]
         // // Upload each photo to its respective field
-        await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload)
+        await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload, { timeout: 90000 })
         await this.page.waitForTimeout(4000);
         await this.page.locator(this.addmedia_webelements.UploadAllButton).click()
         await this.page.waitForTimeout(4000);

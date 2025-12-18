@@ -79,7 +79,7 @@ class BidderDealerPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.SelectRepresentative).click()
         await this.page.locator(this.bidderdealer_webelements.DealerState_Field).fill(this.testdata.LicState)
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(3000)
         await this.page.screenshot({ path: './ScreenShot/50.1 BidderDealerDetails.png', fullPage: true})
             //    await this.page.locator(this.bidderdealer_webelements.SelectDealerState).click()  in UAT not working dropdown
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
@@ -185,7 +185,7 @@ class BidderDealerPage
         await this.page.screenshot({ path: './ScreenShot/67.5 PaymentDetailsForCCDeposit.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.CCNextbtn).click()
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
+        //await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
 
     }
 }

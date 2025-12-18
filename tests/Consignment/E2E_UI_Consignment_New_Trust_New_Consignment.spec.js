@@ -43,32 +43,32 @@ test.describe('Trust Consignment Flow', () => {
         await addvinpage.LoginIn()
     })
 
-    test('05. Enter Vehicle Details (Part 1)', async () => {
+    test('05. Enter Vehicle VIN', async () => {
         await addvinpage.VehicleDetailsone()
     })
 
-    test('06. Select Power Source (Diesel)', async () => {
+    test('06. Select Power Source (Diesel) and Vehicle Details', async () => {
         await addvinpage.PowerSourceDiesel()
     })
 
-    test('07. Enter Mileage', async () => {
+    test('07. Vehicle Condition', async () => {
         await addvinpage.Mileage()
     })
 
-    test('08. Enter Vehicle Description', async () => {
+    test('08. Enter Vehicle Short and Long Description', async () => {
         await addvinpage.VehicleDescp()
     })
 
-    test('09. Upload Additional Photos', async () => {
+    test('09. Uploading Media', async () => {
         // await addmediapage.MainPhotos();
         await addmediapage.AdditionalPhotos()
     })
 
-    test('10. Create Trust Account and Upload Trust Vehicle Documents', async () => {
+    test('10. Upload Vehicle Title Documents and Trust Document in Appilicant page and Creating Personal Account', async () => {
         await trustpage.TrustVehicleDocument()
     })
 
-    test('11. Finish Application', async () => {
+    test('11. Additional Details In Finish Application', async () => {
         await applicationinfopage.FinishApplication()
     })
 
@@ -76,11 +76,11 @@ test.describe('Trust Consignment Flow', () => {
         await applicationinfopage.ReviewApp()
     })
 
-    test('13. View Submission', async () => {
+    test('13. View My Submission', async () => {
         await applicationinfopage.ViewMySubmission()
     })
 
-    test('14. Open Consignment Dashboard (With Documents)', async () => {
+    test('14. Open Consignment Dashboard and Verifying all tab in Dashboard', async () => {
         await applicationinfopage.ConsignmentDashboardwithDocument()
     })
 

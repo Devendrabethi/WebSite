@@ -62,6 +62,7 @@ class BidderBusinessPage
         await this.page.locator(this.bidderbusiness_webelements.RelationshipBusiness).click()
         await this.page.waitForTimeout(500)
         await this.page.locator(this.bidderbusiness_webelements.SelectOwner).click()
+        await this.page.waitForTimeout(3000)
         await this.page.screenshot({ path: './ScreenShot/50.2 BusinessDetails.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
     }

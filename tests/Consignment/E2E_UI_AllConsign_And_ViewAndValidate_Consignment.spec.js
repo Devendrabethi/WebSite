@@ -57,7 +57,7 @@ test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignm
         await addvinpage.LoginIn()
     })
 
-    test('05. Individual: Enter Vehicle Details', async () => {
+    test('05. Individual: Enter Vehicle Details (VIN, Power Source, Condition, Description', async () => {
         await addvinpage.VehicleDetailsone()
         await addvinpage.PowerSource()
         await addvinpage.VehicleDetailstwo()
@@ -65,15 +65,15 @@ test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignm
         await addvinpage.VehicleDescp()
     })
 
-    test('06. Individual: Upload Photos', async () => {
+    test('06. Individual: Uploading Media', async () => {
         await addmediapage.AdditionalPhotos()
     })
 
-    test('07. Individual: Upload Vehicle Documents', async () => {
+    test('07. Individual: Upload Vehicle Title Documents and Creating Personal Account in Appilicant page', async () => {
         await titledocument_page.VehicleDocument()
     })
 
-    test('08. Individual: Finish Application & Review', async () => {
+    test('08. Individual: Additional Details In Finish Application and Review', async () => {
         await applicationinfopage.FinishApplication()
         await applicationinfopage.ReviewApp()
     })
@@ -86,22 +86,22 @@ test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignm
         await businesspage.StartAnotherApp()
     })
 
-    test('10. Business: Enter Vehicle Details', async () => {
+    test('10. Business: Enter Vehicle Details (VIN, Power Source, Condition, Description', async () => {
         await addvinpage.VehicleDetailsone()
         await addvinpage.PowerSourceHyBrid()
         await addvinpage.Mileage()
         await addvinpage.VehicleDescp()
     })
 
-    test('11. Business: Upload Photos', async () => {
+    test('11. Business: Upload Media', async () => {
         await addmediapage.AdditionalPhotos()
     })
 
-    test('12. Business: Upload Vehicle Docs (Already Business)', async () => {
+    test('12. Business: Upload Vehicle Title Documents and Business Documents and Creating Business Account in Appilicant page', async () => {
         await businesspage.AlreadyBusinessVehicleDocument()
     })
 
-    test('13. Business: Finish Application & Review', async () => {
+    test('13. Business: Additional Details In Finish Application and Review', async () => {
         await applicationinfopage.FinishApplication()
         await applicationinfopage.ReviewApp()
     })
@@ -114,22 +114,22 @@ test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignm
         await businesspage.StartAnotherApp()
     })
 
-    test('15. Dealer: Enter Vehicle Details', async () => {
+    test('15. Dealer: Enter Vehicle Details (VIN, Power Source, Condition, Description', async () => {
         await addvinpage.VehicleDetailsone()
         await addvinpage.PowerSourceElectric()
         await addvinpage.Mileage()
         await addvinpage.VehicleDescp()
     })
 
-    test('16. Dealer: Upload Photos', async () => {
+    test('16. Dealer: Upload Media', async () => {
         await addmediapage.AdditionalPhotos()
     })
 
-    test('17. Dealer: Upload Vehicle Docs (Already Dealer)', async () => {
+    test('17. Dealer: Upload Vehicle Title Documents and Dealer Documents and Creating Dealer Account in Appilicant page', async () => {
         await dealerpage.AlreadyDealerVehicleDocument()
     })
 
-    test('18. Dealer: Finish Application & Review', async () => {
+    test('18. Dealer: Additional Details In Finish Application and Review', async () => {
         await applicationinfopage.FinishApplication()
         await applicationinfopage.ReviewApp()
     })
@@ -142,27 +142,27 @@ test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignm
         await businesspage.StartAnotherApp()
     })
 
-    test('20. Trust: Enter Vehicle Details', async () => {
+    test('20. Trust: Enter Vehicle Details (VIN, Power Source, Condition, Description', async () => {
         await addvinpage.VehicleDetailsone()
         await addvinpage.PowerSourceDiesel()
         await addvinpage.Mileage()
         await addvinpage.VehicleDescp()
     })
 
-    test('21. Trust: Upload Photos', async () => {
+    test('21. Trust: Upload Media', async () => {
         await addmediapage.AdditionalPhotos()
     })
 
-    test('22. Trust: Upload Vehicle Docs (Trust)', async () => {
+    test('22. Trust: Upload Vehicle Title Documents and Title Documents', async () => {
         await trustpage.AlreadyTrustVehicleDocument()
     })
 
-    test('23. Trust: Finish Application & Review', async () => {
+    test('23. Trust: Additional Details In Finish Application and Review', async () => {
         await applicationinfopage.FinishApplication()
         await applicationinfopage.ReviewApp()
     })
 
-    test('24. Trust: View Submission & Dashboard', async () => {
+    test('24. Trust: View My  Submission & Verify All Tabs in Dashboard', async () => {
         await applicationinfopage.ViewMySubmission()
         await applicationinfopage.ConsignmentDashboardwithDocument()
     })

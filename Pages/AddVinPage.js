@@ -79,7 +79,7 @@ class AddVinPage
     {
         //await this.page.setViewportSize({ width: 1920, height: 950 })
         await this.page.goto(process.env.URL)
-        await this.page.locator(this.addVIN_webelements.Acceptpopup).click()
+        await this.page.locator(this.addVIN_webelements.Acceptpopup).click({timeout:60000})
     }
     async SignIn()
     {
@@ -253,7 +253,7 @@ class AddVinPage
         await this.page.screenshot({ path: './ScreenShot/7 VinPage.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
-        await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
+        await this.page.locator(this.addVIN_webelements.Make_DropDown).click({timeout:60000})
         await this.page.waitForTimeout(500)
         await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
 

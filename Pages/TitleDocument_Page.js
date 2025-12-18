@@ -36,7 +36,7 @@ class TitleDocument_Page
         await this.page.waitForTimeout(5000);
         await this.page.screenshot({ path: './ScreenShot/12 VehicleDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.waitForTimeout(1000)
+        await this.page.waitForTimeout(3000)
         await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName)
         await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber)
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)

@@ -37,39 +37,39 @@ test.describe('Bidder Opportunity - Individual Premium Package with DocuSign', (
         await addvinpage.LoginIn();
     });
 
-    test('05. Fill Individual Details', async () => {
+    test('05. Fill Individual Details Register', async () => {
         await bidderinvidualpage.IndividualDetails();
     });
 
-    test('06. Complete Registration', async () => {
+    test('06. Complete Individual Registration Method', async () => {
         await bidderinvidualpage.IndividualRegistration();
     });
 
-    test('07. Enter Address Details', async () => {
+    test('07. Enter Addresses Details', async () => {
         await bidderinvidualpage.AddressDetails();
     });
 
-    test('08. Desired Bid Limit', async () => {
+    test('08. Bid Method', async () => {
         await bidderinvidualpage.DesiredBidLimit();
     });
 
-    test('09. Upload Additional Documents', async () => {
+    test('09. Upload Additional Method Documents', async () => {
         await bidderinvidualpage.AdditionalDocument();
     });
 
-    test('10. Add Products', async () => {
+    test('10. Add Products Packages', async () => {
         await bidderinvidualpage.AddProducts();
     });
 
-    test('11. Enter Card Details', async () => {
+    test('11. Enter Card Details in Payment Page', async () => {
         await bidderinvidualpage.CardDetails();
     });
 
-    test('12. Complete DocuSign', async () => {
+    test('12. Complete DocuSign Agreement', async () => {
         await bidderinvidualpage.PersonalDocuSign();
     });
 
-    test('13. View Opportunity', async () => {
+    test('13. View Aggreement Created Bidder Opportunity', async () => {
         await bidderinvidualpage.ViewBidderOpportunity();
     });
 

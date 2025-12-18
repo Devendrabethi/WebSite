@@ -44,32 +44,32 @@ test.describe('Business Consignment Flow', () => {
         await addvinpage.LoginIn()
     })
 
-    test('05. Enter Vehicle Details (Part 1)', async () => {
+    test('05. Enter Vehicle VIN', async () => {
         await addvinpage.VehicleDetailsone()
     })
 
-    test('06. Select Power Source (Hybrid)', async () => {
+    test('06. Select Power Source (Hybrid) and Vehicle Details', async () => {
         await addvinpage.PowerSourceHyBrid()
     })
 
-    test('07. Enter Mileage', async () => {
+    test('07. Vehicle Condition', async () => {
         await addvinpage.Mileage()
     })
 
-    test('08. Enter Vehicle Description', async () => {
+    test('08. Enter Vehicle Short and Long Description', async () => {
         await addvinpage.VehicleDescp()
     })
 
-    test('09. Upload Additional Photos', async () => {
+    test('09. Uploading Media', async () => {
         // await addmediapage.MainPhotos();
         await addmediapage.AdditionalPhotos()
     })
 
-    test('10. Create Business Account and Upload Vehicle Documents', async () => {
+    test('10. Upload Vehicle Title Documents and Creating Business Account in Appilicant page and Creating Personal Account', async () => {
         await businesspage.BusinessVehicleDocument()
     })
 
-    test('11. Finish Application', async () => {
+    test('11. Additional Details In Finish Application', async () => {
         await applicationinfopage.FinishApplication()
     })
 
@@ -77,11 +77,11 @@ test.describe('Business Consignment Flow', () => {
         await applicationinfopage.ReviewApp()
     })
 
-    test('13. View Submission', async () => {
+    test('13. View My Submission', async () => {
         await applicationinfopage.ViewMySubmission()
     })
 
-    test('14. Open Consignment Dashboard (With Documents)', async () => {
+    test('14. Open Consignment Dashboard and Verifying all tab in Dashboard', async () => {
         await applicationinfopage.ConsignmentDashboardwithDocument()
     })
 

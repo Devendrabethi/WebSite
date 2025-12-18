@@ -38,11 +38,11 @@ test.describe('Bidder Opportunity - Individual Regular Bidder Mobilia Package', 
         await addvinpage.LoginIn()
     })
 
-    test('05. Enter Individual Details', async () => {
+    test('05. Enter Individual Details Register', async () => {
         await bidderinvidualpage.IndividualDetails()
     })
 
-    test('06. Complete Individual Registration', async () => {
+    test('06. Complete Individual Registration Method', async () => {
         await bidderinvidualpage.IndividualRegistration()
     })
 
@@ -50,19 +50,19 @@ test.describe('Bidder Opportunity - Individual Regular Bidder Mobilia Package', 
         await bidderinvidualpage.RegularBidderMobiliaAddressDetails()
     })
 
-    test('08. Set Desired Bid Limit', async () => {
+    test('08. Bid Method', async () => {
         await bidderinvidualpage.DesiredBidLimit()
     })
 
-    test('09. Enter Card Details', async () => {
+    test('09. Enter Card Details in Payment Page', async () => {
         await bidderinvidualpage.CardDetails()
     })
 
-    test('10. Complete DocuSign', async () => {
+    test('10. Complete DocuSign Agreement', async () => {
         await bidderinvidualpage.PersonalDocuSign()
     })
 
-    test('11. View Created Bidder Opportunity', async () => {
+    test('11. View Aggreement Created Bidder Opportunity', async () => {
         await bidderinvidualpage.ViewBidderOpportunity()
     })
 
