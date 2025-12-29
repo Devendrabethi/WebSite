@@ -11,7 +11,7 @@ let addvinpage
 let bidderinvidualpage
 let bidderdealerpage
 
-test.describe('Bidder Opportunity - Dealer Pre-Premium (Upload Documents in Dashboard)', () => {
+test.describe('Bidder Opportunity - CompConsignor With Product Package', () => {
 
     test.beforeAll(async ({ playwright }) => {
         // Launch browser
@@ -26,7 +26,7 @@ test.describe('Bidder Opportunity - Dealer Pre-Premium (Upload Documents in Dash
     })
 
     test('01. Start Dealer Pre-Premium Opportunity', async () => {
-        await bidderdealerpage.BidderOpportunityPre_premium()
+        await bidderdealerpage.BidderOpportunity_CompConsignor_WithProduct()
     })
 
     test('02. Create New Account', async () => {
@@ -57,12 +57,12 @@ test.describe('Bidder Opportunity - Dealer Pre-Premium (Upload Documents in Dash
         await bidderdealerpage.DesiredBidLimit()
     })
 
-    test('09. Continue Without Uploading Method Individual Documents', async () => {
-        await bidderinvidualpage.AdditionalWithoutDocumentUploadingfromDashboard()
+    test('09. Upload Individual Method Documents', async () => {
+        await bidderinvidualpage.AdditionalDocument()
     })
 
-    test('10. Continue Without Uploading Method Dealer Documents', async () => {
-        await bidderdealerpage.DealerWithoutDocUploadingfromDashboard()
+    test('10. Upload Dealer Documents', async () => {
+        await bidderdealerpage.DealerDocument()
     })
 
     test('11. Add Products Packages', async () => {
@@ -73,18 +73,18 @@ test.describe('Bidder Opportunity - Dealer Pre-Premium (Upload Documents in Dash
         await bidderinvidualpage.CardDetails()
     })
 
-    test('13. Complete DocuSign Agreement', async () => {
+    test('13. Complete Personal DocuSign Agreement', async () => {
         await bidderinvidualpage.PersonalDocuSign()
     })
 
-    test('14. View Aggreement Created Bidder Opportunity and Upload Documents from Dashboard', async () => {
-        await bidderinvidualpage.BidderDashboardWithoutDocument()
+    test('14. View Aggreement Created Bidder Opportunity', async () => {
+        await bidderinvidualpage.ViewBidderOpportunity()
     })
 
     test.afterAll(async () => {
-        console.log('Dealer Pre-Premium (Dashboard Upload) workflow completed.')
+        console.log('Dealer Pre-Premium workflow completed.')
         await page.close()
-        // await browser.close() // Uncomment to close browser
+        // await browser.close()  // uncomment if you want browser to close
     })
 
 })

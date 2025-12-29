@@ -17,6 +17,8 @@ class TitleDocument_WebElements
         this.SelectAddress = "(//div[contains(@data-key, 'address.')])[1]"
         this.CountydDropdown = "//label[text()='County']/following-sibling::div/button"
 
-
+        this.MiddleName_Merchandise = "//label[text()='Middle Name']/following-sibling::div[1]/input"
+        this.PhoneNumber_Merchandise = "//label[text()='Phone Number']/following-sibling::div[1]/input"
+        this.CountyDropdown_Merchandise = "//span[text()='County']/parent::div/following-sibling::button"
     }
 }

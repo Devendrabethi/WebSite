@@ -36,11 +36,11 @@ test.describe('Consignment Individual Flow', () => {
         await addvinpage.SignIn()
     })
 
-    test.skip('03. Confirm Email', async () => {
+    test('03. Confirm Email', async () => {
         await addvinpage.ConfirmEmail()
     })
 
-    test.skip('04. Login', async () => {
+    test('04. Login', async () => {
         await addvinpage.LoginIn()
     })
 

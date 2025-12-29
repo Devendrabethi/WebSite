@@ -13,5 +13,7 @@ class AddMedia_WebElements
         this.VinPhoto = "//label[text()='VIN photo']/../../../following-sibling::div/div[2]/input[@type='file']"//"(//input[@type='file'])[6]"
 
         this.AdditionalPhotos = "//input[@type='file']"
+        this.AdditionalPhotos2 = "(//input[@type='file'])[2]"
+        this.AdditionalPhotos3 = "(//input[@type='file'])[3]"
     }
 }

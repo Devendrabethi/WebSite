@@ -39,6 +39,7 @@ class TitleDocument_Page
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.titledocument_webelements.MiddleName).fill(this.testdata.MiddleName)
         await this.page.locator(this.titledocument_webelements.ContactNumber).fill(this.testdata.ContactNumber)
+        await this.page.locator(this.titledocument_webelements.AddressSearch).click()
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.locator(this.titledocument_webelements.CountydDropdown).click()

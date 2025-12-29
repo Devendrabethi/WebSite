@@ -11,7 +11,7 @@ let addvinpage;
 let bidderinvidualpage;
 let bidderbusinesspage;
 
-test.describe('Bidder Opportunity - Business with Select Package', () => {
+test.describe('Bidder Opportunity - Business with CompConsignor WithoutProduct Package', () => {
 
     test.beforeAll(async ({ playwright }) => {
         // Launch browser manually
@@ -26,7 +26,7 @@ test.describe('Bidder Opportunity - Business with Select Package', () => {
     });
 
     test('01. Start Business Select Package Opportunity', async () => {
-        await bidderbusinesspage.BidderOpportunitySelect();
+        await bidderbusinesspage.BidderOpportunityCompConsignorWithoutProduct();
     });
 
     test('02. Create New Account', async () => {
@@ -65,12 +65,12 @@ test.describe('Bidder Opportunity - Business with Select Package', () => {
         await bidderbusinesspage.BusinessDocument();
     });
 
-    test('11. Add Products Packages', async () => {
+    test.skip('11. Add Products Packages', async () => {
         await bidderinvidualpage.AddProducts();
     });
 
     test('12.  Enter Card Details in Payment Page', async () => {
-        await bidderinvidualpage.CardDetails();
+        await bidderinvidualpage.CardDetailsWithoutProduct();
     });
 
     test('13. Complete DocuSign Agreement', async () => {

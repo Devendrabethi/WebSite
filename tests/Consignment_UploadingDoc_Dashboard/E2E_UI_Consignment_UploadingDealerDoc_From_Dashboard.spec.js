@@ -106,11 +106,11 @@ test.describe('Dealer Consignment Flow Without Documents (Upload Document from D
         await addvinpage.SignIn()
     })
 
-    test.skip('03. Confirm Email', async () => {
+    test('03. Confirm Email', async () => {
         await addvinpage.ConfirmEmail()
     })
 
-    test.skip('04. Login', async () => {
+    test('04. Login', async () => {
         await addvinpage.LoginIn()
     })
 

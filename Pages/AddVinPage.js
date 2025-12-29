@@ -100,7 +100,7 @@ class AddVinPage
         const randomFirstName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
         const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
 
-        const firstName = "Devendra" + randomFirstName;
+        const firstName = "Devendra"; // + randomFirstName
         const lastName = "Ind" + randomLastName;
 
         // Fill the form fields with the generated names
@@ -154,7 +154,7 @@ class AddVinPage
         
         await this.page.waitForTimeout(8000)
         await newPage.close();
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(4000)
         await page1.close();
         //await this.page.bringToFront();
     }
@@ -253,22 +253,22 @@ class AddVinPage
         await this.page.screenshot({ path: './ScreenShot/7 VinPage.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
-        await this.page.locator(this.addVIN_webelements.Make_DropDown).click({timeout:60000})
-        await this.page.waitForTimeout(500)
-        await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
+        // await this.page.locator(this.addVIN_webelements.Make_DropDown).click({timeout:60000})
+        // await this.page.waitForTimeout(500)
+        // await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
+        //await this.page.locator(this.addVIN_webelements.Year_Field).fill(this.testdata.Year)
 
         const randomYear = this.testdata.vehicleYears[ Math.floor(Math.random() * this.testdata.vehicleYears.length)]
         await this.page.fill(this.addVIN_webelements.Year_Field, randomYear);
 
-       // await this.page.locator(this.addVIN_webelements.Year_Field).fill(this.testdata.Year)
+        await this.page.locator(this.addVIN_webelements.Make_DropDown).click({ state: 'visible' })
 
         const randomVehicle = this.testdata.vehicleMakes[ Math.floor(Math.random() * this.testdata.vehicleMakes.length)]
-        await this.page.fill(this.addVIN_webelements.Make_Field, randomVehicle);
-
-       // await this.page.locator(this.addVIN_webelements.Make_Field).fill(this.testdata.Audi)
-        await this.page.locator(this.addVIN_webelements.Select_Make).click()
-        await this.page.locator(this.addVIN_webelements.Model_Field).click()
-        await this.page.locator(this.addVIN_webelements.Select_Model).click()
+        await this.page.fill(this.addVIN_webelements.Search_make, randomVehicle,{ state: 'visible' });
+        await this.page.locator(this.addVIN_webelements.Select_SearchMake).click({ state: 'visible' })
+        
+        await this.page.locator(this.addVIN_webelements.Modal_Dropdown).click()
+        await this.page.locator(this.addVIN_webelements.Select_SearchModal).click()
         await this.page.locator(this.addVIN_webelements.Style_Field).fill(this.testdata.Style)
     }
     async PowerSource()
@@ -381,3 +381,11 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
 }
+
+
+// await page.getByRole('textbox', { name: 'Year Required' }).click();
+// await page.getByRole('textbox', { name: 'Year Required' }).fill('1920');
+// await page.getByRole('button', { name: 'Make Required Help' }).nth(1).click();
+// await page.getByRole('searchbox', { name: 'Search' }).click();
+// await page.getByRole('searchbox', { name: 'Search' }).fill('bmw');
+// await page.getByRole('option', { name: 'BMW' }).locator('span').first().click();

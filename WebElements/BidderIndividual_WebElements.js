@@ -13,7 +13,8 @@ class BidderIndividual_WebElements
         this.TitlePaperwork = "(//input[@name='addressSearch'])[3]"
         this.Biddingaddress = "(//input[@name='addressSearch'])[4]"
         this.SelectAddress = "(//div[contains(@data-key, 'address.')])[1]"
-
+        this.SelectCountyDropdown = "//span[text()='County']/parent::div/following-sibling::button"
+        this.Select_County = "(//div[@aria-label='Suggestions']/div)[1]"
         this.DesiredBidLimit_Field = "//label[text()='Desired bid limit']/following-sibling::div/input"
         this.BiddingCollateralBox = "//input[@value='biddingCollateral']/../parent::label"
 
@@ -34,8 +35,9 @@ class BidderIndividual_WebElements
 
         this.CardDetails_Checkbox = "//label[contains(text(),'My billing contact')]"
         this.Slect_ExistingAddress = "//button[text()='Select an existing address']"
-        this.Select_MailingAddress = "//p[text()='Mailing Address']"
+        this.Select_MailingAddress = "//p[text()='Mailing Address']/parent::label"
         this.ConfirmSelection = "//span[text()='Confirm Selection']"
+        this.CancelSelection = "//span[text()='Cancel']"
 
         this.CardFirstName = "//input[@name='firstNameCard']"
         this.CardLastName = "//input[@name='lastNameCard']"
@@ -48,6 +50,7 @@ class BidderIndividual_WebElements
         this.ZipCode = "//input[@title='ZIP Code']"
 
         this.SubmitOpportunity = "//span[text()='Pay for registration']/parent::button"
+        this.ConfirmRegistration = "//span[text()='Confirm registration']/parent::button"
 
         this.ViewBidderOpportunity = "//span[text()='View my agreement']/parent::a"
 

@@ -15,8 +15,8 @@ class TestData
         // this.ConfirmPassword = "Pongal1212$1"
         this.vehicleYears = ["2014", "2013", "2016", "2017", "2018", "2019"];
         this.vehicleMakes = ["BMW", "FORD", "MERCEDES-BENZ", "TOYOTA", "AUDI", "DODGE"];
-    //this.Year = "2015"
-    // this.Audi = "BMW"
+        this.Year = "2015"
+        this.Audi = "BMW"
         this.Trim = "Turbo Premium"
         this.Style = "SUV"
         this.Engine = "L/121"
@@ -35,7 +35,7 @@ class TestData
         this.LongDescription = "This Audi A4 has a dependable Intercooled Turbo Premium Unleaded I-4 2.0 L/121 engine powering this Automatic transmission. Window Grid Diversity Antenna, Wheels:8 5-Double-Spoke Dynamic Design, Wheels w/Silver Accents.*Critics Agree*KBB.com 10 Most Awarded Cars, KBB.com 10 Favorite New-for-2018 Cars, KBB.com Best Buy Awards, KBB.com Best Auto Tech Awards, KBB.com 10 Most Awarded Brands."
         this.MiddleName = "Bethi"
         this.ContactNumber = "(701) 839-6645"
-        this.AddressSearch = " 15555 North 79th Place, Scottsdale, Arizona, 85260, Maricopa County, United States"
+        this.AddressSearch = "15555 North 79th Place"
 
         this.VechileWorth = "49999"
 
@@ -54,10 +54,10 @@ class TestData
         this.TitleTrustName = "Devendra Trust"
         
         this.MobileNum = "(231) 629-8184"
-        this.MailingAddress = "5055 E Somerset Dr Cornville, Arizona(AZ), 86325"
-        this.VehicleAddress = "india"
+        this.MailingAddress = "15555 North 79th Place"
+        this.VehicleAddress = "india "
         this.TitlePaperworkAddress = "united kingdom"
-        this.BiddingAddress = "united canada"
+        this.BiddingAddress = "15555 Canada Plum Street"
 
         this.BidLimitValue = "90001"
         this.QuantityValue = "3"

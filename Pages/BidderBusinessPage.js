@@ -29,6 +29,14 @@ class BidderBusinessPage
         //await this.page.reload()
         await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
     }
+     async BidderOpportunityCompConsignorWithoutProduct()
+    {
+        await this.page.setViewportSize({ width: 1920, height: 950 })
+        await this.page.goto(process.env.BidderCompConsignorURL)
+        await this.page.waitForTimeout(6000)
+        //await this.page.reload()
+        await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click()
+    }
 
     async BusinessRegistration()
     {
@@ -69,7 +77,7 @@ class BidderBusinessPage
     async DesiredBidLimit()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderbusiness_webelements.DesiredBidLimit_Field).click()
+        await this.page.locator(this.bidderbusiness_webelements.DesiredBidLimit_Field).click({timeout:60000})
         await this.page.locator(this.bidderbusiness_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.keyboard.press('Tab')
         await this.page.locator(this.bidderbusiness_webelements.FinancingBox).click()
@@ -78,7 +86,7 @@ class BidderBusinessPage
         await this.page.locator(this.bidderbusiness_webelements.Nextbtn).click()  
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderbusiness_webelements.SelectRadiobtn).click()
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(1500)
         await this.page.screenshot({ path: './ScreenShot/54.3 DesireBidLimitWithFinancingOption.png', fullPage: true})
         await this.page.locator(this.bidderbusiness_webelements.SubmitFinancing).click()
     }
@@ -90,7 +98,7 @@ class BidderBusinessPage
         }
         await this.page.waitForTimeout(2000);
         // Upload each photo to its respective field
-        await this.page.locator(this.bidderbusiness_webelements.BusinessDoc).setInputFiles(fileToUpload2.businessL);
+        await this.page.locator(this.bidderbusiness_webelements.BusinessDoc).setInputFiles(fileToUpload2.businessL, {timeout:90000} );
         await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/56.2 BusinessDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
