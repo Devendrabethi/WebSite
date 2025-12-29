@@ -202,9 +202,9 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
-        await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
-        await this.page.waitForTimeout(500)
-        await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
+        // await this.page.waitForTimeout(500)
+        // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         await this.page.screenshot({ path: './ScreenShot/DealerDetails.png', fullPage: true})
         const fileToUpload2 = 
         {
