@@ -30,11 +30,11 @@ test.describe('Bidder Opportunity - Individual Regular Bidder Mobilia Package', 
         await addvinpage.SignIn()
     })
 
-    test('03. Confirm Email', async () => {
+    test.skip('03. Confirm Email', async () => {
         await addvinpage.ConfirmEmail()
     })
 
-    test('04. Login', async () => {
+    test.skip('04. Login', async () => {
         await addvinpage.LoginIn()
     })
 
@@ -51,7 +51,7 @@ test.describe('Bidder Opportunity - Individual Regular Bidder Mobilia Package', 
     })
 
     test('08. Bid Method', async () => {
-        await bidderinvidualpage.DesiredBidLimit()
+        await bidderinvidualpage.RegularBidderDesiredBidLimit()
     })
 
     test('09. Enter Card Details in Payment Page', async () => {

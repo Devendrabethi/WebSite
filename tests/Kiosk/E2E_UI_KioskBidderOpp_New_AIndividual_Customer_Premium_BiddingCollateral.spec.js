@@ -48,11 +48,12 @@ test.describe('Kiosk Bidder Opportunity - Individual Premium Package with DocuSi
     });
 
     test('08. Selecting the package', async () => {
-        await kioskpage.SelectPackage();
+        await kioskpage.SelectPremiumPackage();
     });
-    // test('05. Fill Individual Details Register', async () => {
-    //     await bidderinvidualpage.IndividualDetails();
-    // });
+
+    test('09. Fill Individual Details Register', async () => {
+        await kioskpage.BidderRegister();
+    });
 
     // test('06. Complete Individual Registration Method', async () => {
     //     await bidderinvidualpage.IndividualRegistration();

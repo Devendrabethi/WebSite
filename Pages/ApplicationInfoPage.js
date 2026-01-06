@@ -93,8 +93,10 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(15000);
         await this.page.screenshot({ path: './ScreenShot/27 DocumentIndividualWithDocuments.png', fullPage: true})
         //await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
+         const BusinessDocumentSection = this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection)
         try {
-                await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click({timeout:30000});
+                await BusinessDocumentSection.waitFor({ timeout: 10000 });
+                await BusinessDocumentSection.click({timeout:30000});
                 console.log('Business Document Section clicked successfully');
             } catch (error) 
             {

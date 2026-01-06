@@ -30,7 +30,11 @@ class KioskPage
         await this.page.locator(this.kisosk_webelements.Select_Event).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(process.env.Kiosk_Premium).click()
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(process.env.Kiosk_Select).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(process.env.Kiosk_AbsenteeBidder).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.kisosk_webelements.NextStep_Button).click()
         await this.page.locator(this.kisosk_webelements.Skip_Terminal).click()
     }
@@ -161,11 +165,17 @@ class KioskPage
         await this.page.locator(this.addVIN_webelements.Loginbutton).click()
         await this.page.waitForTimeout(5000)
     }
-    async SelectPackage()
+    async SelectPremiumPackage()
     {
         await this.page.locator(this.kisosk_webelements.Select_PrimiumPackage).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.kisosk_webelements.Next_Button).click()
-        await this.page.waitForTimeout(15000)
+        await this.page.waitForTimeout(5000)
+    }
+    async BidderRegister()
+    {
+        await this.page.locator(this.kisosk_webelements.TakePhoto_Button).click()
+        await this.page.locator(this.kisosk_webelements.Capture_Photo).click()
+        await this.page.waitForTimeout(5000)
     }
 }

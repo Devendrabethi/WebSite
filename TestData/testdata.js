@@ -60,6 +60,7 @@ class TestData
         this.BiddingAddress = "15555 Canada Plum Street"
 
         this.BidLimitValue = "90001"
+        this.RegularBidderBidLimitValue = "50001"
         this.QuantityValue = "3"
 
         this.CardFName = "Devendra"

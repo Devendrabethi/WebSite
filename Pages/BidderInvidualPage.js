@@ -130,6 +130,17 @@ class BidderInvidualPage
         await this.page.waitForTimeout(5000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
     }
+        async RegularBidderDesiredBidLimit()
+    {
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).click()
+        await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).fill(this.testdata.RegularBidderBidLimitValue,{timeout:4000})
+        await this.page.keyboard.press('Tab')
+        await this.page.locator(this.bidderindividual_webelements.BiddingCollateralBox).click()
+        await this.page.screenshot({ path: './ScreenShot/54 DesiredBidLimitWithBiddingCollateral.png', fullPage: true})
+        await this.page.waitForTimeout(5000)
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+    }
     async AdditionalWithoutDocumentUploadingfromDashboard()
     {
         const fileToUpload2 = 
