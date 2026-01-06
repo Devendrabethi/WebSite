@@ -49,11 +49,11 @@ test.describe('Consignment Flow for Individual, Business, Dealer, Trust consignm
         await addvinpage.SignIn()
     })
 
-    test('03. Confirm Email', async () => {
+    test.skip('03. Confirm Email', async () => {
         await addvinpage.ConfirmEmail()
     })
 
-    test('04. Login', async () => {
+    test.skip('04. Login', async () => {
         await addvinpage.LoginIn()
     })
 

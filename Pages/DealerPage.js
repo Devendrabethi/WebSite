@@ -51,16 +51,24 @@ class DealerPage
         await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.screenshot({ path: './ScreenShot/49 DealerDetails.png', fullPage: true})
-         await this.page.locator(this.dealer_webelements.OperatingAggYES).click()
+        await this.page.locator(this.dealer_webelements.OperatingAggYES).click()
         await this.page.locator(this.dealer_webelements.DealerExpDateCalendar).click()
         await this.page.locator(this.dealer_webelements.CurrentDate).click()
-        await this.page.locator(this.dealer_webelements.DealerLicenseState).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000);
-        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.locator(this.dealer_webelements.DealerLicenseState).click()
+        await this.page.locator(this.addVIN_webelements.Search_make).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.addVIN_webelements.Select_FirstOption).click()
+        await this.page.waitForTimeout(1000);
+        //await this.page.locator(this.dealer_webelements.SelectState).click()
         await this.page.locator(this.dealer_webelements.TaxId).fill(this.testdata.TaxId_Value)
         await this.page.locator(this.dealer_webelements.ResaleExpDateCalandar).click()
         await this.page.locator(this.dealer_webelements.CurrentDate).click()
-        await this.page.locator(this.dealer_webelements.ResaleLicenseState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.ResaleLicenseState).click()
+        await this.page.locator(this.addVIN_webelements.Search_make).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.addVIN_webelements.Select_FirstOption).click()
         await this.page.waitForTimeout(1000);
         await this.page.locator(this.dealer_webelements.SelectState).click()
         await this.page.screenshot({ path: './ScreenShot/50 DealerDocumentsWithDetails.png', fullPage: true})
@@ -111,11 +119,11 @@ class DealerPage
         await this.page.locator(this.titledocument_webelements.FrontTitle).setInputFiles(fileToUpload1.fronttitle);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.titledocument_webelements.BackTitle).setInputFiles(fileToUpload1.Backtitle);
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(5000);
         await this.page.screenshot({ path: './ScreenShot/13 VehicleDocumentsWithDealer.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
-        await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
+        await this.page.locator(this.titledocument_webelements.AddressSearch_Related).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.screenshot({ path: './ScreenShot/13.1 DealerDetails.png', fullPage: true})
         const fileToUpload2 = 
@@ -136,15 +144,19 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.OperatingAggYES).click()
         await this.page.locator(this.dealer_webelements.DealerExpDateCalendar).click()
         await this.page.locator(this.dealer_webelements.CurrentDate).click()
-        await this.page.locator(this.dealer_webelements.DealerLicenseState).fill(this.testdata.LicState)
+        await this.page.locator(this.dealer_webelements.DealerLicenseState).click()
         await this.page.waitForTimeout(1000);
-        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.locator(this.dealer_webelements.SearchDealerState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.Select_FirstOption).click()
         await this.page.locator(this.dealer_webelements.TaxId).fill(this.testdata.TaxId_Value)
         await this.page.locator(this.dealer_webelements.ResaleExpDateCalandar).click()
         await this.page.locator(this.dealer_webelements.CurrentDate).click()
-        await this.page.locator(this.dealer_webelements.ResaleLicenseState).fill(this.testdata.LicState)
+        await this.page.locator(this.dealer_webelements.ResaleLicenseState).click()
         await this.page.waitForTimeout(1000);
-        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.locator(this.dealer_webelements.SearchDealerState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.Select_FirstOption).click()
         await this.page.screenshot({ path: './ScreenShot/13.2 DealerDocumentsWithDetails.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(2000)
@@ -200,7 +212,7 @@ class DealerPage
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
 
         await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
-        await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
+        await this.page.locator(this.titledocument_webelements.AddressSearch_Related).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         // await this.page.locator(this.titledocument_webelements.CountydDropdown).click()
         // await this.page.waitForTimeout(500)
@@ -224,15 +236,19 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.OperatingAggYES).click()
         await this.page.locator(this.dealer_webelements.DealerExpDateCalendar).click()
         await this.page.locator(this.dealer_webelements.CurrentDate).click()
-        await this.page.locator(this.dealer_webelements.DealerLicenseState).fill(this.testdata.LicState)
+        await this.page.locator(this.dealer_webelements.DealerLicenseState).click()
         await this.page.waitForTimeout(1000);
-        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.locator(this.dealer_webelements.SearchDealerState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.Select_FirstOption).click()
         await this.page.locator(this.dealer_webelements.TaxId).fill(this.testdata.TaxId_Value)
         await this.page.locator(this.dealer_webelements.ResaleExpDateCalandar).click()
         await this.page.locator(this.dealer_webelements.CurrentDate).click()
-        await this.page.locator(this.dealer_webelements.ResaleLicenseState).fill(this.testdata.LicState)
+        await this.page.locator(this.dealer_webelements.ResaleLicenseState).click()
         await this.page.waitForTimeout(1000);
-        await this.page.locator(this.dealer_webelements.SelectState).click()
+        await this.page.locator(this.dealer_webelements.SearchDealerState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.dealer_webelements.Select_FirstOption).click()
         await this.page.screenshot({ path: './ScreenShot/13.3 DealerDetailsWithDocuments.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(8000)

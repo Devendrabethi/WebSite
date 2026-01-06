@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from "dotenv"
 
 dotenv.config({
-  path: process.env.TEST_ENV ?`./env-files/.env.${process.env.TEST_ENV}` : `./env-files/.env.hotfixqa`  // TEST_ENV is the variable name uat hotfixqa
+  path: process.env.TEST_ENV ?`./env-files/.env.${process.env.TEST_ENV}` : `./env-files/.env.uat`  // TEST_ENV is the variable name uat hotfixqa
   //path:`./env-files/.env.${process.env.TEST_ENV}` // direct from terminal
 })
 

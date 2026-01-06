@@ -55,8 +55,8 @@ class TestData
         
         this.MobileNum = "(231) 629-8184"
         this.MailingAddress = "15555 North 79th Place"
-        this.VehicleAddress = "india "
-        this.TitlePaperworkAddress = "united kingdom"
+        this.VehicleAddress = "united alabama "
+        this.TitlePaperworkAddress = "United California"
         this.BiddingAddress = "15555 Canada Plum Street"
 
         this.BidLimitValue = "90001"

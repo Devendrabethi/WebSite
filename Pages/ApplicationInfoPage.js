@@ -19,6 +19,7 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.VehicleWorth_Field).fill(this.testdata.VechileWorth,{timeout:90000})
         await this.page.locator(this.applicationinfo_webelements.ReserveType_Dropdown).click()
         await this.page.locator(this.applicationinfo_webelements.Reserve).click()
+        await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.ConsignmentSpecialist).click()
         await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/16 ConsignmentSpecialist.png', fullPage: true})
@@ -87,11 +88,18 @@ class ApplicationInfoPage
         await this.page.screenshot({ path: './ScreenShot/26 DocumentInfo.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
         await this.page.waitForTimeout(3000);
-        await this.page.reload()
+        //await this.page.reload()
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
         await this.page.waitForTimeout(15000);
         await this.page.screenshot({ path: './ScreenShot/27 DocumentIndividualWithDocuments.png', fullPage: true})
-        await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
+        //await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
+        try {
+                await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click({timeout:30000});
+                console.log('Business Document Section clicked successfully');
+            } catch (error) 
+            {
+                console.error('Failed to click Business Document Section:', error);
+            }
         await this.page.waitForTimeout(3000);
         // await this.page.reload()
         // await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
@@ -208,8 +216,8 @@ class ApplicationInfoPage
         await this.page.screenshot({ path: './ScreenShot/41 DocumentInfo.png', fullPage: true})
         const fileToUpload1 = 
         {
-            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
+            "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
             "trustDoc":         "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
         }
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
@@ -223,33 +231,56 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Backtitle)
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        //await this.page.waitForTimeout(5000);
-        await this.page.locator(this.applicationinfo_webelements.ThirdDocument).click()
-        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.trustDoc)
-        await this.page.waitForTimeout(2000);
-        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+        try {
+                    await this.page.locator(this.applicationinfo_webelements.ThirdDocument).click();
+                    await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.trustDoc);
+                    await this.page.waitForTimeout(2000);
+                    await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+                    await this.page.waitForTimeout(5000);
+                    console.log('Third document uploaded successfully');
+            } 
+        catch (error) {
+                    console.error('Error while uploading third document:', error);
+        }
         await this.page.reload()
         await this.page.locator(this.applicationinfo_webelements.IndividualDocumentSection).click()
         await this.page.waitForTimeout(15000);
         await this.page.screenshot({ path: './ScreenShot/43 DocumentIndividualWithDocuments.png', fullPage: true})
-        await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
-        await this.page.screenshot({ path: './ScreenShot/44 DocumentBusiness.png', fullPage: true})
-         await this.page.locator(this.applicationinfo_webelements.FirstDocument).click()
-        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.fronttitle)
-        await this.page.waitForTimeout(2000);
-        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        //await this.page.waitForTimeout(5000);
-        await this.page.locator(this.applicationinfo_webelements.SecondDocument).click()
-        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Backtitle)
-        await this.page.waitForTimeout(2000);
-        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        //await this.page.waitForTimeout(5000);
-        await this.page.locator(this.applicationinfo_webelements.ThirdDocument).click()
-        await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.trustDoc)
-        await this.page.waitForTimeout(2000);
-        await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+    try {
+            await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click({timeout:60000});
+            await this.page.screenshot({path: './ScreenShot/44 DocumentBusiness.png',fullPage: true});
+
+            // First Document
+            await this.page.locator(this.applicationinfo_webelements.FirstDocument).click();
+            await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.fronttitle);
+            await this.page.waitForTimeout(2000);
+            await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+            // Second Document
+            await this.page.locator(this.applicationinfo_webelements.SecondDocument).click();
+            await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Backtitle);
+            await this.page.waitForTimeout(2000);
+            await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+            console.log('First and Second documents uploaded successfully');
+        }
+    catch (error) 
+        {
+            console.error('Error in Business Document Section (First/Second):', error);
+        }
+
+// Third Document (within Business Document Section flow)
+    try {
+            await this.page.locator(this.applicationinfo_webelements.ThirdDocument).click({timeout:60000});
+            await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.trustDoc);
+            await this.page.waitForTimeout(2000);
+            await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+            await this.page.waitForTimeout(5000);
+            console.log('Third document uploaded successfully');
+        } 
+    catch (error) 
+        {
+            console.error('Error uploading Third Document:', error);
+        }
+
         await this.page.reload()
         await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
         await this.page.waitForTimeout(15000);

@@ -115,8 +115,8 @@ class MerchandisePage
     {
         await this.page.locator(this.titledocument_webelements.MiddleName_Merchandise).fill(this.testdata.MiddleName)
         await this.page.locator(this.titledocument_webelements.PhoneNumber_Merchandise).fill(this.testdata.ContactNumber)
-        await this.page.locator(this.titledocument_webelements.AddressSearch).click()
-        await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
+        await this.page.locator(this.titledocument_webelements.AddressSearch_Related).click()
+        await this.page.locator(this.titledocument_webelements.AddressSearch_Related).fill(this.testdata.AddressSearch)
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.waitForTimeout(2000)

@@ -86,8 +86,11 @@ class BidderDealerPage
         await this.page.locator(this.bidderdealer_webelements.RelationshipDealer).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderdealer_webelements.SelectRepresentative).click()
-        await this.page.locator(this.bidderdealer_webelements.DealerState_Field).fill(this.testdata.LicState)
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(1000);
+        await this.page.locator(this.bidderdealer_webelements.DealerState_Field).click()
+        await this.page.locator(this.bidderdealer_webelements.SearchDealerState).fill(this.testdata.LicState)
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderdealer_webelements.Select_FirstOption).click()
         await this.page.screenshot({ path: './ScreenShot/50.1 BidderDealerDetails.png', fullPage: true})
             //    await this.page.locator(this.bidderdealer_webelements.SelectDealerState).click()  in UAT not working dropdown
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   

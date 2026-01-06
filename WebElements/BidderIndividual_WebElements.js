@@ -27,17 +27,17 @@ class BidderIndividual_WebElements
         this.SelectDate = "//button[@slot='next']/../following-sibling::table/tbody/tr[4]/td[4]"
 
 
-        this.FirstProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[1]/td[3]/div/div/button[2]"
-        this.SecoundProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[2]/td[3]/div/div/button[2]"
-        this.ThiredProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[3]/td[3]/div/div/button[2]"
-        this.FourthProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[4]/td[3]/div/div/button[2]"
-        this.MuscleLoungeQuantity = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[5]/td[3]/div/div/button[2]"
+        this.FirstProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[1]/td[3]/div/div/input[@aria-label='Quantity']"
+        this.SecoundProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[2]/td[3]/div/div/input[@aria-label='Quantity']"
+        this.ThiredProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[3]/td[3]/div/div/input[@aria-label='Quantity']"
+        this.FourthProduct = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[4]/td[3]/div/div/input[@aria-label='Quantity']"
+        this.MuscleLoungeQuantity = "//th[text()='Additional Items']/../parent::thead/following-sibling::tbody/tr[5]/td[3]/div/div/input[@aria-label='Quantity']"
 
         this.CardDetails_Checkbox = "//label[contains(text(),'My billing contact')]"
         this.Slect_ExistingAddress = "//button[text()='Select an existing address']"
-        this.Select_MailingAddress = "//p[text()='Mailing Address']/parent::label"
+        this.Select_MailingAddress = "//p[text()='Mailing Address']"
         this.ConfirmSelection = "//span[text()='Confirm Selection']"
-        this.CancelSelection = "//span[text()='Cancel']"
+        this.CancelSelection = "//button[text()='Cancel']"
 
         this.CardFirstName = "//input[@name='firstNameCard']"
         this.CardLastName = "//input[@name='lastNameCard']"

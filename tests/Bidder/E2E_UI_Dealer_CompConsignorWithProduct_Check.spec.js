@@ -6,7 +6,6 @@ import { BidderDealerPage } from '../../Pages/BidderDealerPage.js'
 let browser
 let context
 let page
-
 let addvinpage
 let bidderinvidualpage
 let bidderdealerpage

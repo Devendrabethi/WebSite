@@ -64,7 +64,7 @@ class AddMediaPage
         await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload, { timeout: 90000 })
         await this.page.waitForTimeout(4000);
         await this.page.locator(this.addmedia_webelements.UploadAllButton).click()
-        await this.page.waitForTimeout(4000);
+        await this.page.waitForTimeout(20000);
        // await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible({timeout:60000})
         await this.page.locator(this.addVIN_webelements.NextButton_AdditionalPhoto).click({timeout:60000})
         await this.page.screenshot({ path: './ScreenShot/11 VehiclePhotosWithValidFormate.png', fullPage: true})

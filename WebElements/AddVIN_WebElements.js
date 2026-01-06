@@ -23,6 +23,7 @@ class AddVIN_WebElements
         this.ConfirmPassword = "//input[@name='confirmPassword']"
         this.Checkbox_Agree = "//input[@name='agreeToTerms']/../parent::label"
         this.CreateAccountbtn = "//span[text()='Create account']/parent::button"
+        this.LoginButton_Header = "(//span[text()='Log in'])[1]"
 
 
         this.EmailId = "//input[@name='email']"
@@ -53,7 +54,7 @@ class AddVIN_WebElements
         this.Make_Field = "//label[text()='Make']/following-sibling::div[1]/input"
         this.Select_Make = "//div[@aria-label='Suggestions']/div[1]"
         this.Modal_Dropdown = "(//button[@aria-label='Help'])[2]"
-        this.Select_SearchModal = "//input[@aria-label='Search']/parent::div/following-sibling::div[1]/div[1]"
+        this.Select_FirstOption = "//input[@aria-label='Search']/parent::div/following-sibling::div[1]/div[1]"
         this.Model_Field = "//label[text()='Model']/following-sibling::div[1]/input"
         this.Select_Model = "(//div[@aria-label='Suggestions']/div)[1]"
         this.Trim_Field = "//input[@name='trimLevel']"

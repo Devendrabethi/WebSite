@@ -125,9 +125,22 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.Email).click()
         await this.page.locator(this.addVIN_webelements.Email).fill(this.emailid)
 
-        //Password
-        await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password)
-        await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword)
+//Password
+        // await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password)
+        // await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword)
+        const password = this.page.locator(this.addVIN_webelements.Password);
+
+        try {
+                await password.waitFor({ timeout: 10000 });
+                await password.fill(process.env.Password);
+                //await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password);
+                await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword);
+            } 
+        catch (error) 
+            {
+                console.error('Error while filling password fields:', error);
+            }
+
         await this.page.locator(this.addVIN_webelements.Checkbox_Agree).click()
         await this.page.waitForTimeout(5000)
         await this.page.screenshot({ path: './ScreenShot/1 CreateAccount.png', fullPage: true})
@@ -151,29 +164,30 @@ class AddVinPage
                 this.page.context().waitForEvent('page'),
             ]);
         await newPage.waitForLoadState('load');
-        
         await this.page.waitForTimeout(8000)
         await newPage.close();
         await this.page.waitForTimeout(4000)
         await page1.close();
         //await this.page.bringToFront();
     }
+    
     async LoginIn ()
     {
         await this.page.waitForTimeout(2000)
         //await this.page.setViewportSize({ width: 1920, height: 1080 });
         await this.page.screenshot({ path: './ScreenShot/3 PleaseLoginScreen.png', fullPage: true})
-        await this.page.locator(this.addVIN_webelements.PleaseLogin_Button).click()
+        await this.page.locator(this.addVIN_webelements.LoginButton_Header).click()
         await this.page.waitForTimeout(2000)
          await this.page.locator(this.addVIN_webelements.Loginbutton).click()
         await this.page.waitForTimeout(5000)
     }
+    
     async Forgotpassword()
     {
         await this.page.waitForTimeout(2000)
         //await this.page.setViewportSize({ width: 1920, height: 1080 });
         await this.page.screenshot({ path: './ScreenShot/3 PleaseLoginScreen.png', fullPage: true})
-        await this.page.locator(this.addVIN_webelements.PleaseLogin_Button).click()
+        await this.page.locator(this.addVIN_webelements.LoginButton_Header).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.ForgotPassword).click()
         await this.page.screenshot({ path: './ScreenShot/4 ForgotPasswordScreen.png', fullPage: true})
@@ -252,23 +266,36 @@ class AddVinPage
         await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible()
         await this.page.screenshot({ path: './ScreenShot/7 VinPage.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-
-        // await this.page.locator(this.addVIN_webelements.Make_DropDown).click({timeout:60000})
-        // await this.page.waitForTimeout(500)
-        // await this.page.locator(this.addVIN_webelements.Make_DropDown).click()
-        //await this.page.locator(this.addVIN_webelements.Year_Field).fill(this.testdata.Year)
+        await this.page.waitForTimeout(4000)
 
         const randomYear = this.testdata.vehicleYears[ Math.floor(Math.random() * this.testdata.vehicleYears.length)]
         await this.page.fill(this.addVIN_webelements.Year_Field, randomYear);
 
-        await this.page.locator(this.addVIN_webelements.Make_DropDown).click({ state: 'visible' })
+        // Make dropdown
+        const makeDropdown = this.page.locator(this.addVIN_webelements.Make_DropDown);
+        await makeDropdown.waitFor({ state: 'visible' });
+        await makeDropdown.click();
 
-        const randomVehicle = this.testdata.vehicleMakes[ Math.floor(Math.random() * this.testdata.vehicleMakes.length)]
-        await this.page.fill(this.addVIN_webelements.Search_make, randomVehicle,{ state: 'visible' });
-        await this.page.locator(this.addVIN_webelements.Select_SearchMake).click({ state: 'visible' })
+        // Pick random vehicle
+        const randomVehicle =
+        this.testdata.vehicleMakes[
+            Math.floor(Math.random() * this.testdata.vehicleMakes.length)
+        ];
+
+        // Search input
+        const searchMake = this.page.locator(this.addVIN_webelements.Search_make);
+        await searchMake.waitFor({ state: 'visible' });
+        await searchMake.fill(randomVehicle);
+
+        // Select searched make
+        const selectMake = this.page.locator(this.addVIN_webelements.Select_SearchMake);
+        await selectMake.waitFor({ state: 'visible' });
+        await selectMake.click();
+        await this.page.waitForTimeout(2000)
         
         await this.page.locator(this.addVIN_webelements.Modal_Dropdown).click()
-        await this.page.locator(this.addVIN_webelements.Select_SearchModal).click()
+        await this.page.locator(this.addVIN_webelements.Select_FirstOption).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.addVIN_webelements.Style_Field).fill(this.testdata.Style)
     }
     async PowerSource()

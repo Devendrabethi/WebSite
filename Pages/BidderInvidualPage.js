@@ -64,7 +64,7 @@ class BidderInvidualPage
             const randomFirstName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
             const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
     
-            const firstName = "Dev" + randomFirstName;
+            const firstName = "Devendra"//" + randomFirstName;
             const lastName = "Ind" + randomLastName;
     
             // Fill the form fields with the generated names
@@ -78,7 +78,7 @@ class BidderInvidualPage
     }
     async IndividualRegistration()
     {
-        await this.page.locator(this.bidderindividual_webelements.SelectIndividualBox).click({timeout:60000})
+        await this.page.locator(this.bidderindividual_webelements.SelectIndividualBox).click({timeout:90000})
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/51 BidderIndividualRegistration.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()   
@@ -156,7 +156,7 @@ class BidderInvidualPage
         // Upload each photo to its respective field
         await this.page.locator(this.bidderindividual_webelements.CustomerPhoto).setInputFiles(fileToUpload2.CustomerPhoto);
         await this.page.waitForTimeout(5000);
-        //await this.page.locator(this.bidderindividual_webelements.Crop).click()
+        await this.page.locator(this.bidderindividual_webelements.Crop).click()
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Insurance).setInputFiles(fileToUpload2.Insurance)
         await this.page.locator(this.bidderindividual_webelements.Calendar).click()
@@ -166,30 +166,19 @@ class BidderInvidualPage
         await this.page.locator(this.bidderindividual_webelements.SelectDate).click()
         await this.page.screenshot({ path: './ScreenShot/56 AdditionalDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
+        await this.page.waitForTimeout(5000);
     }
     async AddProducts()
     {
-        try 
-        {
-            await this.page.locator(this.bidderindividual_webelements.FirstProduct).click();
-            await this.page.locator(this.bidderindividual_webelements.FirstProduct).click();
-            await this.page.waitForTimeout(1000)
-        }
-        catch (error) 
-        {
-            console.error("No Products", error);
-        }
-        try
-        {
-            await this.page.locator(this.bidderindividual_webelements.SecoundProduct).click();
-            await this.page.locator(this.bidderindividual_webelements.SecoundProduct).click();
-            await this.page.waitForTimeout(1000)
-        }
-        catch (error) 
-        {
-            console.error("No Products", error);
-            // You can add more error handling code here (e.g., take a screenshot, log to a file, etc.)
-        }
+
+            await this.page.locator(this.bidderindividual_webelements.FirstProduct).clear()
+            await this.page.locator(this.bidderindividual_webelements.FirstProduct).fill(this.testdata.QuantityValue, {timeout:90000});
+            await this.page.waitForTimeout(2000)
+            await this.page.locator(this.bidderindividual_webelements.SecoundProduct).clear()
+            await this.page.locator(this.bidderindividual_webelements.SecoundProduct).fill(this.testdata.QuantityValue);
+            await this.page.waitForTimeout(1000);
+            // await this.page.locator(this.bidderindividual_webelements.SecoundProduct).fill(this.testdata.QuantityValue);
+            // await this.page.waitForTimeout(1000)
         // try
         // {
         //     await this.page.locator(this.bidderindividual_webelements.ThiredProduct).click();
@@ -250,12 +239,14 @@ class BidderInvidualPage
         await this.page.locator(this.applicationinfo_webelements.SelectAddress).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         await this.page.screenshot({ path: './ScreenShot/59 Entered New Address in Payment Page.png', fullPage: true})
-        //await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
+        await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
         await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
-        //await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
+        await this.page.waitForTimeout(1000)
         await this.page.screenshot({ path: './ScreenShot/60 Billing existing address.png', fullPage: true})
-        //await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
-        await this.page.locator(this.bidderindividual_webelements.CancelSelection).click()
+        await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
+        //await this.page.locator(this.bidderindividual_webelements.CancelSelection).click()
         await this.page.waitForTimeout(1000)
         const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
         await frame.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
@@ -271,21 +262,6 @@ class BidderInvidualPage
     {
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
-        // await this.page.locator(this.bidderindividual_webelements.CardDetails_Checkbox).click()
-        // await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
-        // await this.page.locator(this.applicationinfo_webelements.SelectAddress).click({timeout:60000})
-        // await this.page.waitForTimeout(2000)
-        // await this.page.screenshot({ path: './ScreenShot/59 Entered New Address in Payment Page.png', fullPage: true})
-        // await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
-        // await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
-        // await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
-        // await this.page.screenshot({ path: './ScreenShot/60 Billing existing address.png', fullPage: true})
-        // await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
-        // const frame = await this.page.frameLocator(this.bidderindividual_webelements.frame)
-        // await frame.locator(this.bidderindividual_webelements.CardNum).fill(this.testdata.CardCC)
-        // await frame.locator(this.bidderindividual_webelements.CardExpDate).fill(this.testdata.CardExp)
-        // await frame.locator(this.bidderindividual_webelements.Cvv).fill(this.testdata.CVVNum)
-        // await frame.locator(this.bidderindividual_webelements.ZipCode).fill(this.testdata.ZipCOde)
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.ConfirmRegistration).click({timeout:90000})
         await this.page.screenshot({ path: './ScreenShot/61 PaymentDetails.png', fullPage: true})

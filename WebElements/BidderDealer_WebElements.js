@@ -10,11 +10,9 @@ class BidderDealer_WebElements
         this.TaxID_Field = "//input[@name='taxId']"
         this.RelationshipDealer = "//span[text()='Relationship to dealer']/../following-sibling::button"
         this.SelectRepresentative = "//div[@data-key='312']"
-        this.DealerState_Field = "//input[@name='dealerState']"
-        this.SelectDealerState = "//div[@data-key='Arizona']"
-
-
-
+        this.DealerState_Field = "//span[text()='State']/parent::div/following-sibling::button"
+        this.SearchDealerState = "//input[@aria-label='Search']"
+        this.Select_FirstOption = "//input[@aria-label='Search']/parent::div/following-sibling::div[1]/div[1]"
         this.DesiredBidLimit_Field = "//label[text()='Desired bid limit']/following-sibling::div/input"
         this.PersonalCheckBox = "//input[@value='personalCheck']/../parent::label"
         this.CreditCardHoldBox = "//input[@value='creditCardHold']/../parent::label"

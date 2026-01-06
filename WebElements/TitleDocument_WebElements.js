@@ -13,7 +13,8 @@ class TitleDocument_WebElements
         this.ContactNumber = "//label[text()='Contact number']/following-sibling::div[1]/input"
 
         this.CheckboxforAllAddress = "//label[text()='Use this address for all']"
-        this.AddressSearch = "//label[text()='Address search']/following-sibling::div[1]/input"
+        this.AddressSearch_Related = "//label[text()='Address search']/following-sibling::div[1]/input"
+        this.AddressSearch = "//input[@aria-label='Address search']"
         this.SelectAddress = "(//div[contains(@data-key, 'address.')])[1]"
         this.CountydDropdown = "//label[text()='County']/following-sibling::div/button"
 

@@ -14,9 +14,11 @@ class Dealer_WebElements
         this.OperatingAggYES = "//span[text()='Are you named on the Operating Agreement?']/following-sibling::div/label[1]"
         this.DealerExpDateCalendar = "(//button[@aria-label='Calendar'])[1]"
         this.CurrentDate = "//div[contains(@aria-label,'Today')]"
-        this.DealerLicenseState = "//label[text()='Dealer license state']/following-sibling::div[1]/input"
+        this.DealerLicenseState = "(//span[text()='State']/parent::div/following-sibling::button)[2]"
+        this.SearchDealerState = "//input[@aria-label='Search']"
+        this.Select_FirstOption = "//input[@aria-label='Search']/parent::div/following-sibling::div[1]/div[1]"
         this.SelectState = "//div[@data-key='Arizona']"
-        this.ResaleLicenseState = "//label[text()='Tax ID state']/following-sibling::div[1]/input"
+        this.ResaleLicenseState = "(//span[text()='State']/parent::div/following-sibling::button)[3]"
         this.TaxId = "//input[@name='taxId']"
         this.ResaleExpDateCalandar = "(//button[@aria-label='Calendar'])[2]"
 
