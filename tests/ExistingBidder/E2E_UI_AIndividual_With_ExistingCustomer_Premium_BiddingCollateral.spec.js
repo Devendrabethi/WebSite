@@ -8,7 +8,7 @@ let page
 
 let addvinpage
 let bidderinvidualpage
-
+//Driver License must and No Customer Photo
 test.describe('Existing Account for Premium Bidder Opportunity Flow', () => {
 
     test.beforeAll(async ({ playwright }) => {

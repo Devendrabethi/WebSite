@@ -65,6 +65,34 @@ class KioskPage
         await this.page.locator(this.kisosk_webelements.Skip_Terminal).click()
         await this.page.locator(this.kisosk_webelements.SkipEmail).click()
     }
+        async WithExistingEmail_ManageMode()
+    {
+        await this.page.locator(this.kisosk_webelements.Select_ManageMode).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.kisosk_webelements.Login_To_Account).click()    
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.addVIN_webelements.Email).click()
+        await this.page.locator(this.addVIN_webelements.Email).fill(process.env.Kiosk_ManageModeMail)
+        await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Kiosk_Password)
+        await this.page.screenshot({ path: './ScreenShot/1.1 LoginAccount.png', fullPage: true})
+        await this.page.locator(this.kisosk_webelements.SignIn_Button).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.kisosk_webelements.Continue_Button).click()
+        await this.page.locator(this.kisosk_webelements.Select_Event).click()
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(process.env.Kiosk_Premium).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(process.env.Kiosk_Select).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(process.env.Kiosk_AbsenteeBidder).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.kisosk_webelements.NextStep_Button).click()
+        await this.page.locator(this.kisosk_webelements.Skip_Terminal).click()
+        await this.page.waitForTimeout(1000)
+        await this.page.locator(this.addVIN_webelements.EmailId).fill(process.env.Emailid)
+        await this.page.locator(this.kisosk_webelements.UseEmailAddress).click()
+        await this.page.locator(this.kisosk_webelements.UseAccount).click()
+    }
 
      async KioskSignIn()
     {
@@ -282,6 +310,11 @@ class KioskPage
         }
         // await this.page.locator(this.kisosk_webelements.EmailAddress).click();
      
+    }
+    async WithExistingDetailPrePopulate()
+    {
+        await this.page.waitForTimeout(8000);
+        await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
     }
     async AdditionalDocument()
     {

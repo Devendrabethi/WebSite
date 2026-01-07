@@ -6,6 +6,7 @@ import { TitleDocument_WebElements } from '../WebElements/TitleDocument_WebEleme
 import { Business_WeElements } from '../WebElements/Business_WeElements.js' 
 import { BidderIndividual_WebElements } from '../WebElements/BidderIndividual_WebElements.js' 
 import { ApplicationInfo_WebElements } from '../WebElements/ApplicationInfo_WebElements.js'  
+import { error } from 'console';
 
 exports.BidderInvidualPage =
 class BidderInvidualPage
@@ -85,6 +86,16 @@ class BidderInvidualPage
     }
     async AddressDetails()
     {
+        await this.page.waitForTimeout(4000)
+        const RetrySearch = this.page.locator(this.applicationinfo_webelements.RetrySearch);
+        try{
+            await RetrySearch.waitFor({ timeout: 10000 });
+            await RetrySearch.click();
+        }
+        catch (error) 
+        {
+            console.error(" No Retry button:", error);
+        }
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.Biddingaddress).click()
         await this.page.locator(this.bidderindividual_webelements.Biddingaddress).fill(this.testdata.BiddingAddress,{timeout:60000})  //BiddingAddress

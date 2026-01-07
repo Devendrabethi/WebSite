@@ -31,6 +31,8 @@ class Kisosk_WebElements
         this.Login_To_Account = "//span[text()='Log in to account']"
         this.SignIn_Button = "//button[text()='Sign in']"
         this.Continue_Button = "//button[text()='Continue']"
+        this.UseEmailAddress = "//span[text()='Use Email Address']"
+        this.UseAccount = "//button[text()='Use account']"
         this.SkipEmail = "//button[text()='Skip']"
         this.EmailAddress = "//input[@name='emailAddress']"
         this.CreateNewRegistration = "//span[text()='Create new registration']"
