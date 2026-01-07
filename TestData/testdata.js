@@ -85,6 +85,9 @@ class TestData
         this.DealerLNum = "Dealer1234"
         this.ResaleTaxIdNum = "Resale1234"
 
+        //
+        this.DriverLicense = "6576465747"
+        this.DateOfBirthYear = "2007"
 
     }
 }
