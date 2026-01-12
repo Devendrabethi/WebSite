@@ -97,6 +97,10 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await kioskpage.CreateNewRegistration();
     });
 
+    test('19. Diabling KIosk Mode', async () => {
+        await kioskpage.DisableKiosk();
+    });
+
     test.afterAll(async () => {
         console.log('All tests completed.');
         await page.close();         // browser stays open for debugging

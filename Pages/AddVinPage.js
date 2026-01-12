@@ -244,7 +244,7 @@ class AddVinPage
         await this.page.locator(this.addVIN_webelements.LoginPassword).fill(process.env.LoginPassword)
         await this.page.screenshot({ path: './ScreenShot/1.1 LoginAccount.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Loginbutton).click()
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(5000)
     }
     async VehicleDetailsone()
     {

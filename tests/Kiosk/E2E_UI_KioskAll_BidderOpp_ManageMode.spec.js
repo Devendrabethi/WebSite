@@ -180,8 +180,8 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await bidderinvidualpage.AddressDetails();
     });
 
-    test('40. Bid Method', async () => {
-        await bidderinvidualpage.DesiredBidLimit();
+    test('40. Bid Method with CC Deposit', async () => {
+        await bidderdealerpage.CCDepositeDesiredBidLimit();
     });
 
     test('41. Upload Additional Documents and Dealer Documents', async () => {
@@ -201,10 +201,17 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await bidderinvidualpage.AbsenteeDocuSign();
     });
 
-    test('45. Logout and Created new Bidder Opportunity', async () => {
+    test('45. Enter Dealer CC Deposit Card Details', async () => {
+        await bidderdealerpage.CCDepositeCardDetails();
+    });
+
+    test('46. Logout and Created new Bidder Opportunity', async () => {
         await kioskpage.CreateNewRegistration();
     });
 
+    test('47. Diabling KIosk Mode', async () => {
+        await kioskpage.DisableKiosk();
+    });
 
     test.afterAll(async () => {
         console.log('All tests completed.');

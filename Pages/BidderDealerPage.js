@@ -39,7 +39,15 @@ class BidderDealerPage
         await this.page.goto(process.env.Bidder_Pre_premiumURL)  
         await this.page.waitForTimeout(6000)
         //await this.page.reload()
-        await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
+        try {
+        const acceptPopup = this.page.locator(this.bidderindividual_webelements.Acceptpopup);
+        await acceptPopup.waitFor({ state: 'visible', timeout: 5000 });
+        await acceptPopup.click();
+        } catch {
+        // Popup did not appear – safe to continue
+        }
+
+        //await this.page.locator(this.bidderindividual_webelements.Acceptpopup).click() 
     }
         async BidderOpportunity_CompConsignor_WithProduct()
     {
@@ -175,7 +183,9 @@ class BidderDealerPage
         await this.page.screenshot({ path: './ScreenShot/67.3 Entered New Address in Payment Page.png', fullPage: true})
         await this.page.locator(this.applicationinfo_webelements.RetrySearch).click()
         await this.page.locator(this.bidderindividual_webelements.Slect_ExistingAddress).click()
+        await this.page.waitForTimeout(1000)
         await this.page.locator(this.bidderindividual_webelements.Select_MailingAddress).click()
+        await this.page.waitForTimeout(1000)
         await this.page.screenshot({ path: './ScreenShot/67.4 Billing existing address.png', fullPage: true})
         await this.page.locator(this.bidderindividual_webelements.ConfirmSelection).click()
         await this.page.waitForTimeout(2000)

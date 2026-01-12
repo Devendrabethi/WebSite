@@ -3,17 +3,22 @@ import { AddVinPage } from '../../Pages/AddVinPage.js'
 import { AddMediaPage } from '../../Pages/AddMediaPage.js'
 import { ApplicationInfoPage } from '../../Pages/ApplicationInfoPage.js'
 import { DealerPage } from '../../Pages/DealerPage.js'
+import { BidderDealerPage } from '../../Pages/BidderDealerPage.js'
+import { BidderInvidualPage } from '../../Pages/BidderInvidualPage.js'
+import { KioskPage } from '../../Pages/KioskPage.js';
 
 let browser
 let context
 let page
-
+let bidderdealerpage
 let addvinpage
 let addmediapage
 let applicationinfopage
 let dealerpage
+let bidderinvidualpage
+let kioskpage;
 
-test.describe('Dealer Consignment Flow', () => {
+test.describe('Creating one account and creating Consignment and Bidder Flow', () => {
 
     test.beforeAll(async ({ playwright }) => {
         // Launch browser
@@ -26,6 +31,9 @@ test.describe('Dealer Consignment Flow', () => {
         addmediapage = new AddMediaPage(page)
         applicationinfopage = new ApplicationInfoPage(page)
         dealerpage = new DealerPage(page)
+        bidderdealerpage = new BidderDealerPage(page)
+        bidderinvidualpage = new BidderInvidualPage(page)
+        kioskpage = new KioskPage(page);
     })
 
     test('01. Open Consignment URL', async () => {
@@ -84,6 +92,52 @@ test.describe('Dealer Consignment Flow', () => {
     test('14. Open Consignment Dashboard and Verifying all tab in Dashboard', async () => {
         await applicationinfopage.ConsignmentDashboardwithDocument()
     })
+
+    
+    test('15. Start Dealer Pre-Premium Opportunity Flow', async () => {
+        await bidderdealerpage.BidderOpportunityPre_premium()
+    })
+
+    test('16. Fill Individual Details', async () => {
+        await kioskpage.WithExistingDetailPrePopulate()
+    })
+
+    test('17. Complete Dealer Registration', async () => {
+        await bidderdealerpage.DealerRegistration()
+    })
+
+    test('18. Enter Address Details', async () => {
+        await bidderinvidualpage.AddressDetails()
+    })
+
+    test('19. Set Desired Bid Limit', async () => {
+        await bidderdealerpage.DesiredBidLimit()
+    })
+
+    test('20. Upload Additional Documents', async () => {
+        await bidderinvidualpage.AdditionalDocument()
+    })
+
+    test('21. Creating Dealer Account and Upload Dealer Documents', async () => {
+        await bidderdealerpage.DealerDocument()
+    })
+
+    test('22. Add Products', async () => {
+        await bidderinvidualpage.AddProducts()
+    })
+
+    test('23. Enter Card Details', async () => {
+        await bidderinvidualpage.CardDetails()
+    })
+
+    test('24. Complete Personal DocuSign', async () => {
+        await bidderinvidualpage.PersonalDocuSign()
+    })
+
+    test('25. View Bidder Opportunity', async () => {
+        await bidderinvidualpage.ViewBidderOpportunity()
+    })
+
 
     test.afterAll(async () => {
         console.log('Dealer Consignment Flow Completed.')

@@ -26,7 +26,7 @@ class TitleDocument_Page
         const fileToUpload = 
         {
             "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic"
         }
 
         // Upload each photo to its respective field
@@ -61,7 +61,7 @@ class TitleDocument_Page
         const fileToUpload = 
         {
             "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\rare.gif"
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic"
         }
 
         // Upload each photo to its respective field

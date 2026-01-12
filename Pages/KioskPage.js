@@ -393,7 +393,20 @@ class KioskPage
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.kisosk_webelements.TakePhoto4_Button).click()
         await this.page.locator(this.kisosk_webelements.Capture_Photo).click()
+        await this.page.waitForTimeout(4000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+    }
+    async DisableKiosk()
+    {
+        // Assume you already have a browser context
+        const newTab = await this.page.context().newPage();
+        // Navigate to a URL in the new tab
+        await newTab.goto(process.env.KisoskDisableURL);
+        // Wait until the page fully loads
+        await newTab.waitForLoadState('domcontentloaded');
+        console.log('New tab opened with URL:', newTab.url());
+        await this.page.waitForTimeout(4000)
+
     }
 
 }

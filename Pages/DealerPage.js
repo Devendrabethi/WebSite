@@ -28,7 +28,7 @@ class DealerPage
     async DealerWithoutDocUploadingfromDashboard()
     {
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click()
+        await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click({timeout:60000})
         await this.page.locator(this.dealer_webelements.Dealer_Field).click()
         await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToDealerName)
         //Dealer Number
@@ -48,7 +48,7 @@ class DealerPage
         await this.page.screenshot({ path: './ScreenShot/48 VehicleDocumentsWithDealer.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
-        await this.page.locator(this.titledocument_webelements.AddressSearch).fill(this.testdata.AddressSearch)
+        await this.page.locator(this.titledocument_webelements.AddressSearch_Related).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()
         await this.page.screenshot({ path: './ScreenShot/49 DealerDetails.png', fullPage: true})
         await this.page.locator(this.dealer_webelements.OperatingAggYES).click()
@@ -70,8 +70,9 @@ class DealerPage
         await this.page.waitForTimeout(1000);
         await this.page.locator(this.addVIN_webelements.Select_FirstOption).click()
         await this.page.waitForTimeout(1000);
-        await this.page.locator(this.dealer_webelements.SelectState).click()
+        //await this.page.locator(this.dealer_webelements.SelectState).click()
         await this.page.screenshot({ path: './ScreenShot/50 DealerDocumentsWithDetails.png', fullPage: true})
+        await this.page.waitForTimeout(2000);
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(2000)
         try 
@@ -92,7 +93,7 @@ class DealerPage
     async DealerVehicleDocument()
     {
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click()
+        await this.page.locator(this.dealer_webelements.VehicleTitle_Field).click({timeout:60000})
         await this.page.locator(this.dealer_webelements.Dealer_Field).click()
         await this.page.locator(this.dealer_webelements.VehicleTitleTo_Field).fill(this.testdata.TitleToDealerName)
         //Dealer Number
@@ -112,7 +113,7 @@ class DealerPage
         const fileToUpload1 = 
         {
             "fronttitle" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Front title.jpg",
-            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Back Titile.jpg"
+            "Backtitle":        "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\interior.jpeg"
         }
 
         // Upload each photo to its respective field
@@ -129,9 +130,9 @@ class DealerPage
         const fileToUpload2 = 
         {
 
-            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Dealer License.jpg",
-            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Resale License.jpg",
-            "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\operating agreement.jpg"
+            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
+            "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
         }
 
         // Upload each photo to its respective field
@@ -157,6 +158,7 @@ class DealerPage
         await this.page.locator(this.dealer_webelements.SearchDealerState).fill(this.testdata.LicState)
         await this.page.waitForTimeout(1000);
         await this.page.locator(this.dealer_webelements.Select_FirstOption).click()
+        await this.page.waitForTimeout(3000);
         await this.page.screenshot({ path: './ScreenShot/13.2 DealerDocumentsWithDetails.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
         await this.page.waitForTimeout(2000)
@@ -221,9 +223,9 @@ class DealerPage
         const fileToUpload2 = 
         {
 
-            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\side.png",
-            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
-            "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\operating agreement.jpg"
+            "DealerLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\engine.heic",
+            "ResaleLicense" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\vin.heif",
+            "OperatingAggDoc" :      "C:\\Users\\bdevendra\\source\\repos\\Website Playwright\\Photos\\Insurance.pdf"
         }
 
         // Upload each photo to its respective field

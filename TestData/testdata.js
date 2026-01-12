@@ -72,7 +72,7 @@ class TestData
 
         this.CCCardFullName = "Devendra Prasad"
         this.CCDepositeCard = "5105 1051 0510 5100"
-        this.CCZIpCode = "86325"
+        this.CCZIpCode = "85260"
 
         //Business
         this.BusinessNameText = "Devendra Business"

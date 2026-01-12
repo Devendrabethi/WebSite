@@ -31,7 +31,7 @@ async function globalSetup() {
   // Prepare executor info JSON
   const executor = {
     name: 'Devendra Prasad',
-    buildName: 'v1.15.4'
+    buildName: 'v1.15.9'
   };
   // Write executor.json file (one file, JSON string)
   fs.writeFileSync(

@@ -69,6 +69,7 @@ class BusinessPage
         await this.page.locator(this.business_webelements.OperatingAggrement).setInputFiles(fileToUpload2.OperatingAggDoc);
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
+        await this.page.waitForTimeout(3000);
         await this.page.screenshot({ path: './ScreenShot/BusinessDetailswithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
         await this.page.waitForTimeout(2000)

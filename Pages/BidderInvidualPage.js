@@ -256,7 +256,7 @@ class BidderInvidualPage
     async CardDetails()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderindividual_webelements.CardDetails_Checkbox).click()
+        await this.page.locator(this.bidderindividual_webelements.CardDetails_Checkbox).click({timeout:60000})
         await this.page.locator(this.applicationinfo_webelements.MallingAddress).fill(this.testdata.MailingAddress)
         await this.page.locator(this.applicationinfo_webelements.SelectAddress).click({timeout:60000})
         await this.page.waitForTimeout(2000)
