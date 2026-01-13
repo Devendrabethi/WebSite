@@ -96,7 +96,7 @@ class ApplicationInfoPage
         //await this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection).click()
          const BusinessDocumentSection = this.page.locator(this.applicationinfo_webelements.BusinessDocumentSection)
         try {
-                await BusinessDocumentSection.waitFor({ timeout: 10000 });
+                await BusinessDocumentSection.waitFor({ timeout: 5000 });
                 await BusinessDocumentSection.click({timeout:30000});
                 console.log('Business Document Section clicked successfully');
             } catch (error) 
@@ -133,19 +133,19 @@ class ApplicationInfoPage
         try {
             const passportDocument = this.page.locator(this.applicationinfo_webelements.Passport_Document);
             // Wait ONLY for Passport_Document
-            await passportDocument.waitFor({ timeout: 10000 });
+            await passportDocument.waitFor({ timeout: 5000 });
             await passportDocument.click({ timeout: 30000 });
             // No waits for below steps
             await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Passport_Document);
             await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
-
+            await this.page.waitForTimeout(3000);
             console.log('Passport document uploaded successfully');
         } catch (error) {
             console.error('Failed to upload Passport document:', error);
         }
         try {
             const passportAlreadyExist = this.page.locator(this.applicationinfo_webelements.PassportAlreadyExist);
-            await passportAlreadyExist.waitFor({ timeout: 10000 });
+            await passportAlreadyExist.waitFor({ timeout: 5000 });
             await passportAlreadyExist.click({ timeout: 30000 });
             console.log('Passport Already Exist clicked successfully');
             await this.page.locator(this.applicationinfo_webelements.Passport_Document).click()
@@ -157,17 +157,18 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(3000);
         try {
                 const Insurance_Document = this.page.locator(this.applicationinfo_webelements.Insurance_Document);
-                await Insurance_Document.waitFor({ timeout: 10000 });
+                await Insurance_Document.waitFor({ timeout: 5000 });
                 await Insurance_Document.click({ timeout: 30000 });
                 console.log('Insurance Already Exist clicked successfully');
                 await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Insurance_Document);
                 await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+                await this.page.waitForTimeout(3000);
             } catch (error) {
                 console.error('Failed to upload Insurance document:', error);
             }
         try {
             const InsuranceAlreadyExist = this.page.locator(this.applicationinfo_webelements.InsuranceAlreadyExist);
-            await InsuranceAlreadyExist.waitFor({ timeout: 10000 });
+            await InsuranceAlreadyExist.waitFor({ timeout: 5000 });
             await InsuranceAlreadyExist.click({ timeout: 30000 });
             console.log('Passport Already Exist clicked successfully');
             await this.page.locator(this.applicationinfo_webelements.Insurance_Document).click()
@@ -179,17 +180,18 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(3000);
         try {
                 const DriverLicense_Document = this.page.locator(this.applicationinfo_webelements.DriverLicense_Document);
-                await DriverLicense_Document.waitFor({ timeout: 10000 });
+                await DriverLicense_Document.waitFor({ timeout: 5000 });
                 await DriverLicense_Document.click({ timeout: 30000 });
                 console.log('Driver License Already Exist clicked successfully');
                 await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.DriverLicense_Document);
                 await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+                await this.page.waitForTimeout(3000);
             } catch (error) {
                 console.error('Failed to upload Driver License document:', error);
             }
         try {
             const DrierLAlreadyExist = this.page.locator(this.applicationinfo_webelements.DrierLAlreadyExist);
-            await DrierLAlreadyExist.waitFor({ timeout: 10000 });
+            await DrierLAlreadyExist.waitFor({ timeout: 5000 });
             await DrierLAlreadyExist.click({ timeout: 30000 });
             console.log('Passport Already Exist clicked successfully');
             await this.page.locator(this.applicationinfo_webelements.DriverLicense_Document).click()
@@ -201,17 +203,18 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(3000);
         try {
                 const Bank_Document = this.page.locator(this.applicationinfo_webelements.Bank_Document);
-                await Bank_Document.waitFor({ timeout: 10000 });
+                await Bank_Document.waitFor({ timeout: 5000 });
                 await Bank_Document.click({ timeout: 30000 });
                 console.log('Bank Already Exist clicked successfully');
                 await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Bank_Document);
                 await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+                await this.page.waitForTimeout(3000);
             } catch (error) {
                 console.error('Failed to upload Bank document:', error);
             }
         try {
             const BankLetterAlreadyExist = this.page.locator(this.applicationinfo_webelements.BankLetterAlreadyExist);
-            await BankLetterAlreadyExist.waitFor({ timeout: 10000 });
+            await BankLetterAlreadyExist.waitFor({ timeout: 5000 });
             await BankLetterAlreadyExist.click({ timeout: 30000 });
             console.log('Passport Already Exist clicked successfully');
             await this.page.locator(this.applicationinfo_webelements.Bank_Document).click()
@@ -223,17 +226,18 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(3000);
          try {
                 const AdditionalBankLetter_Document = this.page.locator(this.applicationinfo_webelements.AdditionalBankLetter_Document);
-                await AdditionalBankLetter_Document.waitFor({ timeout: 10000 });
+                await AdditionalBankLetter_Document.waitFor({ timeout: 5000 });
                 await AdditionalBankLetter_Document.click({ timeout: 30000 });
                 console.log('Bank Already Exist clicked successfully');
                 await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.AdditionalBankLetter_Document);
                 await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+                await this.page.waitForTimeout(3000);
             } catch (error) {
                 console.error('Failed to upload Bank document:', error);
             }
         try {
             const AdditionalLetterAlreadyExist = this.page.locator(this.applicationinfo_webelements.AdditionalLetterAlreadyExist);
-            await AdditionalLetterAlreadyExist.waitFor({ timeout: 10000 });
+            await AdditionalLetterAlreadyExist.waitFor({ timeout: 5000 });
             await AdditionalLetterAlreadyExist.click({ timeout: 30000 });
             console.log('Passport Already Exist clicked successfully');
             await this.page.locator(this.applicationinfo_webelements.AdditionalBankLetter_Document).click()
@@ -245,17 +249,18 @@ class ApplicationInfoPage
         await this.page.waitForTimeout(3000);
         try {
                 const TrustDocument = this.page.locator(this.applicationinfo_webelements.TrustDocument);
-                await TrustDocument.waitFor({ timeout: 10000 });
+                await TrustDocument.waitFor({ timeout: 5000 });
                 await TrustDocument.click({ timeout: 30000 });
                 console.log('Bank Already Exist clicked successfully');
                 await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.AdditionalBankLetter_Document);
                 await this.page.locator(this.applicationinfo_webelements.Upload_Button).click();
+                await this.page.waitForTimeout(3000);
             } catch (error) {
                 console.error('Failed to upload Bank document:', error);
             }
         try {
             const TrustDocAlreadyExist = this.page.locator(this.applicationinfo_webelements.TrustDocAlreadyExist);
-            await TrustDocAlreadyExist.waitFor({ timeout: 10000 });
+            await TrustDocAlreadyExist.waitFor({ timeout: 5000 });
             await TrustDocAlreadyExist.click({ timeout: 30000 });
             console.log('Passport Already Exist clicked successfully');
             await this.page.locator(this.applicationinfo_webelements.TrustDocument).click()
@@ -347,7 +352,7 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
         const ThirdDocument = this.page.locator(this.applicationinfo_webelements.ThirdDocument)
         try {
-                    await ThirdDocument.waitFor({ timeout: 10000 });
+                    await ThirdDocument.waitFor({ timeout: 5000 });
                     await ThirdDocument.click();
                     await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.trustDoc);
                     await this.page.waitForTimeout(2000);

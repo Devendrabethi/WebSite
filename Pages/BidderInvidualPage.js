@@ -89,7 +89,7 @@ class BidderInvidualPage
         await this.page.waitForTimeout(4000)
         const RetrySearch = this.page.locator(this.applicationinfo_webelements.RetrySearch);
         try{
-            await RetrySearch.waitFor({ timeout: 10000 });
+            await RetrySearch.waitFor({ timeout: 5000 });
             await RetrySearch.click();
         }
         catch (error) 
@@ -132,7 +132,7 @@ class BidderInvidualPage
     }
     async DesiredBidLimit()
     {
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(15000)
         await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue,{timeout:4000})
         await this.page.keyboard.press('Tab')
@@ -143,7 +143,7 @@ class BidderInvidualPage
     }
         async RegularBidderDesiredBidLimit()
     {
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(15000)
         await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderindividual_webelements.DesiredBidLimit_Field).fill(this.testdata.RegularBidderBidLimitValue,{timeout:4000})
         await this.page.keyboard.press('Tab')
@@ -282,7 +282,7 @@ class BidderInvidualPage
     }
         async CardDetailsWithoutProduct()
     {
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(8000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()  
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.bidderindividual_webelements.ConfirmRegistration).click({timeout:90000})
@@ -381,29 +381,24 @@ class BidderInvidualPage
         }
         await this.page.locator(this.bidderindividual_webelements.FirstDocument).click()
         await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.Insurance)
-        await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(10000);
         await this.page.locator(this.bidderindividual_webelements.SecondDocument).click()
         await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.DealerLicense)
-        await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(10000);
         await this.page.locator(this.bidderindividual_webelements.ThirdDocument).click()
         await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.ResaleTaxID)
-        await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(10000);
         await this.page.locator(this.bidderindividual_webelements.FourthDocument).click()
         await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.VerificationOfOwnership)
-        await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(10000);
         await this.page.locator(this.bidderindividual_webelements.FivthDocument).click()
         await this.page.locator(this.bidderindividual_webelements.AdditionalPhotos).setInputFiles(fileToUpload.AuthorizationToBid)
-        await this.page.waitForTimeout(2000);
         await this.page.locator(this.bidderindividual_webelements.Upload_Button).click()
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(10000);
         await this.page.reload()
         await this.page.waitForTimeout(20000);
         await this.page.screenshot({ path: './ScreenShot/78 DealerWithDocuments.png', fullPage: true})

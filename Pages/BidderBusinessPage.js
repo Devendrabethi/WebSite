@@ -76,7 +76,7 @@ class BidderBusinessPage
     }
     async DesiredBidLimit()
     {
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(15000)
         await this.page.locator(this.bidderbusiness_webelements.DesiredBidLimit_Field).click({timeout:60000})
         await this.page.locator(this.bidderbusiness_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.keyboard.press('Tab')

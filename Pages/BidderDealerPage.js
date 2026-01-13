@@ -105,7 +105,7 @@ class BidderDealerPage
     }
     async DesiredBidLimit()
     {
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(15000)
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.keyboard.press('Tab')
@@ -165,7 +165,7 @@ class BidderDealerPage
     }
         async CCDepositeDesiredBidLimit()
     {
-        await this.page.waitForTimeout(2000)
+        await this.page.waitForTimeout(15000)
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).click()
         await this.page.locator(this.bidderdealer_webelements.DesiredBidLimit_Field).fill(this.testdata.BidLimitValue)
         await this.page.locator(this.bidderdealer_webelements.CreditCardHoldBox).click()

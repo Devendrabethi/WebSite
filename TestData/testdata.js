@@ -65,7 +65,7 @@ class TestData
 
         this.CardFName = "Devendra"
         this.CardLName = "Prasad"
-        this.CardCC ="	4111 1111 1111 1111"// "	6011 0000 0000 0004"//"4111 1111 1111 1111" 5105 1051 0510 5100  3400 000000 00009  ameri 1111
+        this.CardCC = "5105 1051 0510 5100"// "	6011 0000 0000 0004"//"4111 1111 1111 1111" 5105 1051 0510 5100  3400 000000 00009  ameri 1111
         this.CardExp = "05/28"
         this.CVVNum = "111"
         this.ZipCOde = "11111"

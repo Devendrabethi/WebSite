@@ -144,7 +144,7 @@ class KioskPage
         const password = this.page.locator(this.addVIN_webelements.Password);
 
         try {
-                await password.waitFor({ timeout: 10000 });
+                await password.waitFor({ timeout: 5000 });
                 await password.fill(process.env.Password);
                 //await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password);
                 await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword);
@@ -284,7 +284,7 @@ class KioskPage
         const EmailAddress = this.page.locator(this.kisosk_webelements.EmailAddress);
         try
         {
-            await EmailAddress.waitFor({ timeout: 10000 });
+            await EmailAddress.waitFor({ timeout: 5000 });
             await EmailAddress.click();
             function generateRandomString(length) 
             {

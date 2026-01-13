@@ -131,7 +131,7 @@ class AddVinPage
         const password = this.page.locator(this.addVIN_webelements.Password);
 
         try {
-                await password.waitFor({ timeout: 10000 });
+                await password.waitFor({ timeout: 5000 });
                 await password.fill(process.env.Password);
                 //await this.page.locator(this.addVIN_webelements.Password).fill(process.env.Password);
                 await this.page.locator(this.addVIN_webelements.ConfirmPassword).fill(process.env.ConfirmPassword);
@@ -266,7 +266,7 @@ class AddVinPage
         await expect(this.page.locator(this.addVIN_webelements.Nextbtn_Submit)).toBeVisible()
         await this.page.screenshot({ path: './ScreenShot/7 VinPage.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-        await this.page.waitForTimeout(4000)
+        await this.page.waitForTimeout(6000)
 
         const randomYear = this.testdata.vehicleYears[ Math.floor(Math.random() * this.testdata.vehicleYears.length)]
         await this.page.fill(this.addVIN_webelements.Year_Field, randomYear);
