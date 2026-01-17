@@ -4,7 +4,7 @@ const fse = require('fs-extra');
 
 async function globalSetup() {
   // Read TEST_ENV directly from cross-env
-  const env = process.env.TEST_ENV  || 'hotfixqa'; // hotfixqa, uat, etc.
+  const env = process.env.TEST_ENV  || 'uat'; // hotfixqa, uat, etc.
   const allureResultsDir = path.join(__dirname, 'allure-results');
   const allureReportDir = path.join(__dirname, 'allure-report');
 
