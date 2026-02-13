@@ -123,6 +123,7 @@ class DealerPage
         await this.page.waitForTimeout(5000);
         await this.page.screenshot({ path: './ScreenShot/13 VehicleDocumentsWithDealer.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+        await this.page.waitForTimeout(5000);
         await this.page.locator(this.dealer_webelements.DealerNumber).fill(this.testdata.DealerPhone)        
         await this.page.locator(this.titledocument_webelements.AddressSearch_Related).fill(this.testdata.AddressSearch)
         await this.page.locator(this.titledocument_webelements.SelectAddress).click()

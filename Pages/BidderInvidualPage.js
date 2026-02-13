@@ -344,6 +344,22 @@ class BidderInvidualPage
 
     async ViewBidderOpportunity()
     {
+        //await this.page.locator(this.bidderindividual_webelements.RentCar_Button).click()
+        //await this.page.waitForTimeout(5000)
+        const [popup] = await Promise.all([
+        this.page.waitForEvent('popup'),
+        await this.page.locator(this.bidderindividual_webelements.RentCar_Button).click()   // opens new tab
+        ]);
+        await this.page.waitForTimeout(5000)
+        await popup.close();
+        // await this.page.locator(this.bidderindividual_webelements.BookFlight_Button).click()
+        // await this.page.waitForTimeout(5000)
+        const [popup1] = await Promise.all([
+        this.page.waitForEvent('popup'),
+        await this.page.locator(this.bidderindividual_webelements.BookFlight_Button).click()   // opens new tab
+        ]);
+        await this.page.waitForTimeout(5000)
+        await popup1.close();
         await this.page.locator(this.bidderindividual_webelements.ViewBidderOpportunity).click()
         await this.page.waitForTimeout(15000)
         await this.page.screenshot({ path: './ScreenShot/68 RegistrationInfo.png', fullPage: true})

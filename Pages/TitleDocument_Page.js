@@ -19,7 +19,7 @@ class TitleDocument_Page
     async VehicleDocument()
     {
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.titledocument_webelements.VehicleTitle_Field).click()
+        await this.page.locator(this.titledocument_webelements.VehicleTitle_Field).click({timeout:90000})
         await this.page.locator(this.titledocument_webelements.Individual_Field).click()
         //await this.page.locator(this.titledocument_webelements.VehicleTitleTo_Field).fill(this.testdata.IndividualName)
 
