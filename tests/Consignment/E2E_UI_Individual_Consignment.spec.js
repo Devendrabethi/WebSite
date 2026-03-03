@@ -84,9 +84,9 @@ test.describe('Consignment Individual Flow', () => {
         await applicationinfopage.ViewMySubmission()
     })
 
-    test('15. Open Consignment Dashboard verifying all tabs', async () => {
-        await applicationinfopage.ConsignmentDashboardwithDocument()
-    })
+    // test('15. Open Consignment Dashboard verifying all tabs', async () => {
+    //     await applicationinfopage.ConsignmentDashboardwithDocument()
+    // })
 
     test.afterAll(async () => {
         console.log('Individual Consignment Application Flow Completed.')

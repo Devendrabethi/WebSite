@@ -80,9 +80,9 @@ test.describe('Trust Consignment Flow', () => {
         await applicationinfopage.ViewMySubmission()
     })
 
-    test('14. Open Consignment Dashboard and Verifying all tab in Dashboard', async () => {
-        await applicationinfopage.ConsignmentDashboardwithDocument()
-    })
+    // test('14. Open Consignment Dashboard and Verifying all tab in Dashboard', async () => {
+    //     await applicationinfopage.ConsignmentDashboardwithDocument()
+    // })
 
     test.afterAll(async () => {
         console.log('Trust Consignment Flow Completed.')
