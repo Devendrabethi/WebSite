@@ -345,12 +345,13 @@ class ApplicationInfoPage
         await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.fronttitle)
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        //await this.page.waitForTimeout(5000);
-        await this.page.locator(this.applicationinfo_webelements.SecondDocument).click()
+        await this.page.waitForTimeout(5000);
+        await this.page.locator(this.applicationinfo_webelements.FirstDocument).click()
         await this.page.locator(this.applicationinfo_webelements.AdditionalPhotos).setInputFiles(fileToUpload1.Backtitle)
         await this.page.waitForTimeout(2000);
         await this.page.locator(this.applicationinfo_webelements.Upload_Button).click()
-        const ThirdDocument = this.page.locator(this.applicationinfo_webelements.ThirdDocument)
+        await this.page.waitForTimeout(5000);
+        const ThirdDocument = this.page.locator(this.applicationinfo_webelements.FirstDocument)
         try {
                     await ThirdDocument.waitFor({ timeout: 5000 });
                     await ThirdDocument.click();
