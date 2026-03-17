@@ -38,7 +38,10 @@ class TestData
         this.AddressSearch = "15555 North 79th Place"
 
         this.VechileWorth = "49999"
-
+        this.Weight = "22.5"
+        this.Width = "28"
+        this.Height = "15"
+        this.Depth = "20"
         this.Signature = "Devendra"
 
         this.TitleToBusinessName = "Devendra Business"

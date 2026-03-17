@@ -33,8 +33,16 @@ class MerchandisePage
         await this.page.fill(this.merchandise_webelements.Describe_Item1, randomVehicle,{ state: 'visible' });
         //await this.page.locator(this.merchandise_webelements.Describe_Item1).fill(this.testdata.Audi)
         await this.page.locator(this.merchandise_webelements.Estimate_Value1).fill(this.testdata.VechileWorth)
-        await this.page.locator(this.merchandise_webelements.Addtional_Details1).fill(this.testdata.Signature)
+        await this.page.locator(this.merchandise_webelements.Weight_value1).click()
+        await this.page.locator(this.merchandise_webelements.Weight_value1).fill(this.testdata.Weight)
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.merchandise_webelements.Condition_Button1).click()
+        await this.page.locator(this.merchandise_webelements.Original).click()
+        await this.page.locator(this.merchandise_webelements.Width_Value1).fill(this.testdata.Width)
+        await this.page.locator(this.merchandise_webelements.Height_Value1).fill(this.testdata.Height)
+        await this.page.locator(this.merchandise_webelements.Depth_Value1).fill(this.testdata.Depth)
         await this.page.waitForTimeout(2000)
+        await this.page.locator(this.merchandise_webelements.Addtional_Details1).fill(this.testdata.Signature)
     }
     async AdditionalPhotos1()
     {
@@ -52,7 +60,7 @@ class MerchandisePage
         await this.page.locator(this.addmedia_webelements.AdditionalPhotos).setInputFiles(fileToUpload, { timeout: 90000 })
         //await this.page.waitForTimeout(4000);
         await this.page.locator(this.addmedia_webelements.UploadAllButton).click()
-        await this.page.waitForTimeout(20000);
+        await this.page.waitForTimeout(25000);
         await this.page.screenshot({ path: './ScreenShot/11 VehiclePhotosWithValidFormate.png', fullPage: true})
     }
     async Add_Another_Item()
@@ -66,8 +74,16 @@ class MerchandisePage
         await this.page.fill(this.merchandise_webelements.Describe_Item2, randomVehicle,{ state: 'visible' });
         //await this.page.locator(this.merchandise_webelements.Describe_Item1).fill(this.testdata.Audi)
         await this.page.locator(this.merchandise_webelements.Estimate_Value2).fill(this.testdata.VechileWorth)
-        await this.page.locator(this.merchandise_webelements.Addtional_Details2).fill(this.testdata.Signature)
+        await this.page.locator(this.merchandise_webelements.Weight_value2).click()
+        await this.page.locator(this.merchandise_webelements.Weight_value2).fill(this.testdata.Weight)
         await this.page.waitForTimeout(3000)
+        await this.page.locator(this.merchandise_webelements.Condition_Button2).click()
+        await this.page.locator(this.merchandise_webelements.Original).click()
+        await this.page.locator(this.merchandise_webelements.Width_Value2).fill(this.testdata.Width)
+        await this.page.locator(this.merchandise_webelements.Height_Value2).fill(this.testdata.Height)
+        await this.page.locator(this.merchandise_webelements.Depth_Value2).fill(this.testdata.Depth)
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.merchandise_webelements.Addtional_Details2).fill(this.testdata.Signature)
     }
     async AdditionalPhotos2()
     {
@@ -89,8 +105,17 @@ class MerchandisePage
         await this.page.fill(this.merchandise_webelements.Describe_Item3, randomVehicle,{ state: 'visible' });
         //await this.page.locator(this.merchandise_webelements.Describe_Item1).fill(this.testdata.Audi)
         await this.page.locator(this.merchandise_webelements.Estimate_Value3).fill(this.testdata.VechileWorth)
-        await this.page.locator(this.merchandise_webelements.Addtional_Details3).fill(this.testdata.Signature)
+        await this.page.locator(this.merchandise_webelements.Weight_value3).click()
+        await this.page.locator(this.merchandise_webelements.Weight_value3).fill(this.testdata.Weight)
         await this.page.waitForTimeout(3000)
+        await this.page.locator(this.merchandise_webelements.Weight_value3).fill(this.testdata.Weight)
+        await this.page.locator(this.merchandise_webelements.Condition_Button3).click()
+        await this.page.locator(this.merchandise_webelements.Original).click()
+        await this.page.locator(this.merchandise_webelements.Width_Value3).fill(this.testdata.Width)
+        await this.page.locator(this.merchandise_webelements.Height_Value3).fill(this.testdata.Height)
+        await this.page.locator(this.merchandise_webelements.Depth_Value3).fill(this.testdata.Depth)
+        await this.page.waitForTimeout(2000)
+        await this.page.locator(this.merchandise_webelements.Addtional_Details3).fill(this.testdata.Signature)
     }
     async AdditionalPhotos3()
     {
@@ -127,7 +152,7 @@ class MerchandisePage
     async ReviewApp()
     {
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.merchandise_webelements.SignatureName_Merchandise).fill(this.testdata.Signature)
+        await this.page.locator(this.merchandise_webelements.SignatureName_Merchandise).fill(this.testdata.Signature, { timeout: 90000 })
         await this.page.locator(this.merchandise_webelements.Calendar).click()
         await this.page.locator(this.merchandise_webelements.CurrentDate).click()
         await this.page.screenshot({ path: './ScreenShot/18 ConsignmentReview.png', fullPage: true})
