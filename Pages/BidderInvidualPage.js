@@ -201,7 +201,7 @@ class BidderInvidualPage
     async AddProducts()
     {
 
-            await this.page.locator(this.bidderindividual_webelements.FirstProduct).clear()
+            await this.page.locator(this.bidderindividual_webelements.FirstProduct).clear( {timeout:90000})
             await this.page.locator(this.bidderindividual_webelements.FirstProduct).fill(this.testdata.QuantityValue, {timeout:90000});
             await this.page.waitForTimeout(2000)
             await this.page.locator(this.bidderindividual_webelements.SecoundProduct).clear()

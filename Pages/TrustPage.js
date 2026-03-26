@@ -45,7 +45,7 @@ class TrustPage
         await this.page.waitForTimeout(2000);
         await this.page.screenshot({ path: './ScreenShot/12.4 VehicleDocumentWithTrust.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
-       await this.page.waitForTimeout(2000)
+       await this.page.waitForTimeout(5000)
 
     try 
     {
@@ -68,7 +68,7 @@ class TrustPage
     async AlreadyTrustVehicleDocument()
     {
         await this.page.waitForTimeout(1000)
-        await this.page.locator(this.trust_webelements.VehicleTitle_Field).click()
+        await this.page.locator(this.trust_webelements.VehicleTitle_Field).click({timeout:60000})
         await this.page.locator(this.trust_webelements.Trust_Field).click()
         await this.page.locator(this.trust_webelements.VehicleTitleTo_Field).click()
         await this.page.waitForTimeout(4000)

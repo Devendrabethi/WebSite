@@ -147,7 +147,7 @@ class BusinessPage
         await this.page.locator(this.business_webelements.OperatingAggYES).click()
         await this.page.screenshot({ path: './ScreenShot/15.2 BusinessDetailsWithDocument.png', fullPage: true})
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click({timeout:60000})
-        await this.page.waitForTimeout(8000)
+        await this.page.waitForTimeout(15000)
         try 
         {
             // Check if the fourth product exists and is visible
