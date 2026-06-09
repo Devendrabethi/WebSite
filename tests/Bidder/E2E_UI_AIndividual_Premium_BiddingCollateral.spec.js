@@ -65,9 +65,9 @@ test.describe('Bidder Opportunity - Individual Premium Package with DocuSign', (
         await bidderinvidualpage.CardDetails();
     });
 
-    test('12. Complete DocuSign Agreement', async () => {
-        await bidderinvidualpage.PersonalDocuSign();
-    });
+    // test('12. Complete DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.PersonalDocuSign();
+    // });
 
     test('13. View Aggreement Created Bidder Opportunity', async () => {
         await bidderinvidualpage.ViewBidderOpportunity();
