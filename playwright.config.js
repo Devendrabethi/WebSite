@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from "dotenv"
 
 dotenv.config({
-  path: process.env.TEST_ENV ?`./env-files/.env.${process.env.TEST_ENV}` : `./env-files/.env.uat`  // TEST_ENV is the variable name uat hotfixqa
+  path: process.env.TEST_ENV ?`./env-files/.env.${process.env.TEST_ENV}` : `./env-files/.env.hotfixqa`  // TEST_ENV is the variable name uat hotfixqa
   //path:`./env-files/.env.${process.env.TEST_ENV}` // direct from terminal
 })
 
@@ -20,7 +20,7 @@ dotenv.config({
  */
 export default defineConfig({
   timeout:18000000,
-  testDir: './tests',
+  testDir: './Tests',
     globalSetup: require.resolve('./global-setup.js'),
   /* Run tests in files in parallel */
   fullyParallel: false,

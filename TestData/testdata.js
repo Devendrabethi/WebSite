@@ -60,7 +60,7 @@ class TestData
         this.MailingAddress = "Ohio state"
         this.VehicleAddress = "michigan state"
         this.TitlePaperworkAddress = "texas state"
-        this.BiddingAddress = "South Carolina state"
+        this.BiddingAddress = "South Carolina State House"
 
         this.BidLimitValue = "90001"
         this.RegularBidderBidLimitValue = "50001"
