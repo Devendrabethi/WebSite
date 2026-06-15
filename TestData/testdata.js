@@ -57,10 +57,10 @@ class TestData
         this.TitleTrustName = "Devendra Trust"
         
         this.MobileNum = "(231) 629-8184"
-        this.MailingAddress = "15555 North 79th Place"
-        this.VehicleAddress = "united alabama "
-        this.TitlePaperworkAddress = "United California"
-        this.BiddingAddress = "15555 Canada Plum Street"
+        this.MailingAddress = "Ohio state"
+        this.VehicleAddress = "michigan state"
+        this.TitlePaperworkAddress = "texas state"
+        this.BiddingAddress = "South Carolina state"
 
         this.BidLimitValue = "90001"
         this.RegularBidderBidLimitValue = "50001"
