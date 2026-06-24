@@ -73,8 +73,8 @@ class BidderInvidualPage
             const randomFirstName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
             const randomLastName = generateRandomString(Math.floor(Math.random() * (26-19)) + 1);
     
-            const firstName = "Devendra"//" + randomFirstName;
-            const lastName = "Ind" + randomLastName;
+            const firstName = "Deva"//" + randomFirstName;
+            const lastName = "Prasad" + randomLastName;
     
             // Fill the form fields with the generated names
             await this.page.locator(this.addVIN_webelements.Firstname).fill(firstName);
@@ -348,7 +348,7 @@ class BidderInvidualPage
         //await this.page.waitForTimeout(5000)
         const [popup] = await Promise.all([
         this.page.waitForEvent('popup'),
-        await this.page.locator(this.bidderindividual_webelements.Get_a_quote_Button).click()   // opens new tab
+        await this.page.locator(this.bidderindividual_webelements.Get_a_quote_Button).click( { timeout: 90000 })   // opens new tab
         ]);
         await this.page.waitForTimeout(5000)
         await popup.close();

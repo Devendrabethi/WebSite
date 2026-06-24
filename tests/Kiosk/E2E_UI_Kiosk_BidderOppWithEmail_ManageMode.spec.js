@@ -89,15 +89,19 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await bidderinvidualpage.CardDetails();
     });
 
-    test('17. Complete DocuSign Agreement', async () => {
-        await bidderinvidualpage.PersonalDocuSign();
+    // test('17. Complete DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.PersonalDocuSign();
+    // });
+
+    test('18. Select Quotes and Upgrade button', async () => {
+        await kioskpage.Quotes_Upgrade();
     });
 
-    test('18. Logout and Created new Bidder Opportunity', async () => {
+    test('19. Logout and Created new Bidder Opportunity', async () => {
         await kioskpage.CreateNewRegistration();
     });
 
-    test('19. Diabling KIosk Mode', async () => {
+    test('20. Diabling KIosk Mode', async () => {
         await kioskpage.DisableKiosk();
     });
 

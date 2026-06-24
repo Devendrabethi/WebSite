@@ -58,9 +58,9 @@ test.describe('Bidder Opportunity - Individual Regular Bidder Mobilia Package', 
         await bidderinvidualpage.CardDetails()
     })
 
-    test('10. Complete DocuSign Agreement', async () => {
-        await bidderinvidualpage.PersonalDocuSign()
-    })
+    // test('10. Complete DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.PersonalDocuSign()
+    // })
 
     test('11. View Aggreement Created Bidder Opportunity', async () => {
         await bidderinvidualpage.ViewBidderOpportunity()

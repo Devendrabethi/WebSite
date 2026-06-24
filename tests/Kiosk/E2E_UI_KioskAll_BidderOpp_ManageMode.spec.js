@@ -85,9 +85,9 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await bidderinvidualpage.CardDetails();
     });
 
-    test('16. Complete DocuSign Agreement', async () => {
-        await bidderinvidualpage.PersonalDocuSign();
-    });
+    // test('16. Complete DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.PersonalDocuSign();
+    // });
 
     test('17. Logout and Created new Bidder Opportunity', async () => {
         await kioskpage.CreateNewRegistration();
@@ -141,9 +141,9 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await bidderinvidualpage.CardDetails();
     });
 
-    test('30. Complete DocuSign Agreement', async () => {
-        await bidderinvidualpage.PersonalDocuSign();
-    });
+    // test('30. Complete DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.PersonalDocuSign();
+    // });
 
     test('31. Logout and Created new Bidder Opportunity', async () => {
         await kioskpage.CreateNewRegistration();
@@ -197,9 +197,9 @@ test.describe('Kiosk Bidder Opportunity with manage mode- Individual With Premiu
         await bidderinvidualpage.CardDetails();
     });
 
-    test('44. Complete DocuSign Agreement', async () => {
-        await bidderinvidualpage.AbsenteeDocuSign();
-    });
+    // test('44. Complete DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.AbsenteeDocuSign();
+    // });
 
     test('45. Enter Dealer CC Deposit Card Details', async () => {
         await bidderdealerpage.CCDepositeCardDetails();

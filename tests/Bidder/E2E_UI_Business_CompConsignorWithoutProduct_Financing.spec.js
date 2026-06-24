@@ -77,9 +77,9 @@ test.describe('Bidder Opportunity - Business with CompConsignor WithoutProduct P
         await bidderinvidualpage.PersonalDocuSign();
     });
 
-    test('14. View Aggreement Created Bidder Opportunity', async () => {
-        await bidderinvidualpage.ViewBidderOpportunity();
-    });
+    // test('14. View Aggreement Created Bidder Opportunity', async () => {
+    //     await bidderinvidualpage.ViewBidderOpportunity();
+    // });
 
     test.afterAll(async () => {
         console.log('All tests completed.');

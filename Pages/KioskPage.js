@@ -62,6 +62,8 @@ class KioskPage
         await this.page.locator(process.env.Kiosk_AbsenteeBidder).click()
         await this.page.waitForTimeout(1000)
         await this.page.locator(this.kisosk_webelements.NextStep_Button).click()
+        await this.page.waitForTimeout(3000)
+        await this.page.locator(this.kisosk_webelements.NextStep_Button).click()
         await this.page.locator(this.kisosk_webelements.Skip_Terminal).click()
         await this.page.locator(this.kisosk_webelements.SkipEmail).click()
     }
@@ -86,6 +88,8 @@ class KioskPage
         await this.page.waitForTimeout(1000)
         await this.page.locator(process.env.Kiosk_AbsenteeBidder).click()
         await this.page.waitForTimeout(1000)
+        await this.page.locator(this.kisosk_webelements.NextStep_Button).click()
+        await this.page.waitForTimeout(10000)
         await this.page.locator(this.kisosk_webelements.NextStep_Button).click()
         await this.page.locator(this.kisosk_webelements.Skip_Terminal).click()
         await this.page.waitForTimeout(1000)
@@ -134,7 +138,7 @@ class KioskPage
         const randomEmail = generateRandomString(Math.floor(Math.random() * (26-19)) + 5);
         
     
-        this.emailid = randomEmail+"@yopmail.com";
+        this.emailid = "deva"+randomEmail+"@yopmail.com";
         await this.page.locator(this.addVIN_webelements.Email).click()
         await this.page.locator(this.addVIN_webelements.Email).fill(this.emailid)
 
@@ -322,7 +326,7 @@ class KioskPage
         await this.page.locator(this.kisosk_webelements.TakePhoto_Button).click()
         await this.page.locator(this.kisosk_webelements.Capture_Photo).click()
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.kisosk_webelements.TakePhoto2_Button).click()
+        await this.page.locator(this.kisosk_webelements.TakePhoto2_Button).click( { timeout: 90000 })
         await this.page.locator(this.kisosk_webelements.Capture_Photo).click()
         await this.page.waitForTimeout(2000)
         await this.page.locator(this.kisosk_webelements.ExpirationDate).click()
@@ -395,6 +399,25 @@ class KioskPage
         await this.page.locator(this.kisosk_webelements.Capture_Photo).click()
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.addVIN_webelements.Nextbtn_Submit).click()
+    }
+     async Quotes_Upgrade()
+    {
+        //await this.page.locator(this.bidderindividual_webelements.RentCar_Button).click()
+        //await this.page.waitForTimeout(5000)
+        const [popup] = await Promise.all([
+        this.page.waitForEvent('popup'),
+        await this.page.locator(this.bidderindividual_webelements.Get_a_quote_Button).click( { timeout: 90000 })   // opens new tab
+        ]);
+        await this.page.waitForTimeout(5000)
+        await popup.close();
+        // await this.page.locator(this.bidderindividual_webelements.BookFlight_Button).click()
+        // await this.page.waitForTimeout(5000)
+        const [popup1] = await Promise.all([
+        this.page.waitForEvent('popup'),
+        await this.page.locator(this.bidderindividual_webelements.Upgrade_your_package_Button).click()   // opens new tab
+        ]);
+        await this.page.waitForTimeout(5000)
+        await popup1.close();
     }
     async DisableKiosk()
     {

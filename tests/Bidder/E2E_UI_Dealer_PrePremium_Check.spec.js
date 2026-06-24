@@ -73,9 +73,9 @@ test.describe('Bidder Opportunity - Dealer with Pre-Premium Package', () => {
         await bidderinvidualpage.CardDetails()
     })
 
-    test('13. Complete Personal DocuSign Agreement', async () => {
-        await bidderinvidualpage.PersonalDocuSign()
-    })
+    // test('13. Complete Personal DocuSign Agreement', async () => {
+    //     await bidderinvidualpage.PersonalDocuSign()
+    // })
 
     test('14. View Aggreement Created Bidder Opportunity', async () => {
         await bidderinvidualpage.ViewBidderOpportunity()

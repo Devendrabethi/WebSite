@@ -52,8 +52,8 @@ class BidderIndividual_WebElements
         this.SubmitOpportunity = "//span[text()='Pay for registration']/parent::button"
         this.ConfirmRegistration = "//span[text()='Confirm registration']/parent::button"
 
-        this.Get_a_quote_Button = "//span[text()='Get a quote']"
-        this.Upgrade_your_package_Button = "//span[text()='Upgrade your package']"
+        this.Get_a_quote_Button = "//span[text()='Get a quote']/parent::span/parent::a"
+        this.Upgrade_your_package_Button = "//span[text()='Upgrade your package']/parent::span/parent::a"
         this.ViewBidderOpportunity = "//span[text()='View my agreement']/parent::a"
 
         this.Select_Registration = "//div[@aria-label='Consignment details']/a[contains(@id,'info/registration')]"

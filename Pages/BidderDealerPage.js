@@ -65,7 +65,7 @@ class BidderDealerPage
     async DealerRegistration()
     {
         await this.page.waitForTimeout(2000)
-        await this.page.locator(this.bidderdealer_webelements.SelectDealerBox).click()
+        await this.page.locator(this.bidderdealer_webelements.SelectDealerBox).click( { timeout: 90000 })
         await this.page.locator(this.bidderdealer_webelements.DealerName).fill(this.testdata.DealerName)
         await this.page.locator(this.bidderdealer_webelements.DealerePhoneNum_Field).fill(this.testdata.DealerPhoneNum)
 

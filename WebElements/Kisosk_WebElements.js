@@ -5,7 +5,7 @@ class Kisosk_WebElements
     {
         this.Select_SelfServiceMode = "//p[text()='Self-Service Mode']"
         this.NextStep_Button = "//span[text()='Next step']/parent::button"
-        this.Select_Event = "//p[text()='Palm Beach 2026']/parent::label"
+        this.Select_Event = "//p[text()='Columbus 2026']/parent::label"
         this.Skip_Terminal = "//button[text()='Skip terminal setup']"
         this.Complete_Terminal = "//button[text()='Complete setup']"
         this.Select_PrimiumPackage = "//span[text()='Choose a package']/parent::span/following-sibling::div/label[1]"
